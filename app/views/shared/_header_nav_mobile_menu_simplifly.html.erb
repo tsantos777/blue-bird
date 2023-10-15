@@ -1,0 +1,129 @@
+<!--Hamburger Button-->
+<button x-on:click="open = !open"
+        class="flex items-center space-x-2 focus:outline-none">
+
+  <span x-text="open ? 'Close' : 'Menu'"
+        class="text-lg font-semibold ">Menu</span>
+  
+  <div class="w-6 flex items-center justify-center relative text-white">
+    <span x-bind:class="open ? 'translate-y-0 rotate-45' : '-translate-y-2'"
+          class="transform transition duration-500 w-full h-[3px] bg-current absolute"></span>
+    
+    <span x-bind:class="open ? 'opacity-0 translate-x-3' : 'opacity-100'"
+          class="transform transition duration-500 w-full h-[3px] bg-current absolute"></span>
+    
+    <span x-bind:class="open ? 'translate-y-0 -rotate-45' : 'translate-y-2'"
+          class="transform transition duration-500 w-full h-[3px] bg-current absolute"></span>
+  </div>
+</button>
+
+<menu x-show="open"
+      x-cloak
+      x-transition:enter="transition ease-out duration-300 transform"
+      x-transition:enter-start="-translate-x-full opacity-0"
+      x-transition:enter-end="translate-x-0 opacity-100"
+      x-transition:leave="transition ease-in duration-300 transform"
+      x-transition:leave-start="translate-x-0 opacity-100"
+      x-transition:leave-end="-translate-x-full opacity-0"
+      class="absolute h-screen-mobile font-header text-xl overflow-y-auto w-screen left-0 top-16 bg-gradient-to-b from-sky-600/90 to-sky-100 pt-10 flex flex-col z-30"
+>
+  <div class="ml-16 mr-5 mt-5" x-data="{
+          mobile_resources_drop: false,
+          mobile_now_drop: false,
+          mobile_certification_drop: false,
+          mobile_about_drop: false }">
+    <ul class="space-y-4 font-semibold">
+      <li><%= link_to "ENROLL TODAY", enroll_path, target: "blank", data: { turbo: false }%></li>
+      <li><%= link_to "DISCOVERY FLIGHT", discovery_flight_path, target: "blank", data: { turbo: false }%></li>
+      <li>
+        <div class="flex flex-row justify-between" >
+          <div class=""><%= link_to "HOW TO BECOME A PILOT", root_path, data: { turbo: false }%></div>
+          <div class="px-5 py-1" x-on:click="mobile_resources_drop = ! mobile_resources_drop">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="transition-transform duration-500 ease-in-out" viewBox="0 0 16 16" x-bind:class="{ 'rotate-[90deg]': mobile_resources_drop }">
+              <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+          </div>
+        </div>
+      </li>
+        <!--Drop Down-->
+        <li class="ml-5 animate-slide-in-left" x-show="mobile_resources_drop" x-transition x-transition:leave.duration.300ms x-bind:class="{'animate-slide-out-left': !mobile_resources_drop}">
+          <%= link_to "DISCOVERY FLIGHT" , discovery_flight_path, data: { turbo: false }, target: "blank"%>
+        </li>
+        <li class="ml-5 animate-slide-in-left2" x-show="mobile_resources_drop" x-transition x-transition:leave.duration.300ms x-bind:class="{'animate-slide-out-left2': !mobile_resources_drop}">
+          <%= link_to "ENROLL AT SIMPLIFLY", enroll_path, target: "blank", data: { turbo: false }%>
+        </li>
+        <li class="ml-5 animate-slide-in-left3" x-show="mobile_resources_drop" x-transition x-transition:leave.duration.300ms x-bind:class="{'animate-slide-out-left2': !mobile_resources_drop}">
+          <%= link_to "PILOT TRAINING", pilot_training_path, target: "blank", data: { turbo: false }%>
+        </li>        
+        <li class="ml-5 animate-slide-in-left4" x-show="mobile_resources_drop" x-transition x-transition:leave.duration.300ms x-bind:class="{'animate-slide-out-left3': !mobile_resources_drop}">
+          <%= link_to "BEGIN PILOT CAREER", cfi_path, data: { turbo: false }%>
+        </li>
+      <li>
+        <div class="flex flex-row justify-between" >
+          <div class=""><%=link_to "AIRLINE PILOT COURSES", airline_pilot_courses_path, data: { turbo: false }%></div>
+          <div class="px-5 py-1" x-on:click="mobile_now_drop = ! mobile_now_drop">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="transition-transform duration-500 ease-in-out" viewBox="0 0 16 16" x-bind:class="{ 'rotate-[90deg]': mobile_now_drop }">
+              <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+          </div>
+        </div>
+      </li>
+        <!--Drop Down-->
+        <li class="ml-5 animate-slide-in-left" x-show="mobile_now_drop" x-transition x-transition:leave.duration.300ms x-bind:class="{'animate-slide-out-left': !mobile_now_drop}">
+          <%=link_to "ACCELERATED TRAINING", accelerated_path, data: { turbo: false }%>
+        </li>
+        <li class="ml-5 animate-slide-in-left2" x-show="mobile_now_drop" x-transition x-transition:leave.duration.300ms x-bind:class="{'animate-slide-out-left': !mobile_now_drop}">
+          <%=link_to "FLEXIBLE TRAINING", flexible_path, data: { turbo: false }%>
+        </li>
+        <li class="ml-5 animate-slide-in-left3" x-show="mobile_now_drop" x-transition x-transition:leave.duration.300ms x-bind:class="{'animate-slide-out-left2': !mobile_now_drop}">
+          <%=link_to "TIMELINE", timeline_path, data: { turbo: false }%>
+        </li>
+        <li class="ml-5 animate-slide-in-left4" x-show="mobile_now_drop" x-transition x-transition:leave.duration.300ms x-bind:class="{'animate-slide-out-left3': !mobile_now_drop}">
+          <%=link_to "COST", cost_path, data: { turbo: false }%>
+        </li>
+      <li>
+        <div class="flex flex-row justify-between" >
+          <div class=""><%= link_to "FINANCING", financing_path, data: { turbo: false }%></div>
+          <div class="px-5 py-1" x-on:click="mobile_certification_drop = ! mobile_certification_drop">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="transition-transform duration-500 ease-in-out" viewBox="0 0 16 16" x-bind:class="{ 'rotate-[90deg]': mobile_certification_drop }">
+              <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+          </div>
+        </div>
+      </li>
+        <!--Drop Down-->
+        <li class="ml-5 animate-slide-in-left" x-show="mobile_certification_drop" x-transition x-transition:leave.duration.300ms x-bind:class="{'animate-slide-out-left2': !mobile_certification_drop}">
+          <%=link_to "STRATUS FINANCIAL", stratus_path, data: { turbo: false }%>
+        </li>
+        <li class="ml-5 animate-slide-in-left2" x-show="mobile_certification_drop" x-transition x-transition:leave.duration.300ms x-bind:class="{'animate-slide-out-left': !mobile_certification_drop}">
+          <%=link_to "MERITIZE", meritize_path, data: { turbo: false }%>
+        </li>
+      <li>
+        <div class="flex flex-row justify-between" >
+          <div class=""><%= link_to "SIMPLIFLY", why_simplifly_path, data: { turbo: false }%></div>
+          <div class="px-5 py-1" x-on:click="mobile_about_drop = ! mobile_about_drop">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="transition-transform duration-500 ease-in-out" viewBox="0 0 16 16" x-bind:class="{ 'rotate-[90deg]': mobile_about_drop }">
+              <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+          </div>
+        </div>
+      </li>
+        <!--Drop Down-->
+        <li class="ml-5 animate-slide-in-left" x-show="mobile_about_drop" x-transition x-transition:leave.duration.300ms x-bind:class="{'animate-slide-out-left': !mobile_about_drop}">
+          <%=link_to "WHY SIMPLIFLY", why_simplifly_path, data: { turbo: false }%>
+        </li>
+        <li class="ml-5 animate-slide-in-left2" x-show="mobile_about_drop" x-transition x-transition:leave.duration.300ms x-bind:class="{'animate-slide-out-left2': !mobile_about_drop}">
+          <%=link_to "MEET OUR TEAM", our_team_path, data: { turbo: false }%>
+        </li>
+        <!--<li class="ml-5 animate-slide-in-left3" x-show="mobile_about_drop" x-transition x-transition:leave.duration.300ms x-bind:class="{'animate-slide-out-left3': !mobile_about_drop}">
+          <%=link_to "AIRPLANES", root_path, data: { turbo: false }%>
+        </li>-->
+        <li class="ml-5 animate-slide-in-left4" x-show="mobile_about_drop" x-transition x-transition:leave.duration.300ms x-bind:class="{'animate-slide-out-left4': !mobile_about_drop}">
+          <%=link_to "LOCATIONS", location_path, data: { turbo: false }%>
+        </li>
+        <li class="ml-5 animate-slide-in-left5" x-show="mobile_about_drop" x-transition x-transition:leave.duration.300ms x-bind:class="{'animate-slide-out-left5': !mobile_about_drop}">
+          <%=link_to "BLOG", blog_path, data: { turbo: false }%>
+        </li>
+    </ul>
+  </div>
+</menu>

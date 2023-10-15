@@ -1,0 +1,43 @@
+<%= render "shared/header"%>
+
+<header class="bg-gradient-to-b from-slate-50 to-blue-100">
+  <div class="flex flex-col lg:flex-row">
+    <div class="flex flex-col items-center lg:w-1/2">
+      <h1 class="font-bold text-5xl pt-10 text-center">Helicopters Pilot Training</h1>
+      <h2 class="font-semibold text-xl italic pt-5 pb-3 px-10 text-center">St. Louis's only FAA Approved Part 141 Helicopter Flight School. </h2>
+      <p class="p-text w-3/4 pb-5">
+        Our programs are tailored to meet the needs of those who aspire to fly for leisure or aim to become a skilled Helicopter Pilot.
+      </p>
+      <p class="p-text w-3/4 pb-5">
+        This allows us to provide all our students, especially America's veterans, a more comprehensive learning experience leading to a career in aviation. Whether your goal is to fly for fun or become a professional helicopter pilot, we can get you enrolled in the right program.
+      </p>
+      <%= link_to "SEND US A MESSAGE", contact_path, data: { turbo: false }, class: "btn-primary my-3" %>
+    </div>
+    <div class="flex flex-col items-center lg:w-1/2">
+      <%= image_tag "helicopter.webp", alt: "Helicopter hovering outside Ideal Aviation hangar", class: ""%>
+    </div>
+  </div>
+</header>
+
+
+<%= render "shared/cta_discovery_flight_copter"%>
+<%= render "shared/after_discovery"%>
+
+<header class="w-full bg-dark-hangar bg-cover h-screen-3/4 lg:h-screen-4/5 bg-center flex justify-center items-center text-white">
+  <div class="px-5 py-40 lg:py-52 flex flex-col justify-center items-center w-full">
+      <h1 class="font-bold text-5xl text-center">Ideal Aviation Helicopters</h1>
+      <h2 class="font-bold text-4xl text-center py-10">Check out the helicopter fleet at Ideal Aviation</h2>
+      <%= link_to "VIEW ROTARY WING AIRCRAFT", rotary_wing_path, data: { turbo: false }, class: "btn-primary" %>
+  </div>
+</header>
+
+
+<%= render "shared/testimonials"%>
+<%= render "shared/cta_fly_with"%>
+<%= render "shared/cta_book"%>
+<%= render "shared/cta_next_steps"%>
+<%= render "shared/footer"%>
+
+
+<%# Sticky div %>
+</div>

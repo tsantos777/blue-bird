@@ -1,0 +1,41 @@
+<%= render "shared/header" %>
+<main class="bg-slate-50 w-full flex flex-col items-center justify-center">
+  <!--Container for contents-->
+  <div class="lg:w-3/5 md:w-4/5 pb-10">
+    <h1 class="font-bold text-4xl py-10 text-center">Get ready to fly!</h1>  
+    <p class="px-5 p-text pb-5">
+    Thank you<%if notice.present?%>, <%= notice %>,<%end%> for requesting to do a checkout flight at Ideal Aviation.  We're excited to have you on board and can't wait to share our passion for flying with you.
+    A member of our team will be in touch shortly to confirm your flight details. You can also give us a call at <%=link_to "1-618-337-5845", "tel:1-618-337-5845" %> or email us at <%= mail_to 'info@idealaviationstl.com', class: "text-slate-800 hover:underline"%>
+    </p>
+  </div>
+
+  <div class="flex flex-col lg:flex-row">
+    <div class="lg:w-1/2 lg:px-10">
+      <h2 class="font-bold text-2xl py-10 text-center">What to Expect From Ideal Aviation</h2>
+      <p class="p-text px-5">
+        At Ideal Aviation, we are committed to providing our customers with exceptional service and support at every step of their journey. From the moment you walk through our doors, you can expect a friendly and knowledgeable staff who will help guide you through the rental and/or flight training process and answer any questions you may have. We pride ourselves on maintaining a fleet of wellmaintained and reliable aircraft. Our commitment to safety is unwavering, and we maintain rigorous training standards for our pilots and staff. Whether you are a seasoned pilot or a beginner, we look forward to helping you achieve your goals and experience the thrill of flight. Thank you for choosing Ideal Aviation!
+      </p>
+      <div class="pt-10 flex flex-row gap-3 justify-center">
+        <%= link_to programs_path do %>
+          <div class="btn-primary mb-10">
+            VIEW PROGRAMS
+          </div>
+        <% end %>
+
+        <%= link_to root_path do %>
+          <div class="btn-primary mb-10">
+            HOME PAGE
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+    
+    <div class="lg:w-1/2">
+      <%= image_tag "wingtip.webp", class: "lg:w-3/4", alt: "fly over St. Louis Gateway Arch during sunset"%>
+    </div>
+  </div>
+
+</main>
+
+<%= render "shared/footer"%>

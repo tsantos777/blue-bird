@@ -1,0 +1,15 @@
+<section class="bg-gradient-to-b from-slate-50 to-white flex flex-col lg:flex-row-reverse items-center pt-10 pb-0 lg:py-10">
+  <div class="flex flex-col items-center justify-center lg:w-1/2 p-text">
+    <h2 class="text-3xl font-semibold pb-10 font-sans mx-5 text-center">How Much is Flight Training Going to Cost?</h2>
+    <p class="w-3/4 pb-10">The cost of flight training varies greatly depending on a number of factors such as type of training, the student's aptitude and experience level, and the type of aircraft used.</p>
+    <p class="w-3/4 pb-10">Although the actual cost of flight training can vary widely, plan to budget around $10,000 to $15,000 for private pilot fixed wing.  To get more details on hourly rates, program pricing, and potential financing options; give us a call today and speak to a SimpliFly team member.</p>
+    <div class="flex flex-col lg:flex-row gap-5 mb-10">
+      <%= link_to "VIEW PRICING", cost_path, data: { turbo: false }, class: "btn-primary" %>
+      <%= link_to "CONTACT US", contact_path, data: { turbo: false }, class: "btn-secondary" %>
+    </div>
+  </div>
+  <div class="flex flex-col items-center lg:w-1/2">
+    <%=image_tag "pilot_pass_checkride_cessna.webp", alt: "Pilot passing private pilot checkride at SimpliFly", class: "lg:h-screen-2/3"%>
+    <span class="text-slate-500 italic hidden lg:block lg:w-1/2 text-center">Pilot passing his private pilot checkride at SimpliFly Flight School</span>
+  </div>
+</section>

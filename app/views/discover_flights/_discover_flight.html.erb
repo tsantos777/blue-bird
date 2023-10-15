@@ -1,0 +1,57 @@
+<div id="<%= dom_id discover_flight %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">First name:</strong>
+    <%= discover_flight.first_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Last name:</strong>
+    <%= discover_flight.last_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Email:</strong>
+    <%= discover_flight.email %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Phone:</strong>
+    <%= discover_flight.phone %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Aircraft:</strong>
+    <%= discover_flight.aircraft %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Preferred date:</strong>
+    <%= discover_flight.preferred_date %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Preferred availability:</strong>
+    <%= discover_flight.preferred_availability %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Alternate date:</strong>
+    <%= discover_flight.alternate_date %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Alternate availability:</strong>
+    <%= discover_flight.alternate_availability %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Comments:</strong>
+    <%= discover_flight.comments %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this discover flight", discover_flight, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this discover flight', edit_discover_flight_path(discover_flight), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

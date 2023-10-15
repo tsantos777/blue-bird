@@ -1,0 +1,299 @@
+<%= render "shared/header"%>
+
+<header class="w-full bg-piper bg-cover h-screen-3/4 lg:h-screen-4/5 bg-center flex justify-center items-center">
+  <div class="px-5 py-40 lg:py-52 flex flex-col justify-center items-center w-full">
+      <h1 class="font-bold text-5xl text-center">Fixed Wing Aircraft</h1>
+      <h2 class="font-bold text-4xl text-center py-10">Fly an airplane today at Ideal Aviation</h2>
+      <%= link_to "GET CHECKED OUT NOW", rental_checkout_path, data: { turbo: false }, class: "btn-primary" %>
+  </div>
+</header>
+
+<section class="flex flex-col lg:flex-row-reverse pt-10 pb-0 lg:py-10">
+  <div class="flex flex-col items-center lg:w-1/2 p-text">
+    <h3 class="text-3xl font-semibold pb-10 font-sans mx-5 text-center">The Tecnam P92</h3>
+    <p class="w-3/4 pb-5">
+      Ideal Aviation is proud to be the only school in the St. Louis area that offers Tecnam aircraft for our students. You'll have access to some of the most advanced and innovative aircraft on the market. From the modern avionics to the sleek design, our Tecnam light sport aircraft offers a flying experience that you won't find anywhere else in St. Louis.
+    </p>
+    <p class="w-3/4 pb-10">
+      Tecnam P92s are equipped with the Garmin G3X touch screen avionics system. This innovative system provides pilots with two advanced and user-friendly 10.6 inch touch screens that makes flying safer and more enjoyable.  To top it all off, enjoy a comfortable ride with a premium interior and easily adjustable Italian leather seats.  Come fly with us and experience the comfort and luxury of our Tecnam aircraft. 
+    </p>
+    <%= link_to "FLY THE TECNAM P92", rental_checkout_path, data: { turbo: false }, class: "btn-primary mb-10" %>
+  </div>
+  <div class="flex flex-col items-center lg:w-1/2">
+    <!--Slider--->
+    <div x-data="{
+      slide: 0,
+      images: [
+        '<%= image_url "tecnam1.webp" %>',
+        '<%= image_url "tecnam2.webp" %>',
+        '<%= image_url "tecnam3.webp" %>'
+      ],
+      autoplay: null,
+      startAutoplay() {
+        this.autoplay = setInterval(() => {
+          this.nextSlide();
+        }, 10000);  //timer
+      },
+      stopAutoplay() {
+        clearInterval(this.autoplay);
+        this.autoplay = null;
+      },
+      nextSlide() {
+        this.slide = (this.slide + 1) % this.images.length;
+      },
+      prevSlide() {
+        this.slide = this.slide - 1 < 0 ? this.images.length - 1 : this.slide - 1;
+      }
+    }" x-init="startAutoplay()" id="slider" class="w-full lg:w-3/4">
+      <div x-show="images.length > 1" class="relative">
+    <template x-for="(image, index) in images" :key="index">
+      <img x-show="slide === index" :src="image" :alt="'Modern Tecnam Airplane ' + (index + 1)" class="w-full"
+        x-transition:enter="opacity-0 duration-500" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+        x-transition:leave="opacity-100 duration-500" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+        :class="{'hidden': index !== slide}" x-init="setTimeout(() => { $el.classList.remove('hidden'); }, 100)">
+    </template>
+
+        <button x-show="images.length > 1" x-on:mouseover="stopAutoplay()" x-on:mouseleave="startAutoplay()" x-on:click="prevSlide()" class="absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 rounded-md text-white bg-ideal-blue hover:bg-ideal-blue-light focus:outline-none focus:shadow-outline-gray transition duration-150 ease-in-out mx-3">
+          <span class="sr-only">Previous</span>
+          <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button x-show="images.length > 1" x-on:mouseover="stopAutoplay()" x-on:mouseleave="startAutoplay()" x-on:click="nextSlide()" class="absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 rounded-md text-white bg-ideal-blue hover:bg-ideal-blue-light focus:outline-none focus:shadow-outline-gray transition duration-150 ease-in-out mx-3">
+          <span class="sr-only">Next</span>
+          <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+        <div class="absolute bottom-0 left-0 w-full flex justify-center space-x-2 pb-2">
+          <template x-for="(image, index) in images" :key="index">
+            <button x-on:click="slide = index" :class="{'bg-ideal-blue': index === slide, 'bg-slate-50': index !== slide}" class="h-2 w-2 rounded-full"></button>
+          </template>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="flex flex-col lg:flex-row pt-10 pb-0 lg:py-10">
+  <div class="flex flex-col items-center lg:w-1/2 p-text">
+    <h3 class="text-3xl font-semibold pb-10 font-sans mx-5 text-center">The Piper Pilot 100i</h3>
+    <p class="w-3/4 pb-5">
+      At Ideal Aviation, we take pride in our fleet of top quality aircraft. Our Piper Pilot 100i is a shining example of the kind of modern, reliable planes we offer. With its advanced avionics, comfortable cabin, and spacious cockpit, the Piper Pilot 100i is the perfect choice for both students and instructors. The Garmin G3X touch screen avionics suite provides unparalleled situational awareness, while the Lycoming 180 horsepower engine delivers ample power for takeoff, climb, and cruising.
+    </p>
+    <p class="w-3/4 pb-10">
+      The Piper Pilot 100i is a reliable cross country plane and IFR trainer, with a GFC500 autopilot, GNX375 GPS, and backup Garmin G5. Synthetic vision technology provides valuable information for informed decision making while flying. Its advanced technology and performance make it an ideal choice for pilots serious about their training.
+    </p>
+    <%= link_to "FLY THE PIPER PILOT", rental_checkout_path, data: { turbo: false }, class: "btn-primary mb-10" %>
+  </div>
+  <div class="flex flex-col items-center lg:w-1/2">
+    <!--Slider--->
+    <div x-data="{
+      slide: 0,
+      images: [
+        '<%= image_url "piper1.webp" %>',
+        '<%= image_url "piper2.webp" %>',
+        '<%= image_url "piper3.webp" %>'
+      ],
+      autoplay: null,
+      startAutoplay() {
+        this.autoplay = setInterval(() => {
+          this.nextSlide();
+        }, 11000);  //timer
+      },
+      stopAutoplay() {
+        clearInterval(this.autoplay);
+        this.autoplay = null;
+      },
+      nextSlide() {
+        this.slide = (this.slide + 1) % this.images.length;
+      },
+      prevSlide() {
+        this.slide = this.slide - 1 < 0 ? this.images.length - 1 : this.slide - 1;
+      }
+    }" x-init="startAutoplay()" id="slider" class="w-full lg:w-3/4">
+      <div x-show="images.length > 1" class="relative">
+    <template x-for="(image, index) in images" :key="index">
+      <img x-show="slide === index" :src="image" :alt="'Piper Pilot Airplane ' + (index + 1)" class="w-full"
+        x-transition:enter="opacity-0 duration-500" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+        x-transition:leave="opacity-100 duration-500" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+        :class="{'hidden': index !== slide}" x-init="setTimeout(() => { $el.classList.remove('hidden'); }, 100)">
+    </template>
+
+        <button x-show="images.length > 1" x-on:mouseover="stopAutoplay()" x-on:mouseleave="startAutoplay()" x-on:click="prevSlide()" class="absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 rounded-md text-white bg-ideal-blue hover:bg-ideal-blue-light focus:outline-none focus:shadow-outline-gray transition duration-150 ease-in-out mx-3">
+          <span class="sr-only">Previous</span>
+          <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button x-show="images.length > 1" x-on:mouseover="stopAutoplay()" x-on:mouseleave="startAutoplay()" x-on:click="nextSlide()" class="absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 rounded-md text-white bg-ideal-blue hover:bg-ideal-blue-light focus:outline-none focus:shadow-outline-gray transition duration-150 ease-in-out mx-3">
+          <span class="sr-only">Next</span>
+          <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+        <div class="absolute bottom-0 left-0 w-full flex justify-center space-x-2 pb-2">
+          <template x-for="(image, index) in images" :key="index">
+            <button x-on:click="slide = index" :class="{'bg-ideal-blue': index === slide, 'bg-slate-50': index !== slide}" class="h-2 w-2 rounded-full"></button>
+          </template>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="flex flex-col lg:flex-row-reverse pt-10 pb-0 lg:py-10">
+  <div class="flex flex-col items-center lg:w-1/2 p-text">
+    <h3 class="text-3xl font-semibold pb-10 font-sans mx-5 text-center">The Cessna 172</h3>
+    <p class="w-3/4 pb-5">
+      Ideal Aviation's fleet includes the Cessna 172, a popular and reliable aircraft that has been a workhorse in flight training for decades. With its proven stability and reliability, the Cessna 172 is ideal for student pilots and experienced aviators alike.
+    </p>
+    <p class="w-3/4 pb-10">
+      Our Cessna 172s have the straightforward "six pack" cockpit layout and its fuel-injected Continental IO-360 engine provides ample power for takeoff, climb, and cruising. The Cessna 172 is a versatile and dependable aircraft that can be used for a wide range of training scenarios, making it a popular choice for pilots looking for a cost-effective and reliable aircraft.
+    </p>
+    <%= link_to "FLY THE CESSNA 172", rental_checkout_path, class: "btn-primary mb-10" %>
+  </div>
+  <div class="flex flex-col items-center lg:w-1/2">
+    <!--Slider--->
+    <div x-data="{
+      slide: 0,
+      images: [
+        '<%= image_url "cessna1.webp" %>',
+        '<%= image_url "cessna2.webp" %>',
+        '<%= image_url "cessna3.webp" %>'
+      ],
+      autoplay: null,
+      startAutoplay() {
+        this.autoplay = setInterval(() => {
+          this.nextSlide();
+        }, 11000);  //timer
+      },
+      stopAutoplay() {
+        clearInterval(this.autoplay);
+        this.autoplay = null;
+      },
+      nextSlide() {
+        this.slide = (this.slide + 1) % this.images.length;
+      },
+      prevSlide() {
+        this.slide = this.slide - 1 < 0 ? this.images.length - 1 : this.slide - 1;
+      }
+    }" x-init="startAutoplay()" id="slider" class="w-full lg:w-3/4">
+      <div x-show="images.length > 1" class="relative">
+    <template x-for="(image, index) in images" :key="index">
+      <img x-show="slide === index" :src="image" :alt="'Cessna 172 Airplane ' + (index + 1)" class="w-full"
+        x-transition:enter="opacity-0 duration-500" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+        x-transition:leave="opacity-100 duration-500" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+        :class="{'hidden': index !== slide}" x-init="setTimeout(() => { $el.classList.remove('hidden'); }, 100)">
+    </template>
+
+        <button x-show="images.length > 1" x-on:mouseover="stopAutoplay()" x-on:mouseleave="startAutoplay()" x-on:click="prevSlide()" class="absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 rounded-md text-white bg-ideal-blue hover:bg-ideal-blue-light focus:outline-none focus:shadow-outline-gray transition duration-150 ease-in-out mx-3">
+          <span class="sr-only">Previous</span>
+          <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button x-show="images.length > 1" x-on:mouseover="stopAutoplay()" x-on:mouseleave="startAutoplay()" x-on:click="nextSlide()" class="absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 rounded-md text-white bg-ideal-blue hover:bg-ideal-blue-light focus:outline-none focus:shadow-outline-gray transition duration-150 ease-in-out mx-3">
+          <span class="sr-only">Next</span>
+          <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+        <div class="absolute bottom-0 left-0 w-full flex justify-center space-x-2 pb-2">
+          <template x-for="(image, index) in images" :key="index">
+            <button x-on:click="slide = index" :class="{'bg-ideal-blue': index === slide, 'bg-slate-50': index !== slide}" class="h-2 w-2 rounded-full"></button>
+          </template>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="flex flex-col lg:flex-row pt-10 pb-0 lg:py-10">
+  <div class="flex flex-col items-center lg:w-1/2 p-text">
+    <h3 class="text-3xl font-semibold pb-10 font-sans mx-5 text-center">The Piper Seminole</h3>
+    <p class="w-3/4 pb-5">
+      The Piper Seminole is a popular twin-engine aircraft that provides an exceptional flight training experience. Its fuel-injected Lycoming engines offer a smooth and efficient flight that is ideal for multi-engine training. The modern avionics, including dual Garmin 430 GPS and G5s, make navigation and communication a breeze.
+    </p>
+    <p class="w-3/4 pb-10">
+      The Seminole's spacious cabin can accommodate up to four passengers, providing an ideal environment for flight instructors and students to master the challenges of multi-engine flight. Its twin-engine configuration and advanced avionics make it a reliable and efficient choice for commercial and multi-engine training. Whether you are pursuing your commercial pilot license or enhancing your skills as a multi-engine pilot, the Piper Seminole is the perfect aircraft to help you achieve your goals.
+    </p>
+    <%= link_to "FLY THE SEMINOLE", rental_checkout_path, class: "btn-primary mb-10" %>
+  </div>
+  <div class="flex flex-col items-center lg:w-1/2">
+    <!--Slider--->
+    <div x-data="{
+      slide: 0,
+      images: [
+        '<%= image_url "seminole1.webp" %>',
+        '<%= image_url "seminole2.webp" %>',
+        '<%= image_url "seminole3.webp" %>'
+      ],
+      autoplay: null,
+      startAutoplay() {
+        this.autoplay = setInterval(() => {
+          this.nextSlide();
+        }, 10000);  //timer
+      },
+      stopAutoplay() {
+        clearInterval(this.autoplay);
+        this.autoplay = null;
+      },
+      nextSlide() {
+        this.slide = (this.slide + 1) % this.images.length;
+      },
+      prevSlide() {
+        this.slide = this.slide - 1 < 0 ? this.images.length - 1 : this.slide - 1;
+      }
+    }" x-init="startAutoplay()" id="slider" class="w-full lg:w-3/4">
+      <div x-show="images.length > 1" class="relative">
+    <template x-for="(image, index) in images" :key="index">
+      <img x-show="slide === index" :src="image" :alt="'Multiengine Seminole ' + (index + 1)" class="w-full"
+        x-transition:enter="opacity-0 duration-500" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+        x-transition:leave="opacity-100 duration-500" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+        :class="{'hidden': index !== slide}" x-init="setTimeout(() => { $el.classList.remove('hidden'); }, 100)">
+    </template>
+
+        <button x-show="images.length > 1" x-on:mouseover="stopAutoplay()" x-on:mouseleave="startAutoplay()" x-on:click="prevSlide()" class="absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 rounded-md text-white bg-ideal-blue hover:bg-ideal-blue-light focus:outline-none focus:shadow-outline-gray transition duration-150 ease-in-out mx-3">
+          <span class="sr-only">Previous</span>
+          <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button x-show="images.length > 1" x-on:mouseover="stopAutoplay()" x-on:mouseleave="startAutoplay()" x-on:click="nextSlide()" class="absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 rounded-md text-white bg-ideal-blue hover:bg-ideal-blue-light focus:outline-none focus:shadow-outline-gray transition duration-150 ease-in-out mx-3">
+          <span class="sr-only">Next</span>
+          <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+        <div class="absolute bottom-0 left-0 w-full flex justify-center space-x-2 pb-2">
+          <template x-for="(image, index) in images" :key="index">
+            <button x-on:click="slide = index" :class="{'bg-ideal-blue': index === slide, 'bg-slate-50': index !== slide}" class="h-2 w-2 rounded-full"></button>
+          </template>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="flex flex-col lg:flex-row-reverse pt-10 pb-0 lg:py-10">
+  <div class="flex flex-col items-center lg:w-1/2 p-text">
+    <h3 class="text-3xl font-semibold pb-10 font-sans mx-5 text-center">Redbird Simulator</h3>
+    <p class="w-3/4 pb-5">
+      The Redbird Simulator is a highly realistic flight training device with an advanced motion platform, high-resolution visual system, and realistic flight controls. The Redbird Simulator is a FAA approved training device that provides a safe and controlled environment for pilots to practice a wide range of flight maneuvers and emergency procedures, making it a valuable tool for pilots of all levels.
+    </p>
+    <p class="w-3/4 pb-10">
+      The simulator's customizable scenarios and weather conditions make it an excellent tool for instrument training, allowing pilots to practice instrument approaches and procedures without the added cost and complexity of flying in actual instrument conditions. With its advanced technology and unparalleled realism, the Redbird Simulator is the ultimate tool for flight training and proficiency.
+    </p>
+    <%= link_to "FLY THE REDBIRD", rental_checkout_path, class: "btn-primary mb-10" %>
+  </div>
+  <div class="flex flex-col items-center lg:w-1/2">
+    <%= image_tag "redbird.webp", alt: "Redbird simulator training", class: "lg:w-3/4"%>
+  </div>
+</section>
+
+<%= render "shared/cta_arch"%>
+<%= render "shared/cta_next_steps"%>
+<%= render "shared/footer"%>

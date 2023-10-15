@@ -1,0 +1,52 @@
+<%# Head / Meta Data %>
+<%# title(@post.title + " | Right Rudder Marketing Blog") %>
+<%# meta_description(if @post.meta_description? then @post.meta_description end) %>
+<%# meta_keywords(if @post.meta_keywords? then @post.meta_keywords end) %>
+<%# og_image(@post.feature_image.url) %>
+<%# twitter_image(@post.feature_image.url) %>
+
+<%= render "shared/header" %>
+<div class="text-lg bg-gradient-to-r from-slate-100 to-blue-100">
+  
+
+  <div class="flex flex-col items-center">
+    <div class="lg:border-1 lg:w-3/5 flex flex-col lg:rounded-xl lg:my-10 border-slate-300 bg-slate-50">
+      <!--Header-->
+      <%#=image_tag @post.feature_image.url, class:"w-full object-cover object-center lg:rounded-t-xl", alt: "picture for article: #{@post.title}"%>
+      <% if @post.feature_image.present?%>
+      <%=image_tag @post.feature_image.url, class:"w-full object-cover object-center lg:rounded-t-xl", alt: "picture for article: #{@post.title}"%>
+      <%end%>
+      <!--Text-->
+      <div class="">
+        <div class="p-3">
+          <h2 class="font-bold text-3xl"><%= @post.title %></h2>
+          <div class="text-md font-semibold"><%= @post.category %></div>      
+          <div class="text-sm font-semibold"><%= I18n.localize(@post.post_date, :format => '%^a %^b %-d %Y') %></div>
+          <div class="text-sm italic">Published by <%= @post.author%></div>          
+        </div>
+        <%# Shown only when logged in %>
+        <% if admin_signed_in? %>
+        <hr class="border-slate-300">        
+        <div class="p-3">
+          <div>Status: <span class="italic"><%= @post.status %></span></div>
+          <div class="flex flex-row gap-3">
+            <%= link_to 'Edit this post', edit_post_path(@post), class: "font-semibold hover:underline", data: { turbo: false } %>
+            <span class="hidden"> | </span>
+            <%= button_to 'Delete this post', post_path(@post), method: :delete, class: " font-semibold hover:underline" %>
+          </div>
+        </div>
+        <hr class="border-slate-300">
+        <%end%>
+      </div>
+      
+      <!--Content-->
+      <div class="p-3 no-tailwindcss-base ">
+        <%= raw @post.post_content %>
+      </div>
+    </div>
+  </div>
+</div>
+<%#= render "shared/cta1" %>
+<%= render "shared/cta_fly_with"%>
+<%= render "shared/cta_next_steps"%>
+<%= render "shared/footer" %>

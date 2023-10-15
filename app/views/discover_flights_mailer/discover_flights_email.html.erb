@@ -1,0 +1,38 @@
+<p>Dear <%=@discover_flight.first_name%>, 
+
+<p>Thank you for requesting a discovery flight on our website.  We'll reach out to your shortly to confirm the exact time and date.</p>
+
+<p>At Ideal Aviation, we are committed to providing the best possible aviation education and training. We offer a variety of programs and courses designed to meet the needs of both aspiring pilots and experienced aviators.</p>
+
+<p>Taking a discovery flight is the first step to becoming a pilot and we're excited to be a part of your aviation journey.</p>
+
+<p>If you are interested in pursuing a career as a pilot, we offer comprehensive training programs that will help you achieve your goals. Our programs cover everything from private pilot certification to advanced training in commercial aviation.</p>
+
+<p>Whatever your goals may be, we are confident that we can help you achieve them. If you have any questions about our programs, please don't hesitate to contact us.</p>
+
+<p>
+The team at Ideal Aviation<br>
+1-618-350-4408<br>
+info@idealaviationstl.com<br>
+</p>
+<br>
+<br>
+  -------- Your Form Submission Details --------
+<br>
+<br>
+First Name: <%=@discover_flight.first_name%><br>
+Last Name: <%=@discover_flight.last_name%><br>
+Phone: <%=@discover_flight.phone%><br>
+Email: <%=@discover_flight.email%><br>
+<br>
+<br>
+Select aircraft category: <%=@discover_flight.aircraft%>
+<br>
+<br>
+Is there anything else you'd like us to know: <%=@discover_flight.comments%>
+<br>
+<br>
+Selected Date: <%=@discover_flight.preferred_date%><br>
+Selected Time: <%=@discover_flight.preferred_availability%><br>
+Alternate Date: <%=@discover_flight.alternate_date%><br>
+Alternate Time: <%=@discover_flight.alternate_availability%><br>

@@ -1,0 +1,13 @@
+<section class="bg-gradient-to-b from-slate-50 to-white flex flex-col lg:flex-row items-center pt-10 pb-0 lg:py-10">
+  <div class="flex flex-col items-center justify-center lg:w-1/2 p-text">
+    <span class="font-sans font-semibold italic">Take the first step...</span>
+    <h2 class="text-3xl font-semibold pb-10 font-header uppercase mx-5 text-center">Schedule a Discovery Flight</h2>
+    <p class="w-3/4 pb-10">Experience the excitement of aviation by scheduling a meeting with our team, exploring our facilities, and embarking on a thrilling flight in one of our aircraft. During a captivating discovery flight, you will be partnered with one of our highly skilled flight instructors who are FAA certified.</p>
+    <p class="w-3/4 pb-10">Together, you will navigate the taxiway, receive clearance from the control tower, and venture into the open skies. Next you will have the opportunity to take control of the aircraft and practice fundamental maneuvers such as maintaining level flight, executing turns, and performing climbs and descents.</p>
+    <p class="w-3/4 pb-10 font-semibold font-sans">Don't miss out on this incredible opportunity to explore the world of flight. Schedule your discovery flight today and discover if the exhilarating world of aviation is meant for you.</p>
+    <%= link_to "SCHEDULE DISCOVERY FLIGHT", discovery_flight_path,  target: "blank", data: { turbo: false }, class: "btn-primary mb-10" %>
+  </div>
+  <div class="flex flex-col items-center lg:w-1/2">
+    <%=image_tag "wing-pitot-mountain.webp", alt: "Discovery flight over Phoenix, AZ valley", class: "lg:h-screen-2/3 lg:px-12 lg:py-8"%>
+  </div>
+</section>

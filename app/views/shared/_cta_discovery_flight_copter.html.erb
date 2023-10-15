@@ -1,0 +1,13 @@
+<section class="bg-gradient-to-b from-slate-50 to-white flex flex-col lg:flex-row-reverse items-center pt-10 pb-0 lg:py-10">
+  <div class="flex flex-col items-center justify-center lg:w-1/2 p-text">
+    <span class="font-sans font-semibold italic">Take the first step...</span>
+    <h2 class="text-3xl font-semibold pb-10 font-sans mx-5 text-center">Schedule a Discovery Flight</h2>
+    <p class="w-3/4 pb-10">Schedule a time to meet with our team, tour our hangar, and take flight in one of our helicopters.  During a discovery flight, you'll be paired up with one of our highly qualified FAA certificated flight instructors.</p>
+    <p class="w-3/4 pb-10">You'll have the opportunity to experience sitting in the pilot seat and take command of a helicopter. With guidance from your instructor, you'll learn how to maneuver the helicopter out of the ramp and obtain clearance from the control tower. After taking off, you'll be able to pilot the helicopter and practice fundamental techniques such as maintaining a straight and level flight, executing turns, climbing, and descending.</p>
+    <p class="w-3/4 pb-10 font-semibold font-sans">Are you up for the opportunity that lies ahead?  Schedule a discovery flight now and see if flying is right for you.</p>
+    <%= link_to "SCHEDULE DISCOVERY FLIGHT", discovery_flight_path, data: { turbo: false }, class: "btn-primary mb-10" %>
+  </div>
+  <div class="flex flex-col items-center lg:w-1/2">
+    <%=image_tag "helicopter_smiling.webp", alt: "Pilot smiling right before taking off in a helicopter", class: "lg:h-screen-2/3 lg:px-12 lg:py-8"%>
+  </div>
+</section>

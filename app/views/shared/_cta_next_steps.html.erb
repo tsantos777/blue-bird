@@ -1,0 +1,41 @@
+<section class="bg-gradient-to-r from-sky-600 to-sky-400 flex flex-col items-center pt-10 pb-0 lg:py-10">
+  
+  <div class="text-center text-slate-50">
+    <h3 class="font-semibold text-6xl font-header">NEXT STEPS</h3>
+
+
+  <div class="text-center text-slate-50 flex flex-col items-center">
+    <p class="text-4xl font-header font-semibold pt-10 pb-3">
+      SCHEDULE A TIME TO TALK TO OUR TEAM
+    </p>
+    <p class="p-text text-xl italic pb-10 lg:w-1/2 mx-5">
+      Let's discuss how we can help you achieve your aviation goals.  Explore what the requirements are and what it takes to become a pilot.  Click the big red button to schedule a time to speak with one of our team members
+    </p>
+    
+    <!--Button-->
+    <%=link_to contact_path, data: { turbo: false } do%>
+      <div class="flex flex-row items-center rounded-xl px-5 py-4 mx-2 bg-red-700 text-2xl lg:text-4xl font-header font-semibold duration-300 hover:scale-105 hover:bg-red-600">
+        <%= image_tag "calendar.webp", alt: "graphic of a calendar", class: "h-6 lg:h-8"%>
+        <span class="pl-10">
+          SCHEDULE A CALL
+        </span>
+      </div>
+    <%end%>
+
+  </div>
+
+      <p class="p-text text-2xl lg:text-3xl italic py-10">
+      Join the SimpliFly Community.  <br>Like and follow us on social media.
+    </p>
+  </div>
+
+  <div class="flex flex-row gap-5 lg:gap-10 mb-10 lg:mb-0">
+    <%= link_to "https://www.instagram.com/simpliflyco", target: "blank" do%>
+      <%=image_tag "insta.webp", alt: "facebook social media icon", class: "h-16 hover:scale-110 duration-300" %>
+    <%end%>
+    <%= link_to "https://www.facebook.com/SimpliFlyFlightSchool", target: "blank" do%>
+      <%=image_tag "fb.webp", alt: "facebook social media icon", class: "h-16 hover:scale-110 duration-300" %>
+    <%end%>
+  </div>
+
+</section>

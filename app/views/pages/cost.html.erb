@@ -1,0 +1,275 @@
+<%# Head / Meta Data %>
+<% title("Pricing and Cost Calculator | SimpliFly Flight School") %>
+<% meta_description("Use Simplifly's pilot training pricing calculator to estimate the cost of your pilot training. Get an approximate idea of the expenses involved and plan your training accordingly. Our experienced instructors, affordable aircraft, and personalized training approach make us the perfect choice for pilot training. Our flight schools are in Mesa, AZ and Spanish Fork, UT.  Many of our students come from Gilbert, Chandler, Tempe, Scottsdale, Apache Junction, Queen Creek, Fountain Hills, Gold Canyon, Maricopa, Pinal, Springville, Provo, Payson, Mapleton, Salem, Elk Ridge, Utah County, Juab County") %>
+<% meta_keywords("Pilot Training Pricing Calculator, Flight Training Costs, Training Expenses, Mesa Flight School, Phoenix Flight School, Scottsdale Flight School, Spanish Fork Flight School, Salt Lake Flight School, approximate flight training costs, how much to be a pilot") %>
+
+<%= render "shared/header"%>
+
+<%# Declare variables %>
+<% airplane_rental = "165" %>
+<% multi_rental = "400" %>
+<% instruction = "70" %>
+<% simulator = "130" %>
+
+<header class="bg-student bg-cover lg:bg-[center_top_-5rem] h-screen-3/4 flex flex-col items-center justify-center">
+  <h1 class="uppercase font-header text-5xl lg:text-7xl font-semibold text-center">Approximate Training Costs</h1>
+  <h2 class="italic text-3xl lg:text-5xl text-center pt-10 font-semibold">Affordable options for pilot training</h2>
+</header>
+
+<section class="flex flex-col items-center pb-20 bg-gradient-to-r from-white to-slate-200">
+  <h3 class="uppercase font-header text-3xl lg:text-5xl font-semibold text-center pt-20 pb-10">Current Pricing</h3>
+
+  <div class="max-w-xl mx-3">
+    <div class="grid grid-cols-2">
+      <!--Table head-->
+      <div class="bg-sky-600 text-white font-semibold pl-2 py-2 rounded-tl-2xl">
+      Item
+      </div>
+      <div class="bg-sky-600 text-white font-semibold text-right pr-5 py-2 rounded-tr-2xl">
+      Pricing
+      </div>
+      <!--1st row-->
+      <div class="pl-2 py-3 bg-slate-200">
+      Single Engine Airplane Rental
+      </div>
+      <div class="pr-2 text-right py-3 bg-slate-200">
+      $<%= airplane_rental %> / Hour
+      </div>
+      
+      <!--2nd row-->
+      <div class="pl-2 py-3 bg-white border-l-2">
+      Instruction
+      </div>
+      <div class="pr-2 text-right py-3 bg-white border-r-2">
+      $<%= instruction %> / Hour
+      </div>
+      <!--3rd row-->
+      <div class="pl-2 py-3 bg-slate-200">
+      Single Engine Airplane and Instructor
+      </div>
+      <div class="pr-2 text-right py-3 bg-slate-200">
+      $<%= (airplane_rental.to_i + instruction.to_i).to_s %> / Hour
+      </div>
+      <!--4th row-->
+      <div class="pl-2 py-3 bg-white border-l-2">
+      Simulator and Instructor
+      </div>
+      <div class="pr-2 text-right py-3 bg-white border-r-2">
+      $<%= simulator %> / Hour
+      </div>
+      <!--multi row-->
+      <div class="pl-2 py-3 bg-slate-200 rounded-bl-2xl">
+      Multi Engine Airplane and Instructor
+      </div>
+      <div class="pr-2 text-right py-3 bg-slate-200 rounded-br-2xl">
+      $<%= (multi_rental.to_i + instruction.to_i).to_s %> / Hour
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="flex flex-col items-center bg-gradient-to-r from-slate-200 to-sky-100 pb-5 lg:pb-10">
+  <h3 class="uppercase font-header text-3xl lg:text-5xl font-semibold text-center pt-20 pb-20">Cost Estimator</h3>
+
+  <div class="flex flex-col lg:flex-row w-full" x-data="{ flight: '', instructor: '', sim: '', multi: '' }">
+    <!--Mins and Averages-->
+    <div class="lg:w-1/2 flex flex-col items-center mb-20 mx-5">
+      <div class="">
+        <h4 class="font-semibold uppercase text-base lg:text-xl font-header">Private Pilot Minimums</h4>
+        <div class="flex justify-between gap-10">
+          <ul class="text-sm lg:text-base">
+            <li>40 hours total flight time</li>
+            <li>20 hours flight time with instructor</li>
+          </ul>
+          <!--Mobile button with scroll-->
+          <button class="btn-primary text-sm uppercase py-2 h-min lg:hidden" 
+                x-on:click="flight=40, instructor=20, sim=0, multi=0" 
+                onclick="event.preventDefault(); 
+                const contactElement = document.getElementById('calculator');
+                const targetOffset = contactElement.offsetTop -40;
+                window.scrollTo({ top: targetOffset, behavior: 'smooth' });">
+          Calculate
+          </button>
+          <!--Desktop button with no scroll-->
+          <button class="btn-primary text-sm uppercase py-2 h-min hidden lg:block" 
+                x-on:click="flight=40, instructor=20, sim=0, multi=0">
+          Calculate
+          </button>
+        </div>
+        <h4 class="font-semibold uppercase text-base lg:text-xl font-header pt-5">Private Pilot Average</h4>
+        <div class="flex justify-between gap-10">
+          <ul class="text-sm lg:text-base">
+            <li>75 hours total flight time</li>
+            <li>30 hours flight time with instructor</li>
+            <li>10 hours ground instruction</li>
+          </ul>
+          <button class="btn-primary text-sm uppercase py-2 h-min lg:hidden" 
+                  x-on:click="flight=75, instructor=40, sim=0, multi=0"
+                  onclick="event.preventDefault(); 
+                  const contactElement = document.getElementById('calculator');
+                  const targetOffset = contactElement.offsetTop -40;
+                  window.scrollTo({ top: targetOffset, behavior: 'smooth' });">
+          Calculate
+          </button>
+          <button class="btn-primary text-sm uppercase py-2 h-min hidden lg:block" 
+                  x-on:click="flight=75, instructor=40, sim=0, multi=0">
+          Calculate
+          </button>
+        </div>
+        <h4 class="font-semibold uppercase text-base lg:text-xl font-header pt-5">Instrument Minimums</h4>
+        <div class="flex justify-between gap-10">
+          <ul class="text-sm lg:text-base">
+            <li>50 hours total flight time</li>
+            <li>15 hours with an instructor</li>
+          </ul>
+          <button class="btn-primary text-sm uppercase py-2 h-min lg:hidden" 
+            x-on:click="flight=50, instructor=15, sim=0, multi=0"
+            onclick="event.preventDefault(); 
+            const contactElement = document.getElementById('calculator');
+            const targetOffset = contactElement.offsetTop -40;
+            window.scrollTo({ top: targetOffset, behavior: 'smooth' });">
+          Calculate
+          </button>
+          <button class="btn-primary text-sm uppercase py-2 h-min hidden lg:block" 
+            x-on:click="flight=50, instructor=15, sim=0, multi=0">
+          Calculate
+          </button>
+        </div>
+        <h4 class="font-semibold uppercase text-base lg:text-xl font-header pt-5">Instrument Average</h4>
+        <div class="flex justify-between gap-10">
+          <ul class="text-sm lg:text-base">
+            <li>65 hours total flight time</li>
+            <li>25 hours with an instructor</li>
+            <li>10 hours ground instruction</li>
+            <li>10 hours simulator</li>
+          </ul>
+          <button class="btn-primary text-sm uppercase py-2 h-min lg:hidden" 
+            x-on:click="flight=65, instructor=35, sim=10, multi=0"
+            onclick="event.preventDefault(); 
+            const contactElement = document.getElementById('calculator');
+            const targetOffset = contactElement.offsetTop -40;
+            window.scrollTo({ top: targetOffset, behavior: 'smooth' });">
+          Calculate
+          </button>
+          <button class="btn-primary text-sm uppercase py-2 h-min hidden lg:block" 
+            x-on:click="flight=65, instructor=35, sim=10, multi=0">
+          Calculate
+          </button>
+        </div>
+        <h4 class="font-semibold uppercase text-base lg:text-xl font-header pt-5">Commercial Minimums</h4>
+        <div class="flex justify-between gap-10">
+          <ul class="text-sm lg:text-base">
+            <li>250 hours total flight time</li>
+          </ul>
+          <button class="btn-primary text-sm uppercase lg:-mt-5 py-2 h-min lg:hidden" 
+            x-on:click="flight=250, instructor=0, sim=0, multi=0"
+            onclick="event.preventDefault(); 
+            const contactElement = document.getElementById('calculator');
+            const targetOffset = contactElement.offsetTop -40;
+            window.scrollTo({ top: targetOffset, behavior: 'smooth' });">
+          Calculate
+          </button>
+          <button class="btn-primary text-sm uppercase lg:-mt-5 py-2 h-min hidden lg:block" 
+            x-on:click="flight=250, instructor=0, sim=0, multi=0">
+          Calculate
+          </button>
+        </div>
+        <h4 class="font-semibold uppercase text-base lg:text-xl font-header pt-5">Multi Engine Average</h4>
+        <div class="flex justify-between gap-10">
+          <ul class="text-sm lg:text-base">
+            <li>15 hours multi engine time</li>
+            <li>15 hours with an instructor</li>
+          </ul>
+          <button class="btn-primary text-sm uppercase lg:-mt-5 py-2 h-min lg:hidden" 
+            x-on:click="flight=0, instructor=15, sim=0, multi=15"
+            onclick="event.preventDefault(); 
+            const contactElement = document.getElementById('calculator');
+            const targetOffset = contactElement.offsetTop -40;
+            window.scrollTo({ top: targetOffset, behavior: 'smooth' });">
+          Calculate
+          </button>
+          <button class="btn-primary text-sm uppercase lg:-mt-5 py-2 h-min hidden lg:block" 
+            x-on:click="flight=0, instructor=15, sim=0, multi=15">
+          Calculate
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!--Calculator-->
+    <div class="lg:w-1/2 flex flex-col items-center">
+      <div class="grid grid-cols-2 lg:w-1/2 bg-slate-50 mx-5 pt-5 mb-10 rounded-2xl" id="calculator">
+        <div class="font-header uppercase font-semibold text-xl pb-5 pl-5">Input</div>
+        <div class="font-header uppercase font-semibold text-xl pb-5 text-right pr-5">Cost</div>
+
+        <div class="flex flex-col">
+          <span class="text-sm text-slate-500 ml-5">Flight Hours</span>
+          <input type="text" id="flight" placeholder="Flight Hours" class="rounded-lg focus:ring-sky-500 focus:border-sky-500 w-40 ml-5" x-model="flight">
+        </div>
+        <div id="flight_hours_cost" class="py-2 text-right pr-10 pt-6" x-text="isNaN(flight) ? 'N/A' : ('$' + (flight * <%= airplane_rental %>).toLocaleString())"></div>
+        
+        <div class="flex flex-col">
+          <span class="text-sm text-slate-500 ml-5 pt-5">Instructor Hours</span>
+          <input type="text" id="instructor" placeholder="Instructor Hours" class="rounded-lg focus:ring-sky-500 focus:border-sky-500 w-40 ml-5" x-model="instructor">
+        </div>
+        <div id="instructor_hours_cost" class="py-2 text-right pr-10 mb-5 pt-12" x-text="isNaN(instructor) ? 'N/A' : ('$' + (instructor * <%= instruction %>).toLocaleString())"></div>
+
+        <div class="flex flex-col">
+          <span class="text-sm text-slate-500 ml-5">Simulator Hours</span>
+          <input type="text" id="sim" placeholder="Simulator Hours" class="rounded-lg focus:ring-sky-500 focus:border-sky-500 w-40 ml-5" x-model="sim">
+        </div>
+        <div id="simulator_hours_cost" class="py-2 text-right pr-10 mt-5" x-text="isNaN(sim) ? 'N/A' : ('$' + (sim * <%= simulator %>).toLocaleString())"></div>
+
+        <div class="flex flex-col">
+          <span class="text-sm text-slate-500 ml-5 pt-5 ">Multi Engine Hours</span>
+          <input type="text" id="sim" placeholder="Multi Engine Hours" class="placeholder:text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 w-40 ml-5" x-model="multi">
+        </div>
+        <div id="multi_hours_cost" class="py-2 text-right pr-10 mt-5" x-text="isNaN(multi) ? 'N/A' : ('$' + (multi * <%= multi_rental %>).toLocaleString())"></div>
+
+        <div class="font-header uppercase font-semibold text-xl py-5 pl-5">Total Cost</div>
+        <div class="font-header uppercase font-semibold text-xl py-5 text-right pr-9" x-text="isNaN(flight) || isNaN(multi) || isNaN(instructor) || isNaN(sim) ? 'N/A' : ('$' + (flight * <%= airplane_rental %> + instructor * <%= instruction %> + sim * <%= simulator %> + multi * <%= multi_rental %>).toLocaleString())"></div>
+        
+        <template x-if="isNaN(flight) || isNaN(multi) || isNaN(instructor) || isNaN(sim)">
+          <div class="text-red-500 mt-2 ml-5 col-span-2 pb-5">Please enter valid numbers for all fields.</div>
+        </template>
+      </div>
+
+      <div class="mb-10 px-5">
+        <h4 class="font-semibold uppercase text-base lg:text-xl font-header pt-5">Zero to Hero (PPL-CFII)</h4>
+        <div class="flex justify-between gap-10">
+          <ul class="text-sm lg:text-base">
+            <li>275 hours single engine time</li>
+            <li>25 hours multi engine time</li>
+            <li>370 hours instruction</li>
+          </ul>
+          <button class="btn-primary text-sm uppercase -mt-5 py-2 h-min lg:hidden" 
+            x-on:click="flight=275, instructor=370, sim=0, multi=25"
+            onclick="event.preventDefault(); 
+            const contactElement = document.getElementById('calculator');
+            const targetOffset = contactElement.offsetTop -40;
+            window.scrollTo({ top: targetOffset, behavior: 'smooth' });">
+          Calculate
+          </button>
+          <button class="btn-primary text-sm uppercase lg:-mt-5 py-2 h-min hidden lg:block" 
+            x-on:click="flight=275, instructor=370, sim=0, multi=25">
+          Calculate
+          </button>
+        </div>
+        <div class="italic text-slate-500 pb-10 max-w-2xl">
+        * Books, checkride fees, headset, and iPad are about $12,000
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="italic text-slate-500 pb-10 max-w-2xl mx-5">
+    Notes: Individual times may vary depending on frequency of training, aircraft and instructor availability, and skills.  Total times given are an approximate.  Speak to a SimpliFly team member today for more details and information.
+  </div>
+
+  <%= render "shared/finance"%>
+</section>
+
+<%= render "shared/cta_fly_with"%>
+<%= render "shared/cta_next_steps"%>
+<%= render "shared/footer"%>

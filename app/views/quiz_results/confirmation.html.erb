@@ -1,0 +1,56 @@
+<%= render "shared/header" %>
+<main class="bg-slate-50 w-full flex flex-col items-center justify-center">
+  <!--Container for contents-->
+  <div class="lg:w-3/5 md:w-4/5 pb-10">
+    <h1 class="font-bold text-4xl py-10 text-center">You can be a pilot!</h1>  
+    <p class="px-5 p-text pb-5">
+    Thank you<%if notice.present?%>, <%= notice %>,<%end%> for taking our quiz.  
+    A member of our team will be in touch shortly to talk about your aviation goals. You can also give us a call at <%=link_to "1-618-337-5845", "tel:1-618-337-5845" %> or email us at <%= mail_to 'info@idealaviationstl.com', class: "text-slate-800 hover:underline"%>
+    </p>
+
+  </div>
+
+  <div class="flex flex-col lg:flex-row-reverse items-center pb-20">
+    <div class="lg:w-1/2 lg:px-10">
+      <h2 class="font-bold text-2xl py-10 text-center">Why Does an Airfoil Generate Lift?</h2>
+      <p class="p-text px-5">
+        An airfoil, which is the shape of an airplane wing or a helicopter rotor, generates lift due to a phenomenon called Bernoulli's principle. When air flows over the curved upper surface of the airfoil, it has to travel a greater distance than the air flowing beneath the flat lower surface. As a result, the air flowing over the upper surface of the wing is forced to move faster than the air flowing beneath the wing, creating a region of low pressure above the wing and a region of higher pressure beneath the wing. This pressure difference results in a net upward force on the wing, which we refer to as lift. This lift is what enables airplanes to fly.
+      </p>
+    </div>
+    
+    <div class="lg:w-1/2 flex flex-col items-center">
+      <%= image_tag "airfoil.svg", class: "lg:w-3/5", alt: "airfoil"%>
+    </div>
+  </div>
+  
+  <div class="flex flex-col lg:flex-row">
+    <div class="lg:w-1/2 lg:px-10">
+      <h2 class="font-bold text-2xl py-10 text-center">Consider Taking a Discovery Flight</h2>
+      <p class="p-text px-5 pb-5">
+        Your Discovery Flight is designed to give you a taste of what it's like to be a pilot. You'll spend approximately 30 minutes in the air with one of our certified flight instructors, who will guide you through the basics of flying and answer any questions you may have. You'll also have the opportunity to take the controls and experience the thrill of flying first-hand.
+      </p>
+      <p class="p-text px-5 pb-5">
+        If you're interested in taking a discovery flight, please mention this when you talk to one of our team members.
+      </p>
+      <div class="pt-10 flex flex-row gap-3 justify-center">
+        <%= link_to programs_path do %>
+          <div class="btn-primary mb-10">
+            VIEW PROGRAMS
+          </div>
+        <% end %>
+
+        <%= link_to root_path do %>
+          <div class="btn-primary mb-10">
+            HOME PAGE
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="lg:w-1/2 lg:px-10 flex flex-col items-center">
+      <%= image_tag "wingtip.webp", class: "lg:w-3/4", alt: "fly over St. Louis Gateway Arch during sunset"%>
+    </div>
+  </div>
+
+</main>
+
+<%= render "shared/footer"%>

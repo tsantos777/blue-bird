@@ -1,0 +1,25 @@
+<%# Head / Meta Data %>
+<% title("Contact Us | SimpliFly Flight School") %>
+<% meta_description("Contact Simplifly, the premier flight school in Mesa, Phoenix, Scottsdale, and Spanish Fork, Salt Lake. Reach out to us for inquiries, information, or to schedule a visit. We're here to assist you.") %>
+<% meta_keywords("Contact Simplifly, Flight School Contact, Mesa Flight School, Phoenix Flight School, Scottsdale Flight School, Spanish Fork Flight School, Salt Lake Flight School") %>
+
+<%= render "shared/header"%>
+<div class="bg-gradient-to-l from-slate-200 to-blue-50">
+  <h1 class="font-bold text-4xl pt-10 text-center">Contact Us</h1>
+  <div class="lg:flex lg:flex-row-reverse items-center lg:items-start">
+  
+
+    <div class="mx-10 lg:px-16 lg:w-1/2">
+      <%= render "form", message: @message %>      
+    </div>
+
+    <div class="mx-0 lg:w-1/2">
+      <%=image_tag "simplifly-team.webp", class: "lg:pt-10 lg:pl-20 lg:rounded-xl", alt: "The team at SimpliFly"%>
+    </div>
+
+  </div>
+
+</div>
+
+<%= render "shared/visit_school"%>
+<%= render "shared/footer"%>

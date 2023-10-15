@@ -1,0 +1,107 @@
+<%# Head / Meta Data %>
+<% title("Instrument Rating | SimpliFly Flight School") %>
+<% meta_description("Earn your instrument rating in Mesa, AZ and Spanish Fork, UT.  Master instrument flying techniques and enhance your pilot skills. Start your instrument training journey with us. Enroll with us now.  Many of our students come from Gilbert, Chandler, Tempe, Scottsdale, Apache Junction, Queen Creek, Fountain Hills, Gold Canyon, Maricopa, Pinal, Springville, Provo, Payson, Mapleton, Salem, Elk Ridge, Utah County, Juab County") %>
+<% meta_keywords("Instrument Rating, Instrument Training, Mesa Flight School, Phoenix Flight School, Scottsdale Flight School, Spanish Fork Flight School, Salt Lake Flight School, Instrument Flying Techniques") %>
+
+
+<%= render "shared/header"%>
+
+
+
+<section class="bg-gradient-to-b from-slate-50 to-sky-200 flex flex-col items-center">
+  <div class="max-w-4xl flex flex-col pt-10 px-5">
+    <h3 class="text-5xl font-header uppercase font-semibold">Get Your Instrument Rating</h3>
+    <h4 class="text-3xl text-slate-600 italic py-5">Simplifly Offers Accelerated and Flexible Training Options</h4>
+    <p class="text-lg">The next step after your private is the instrument rating. It is earned through intensive training focused on flying solely by reference to instruments.  A well-trained and proficient instrument pilot can fly an airplane from point A to point B without ever having to look out the window except for takeoff and landing.</p>
+    
+    <h3 class="text-5xl font-header uppercase font-semibold pt-20 pb-5">How Long Will it Take?</h3>
+    <p class="text-lg">The amount of time required to earn an instrument rating varies and largely depends on weather, availability, finances, and how often a student is available to fly. In our accelerated program, an instrument rating can be earned in approximately two months. If flying only a few times a week, expect to be ready for your instrument checkride in a few months to a year.</p>
+
+    <h3 class="text-5xl font-header uppercase font-semibold pt-20 pb-5">What are the Eligibility Requirements?</h3>
+    <ul class="list-disc text-lg pl-10 lg:pl-16">
+      <li>Read, speak, write and understand the English language</li>
+      <li>Hold a valid private pilot certificate</li>
+      <li>50 hours cross country time</li>
+      <li>40 hours instrument time</li>
+      <li>Complete a 250NM cross country along airways or by routing from a  air traffic control facility</li>
+      <li>Receive flight training and a logbook endorsement from an authorized instructor</li>
+      <li>Pass a practical test for the aircraft rating sought</li>
+    </ul>
+    <p class="text-slate-600 italic pt-5">Reference 14 CFR §61.65 for the entire list of eligibility requirements.</p>
+
+    <h3 class="text-5xl font-header uppercase font-semibold pt-20 pb-5">The SimpliFly Guarantee</h3>
+    <p class="text-lg pb-20">If you have completed your <%= link_to "private", private_pilot_path, class: "text-sky-600 hover:underline", data: {turbo: false}%>, instrument, <%= link_to "commercial", commercial_path, class: "text-sky-600 hover:underline", data: {turbo: false}%>, and <%= link_to "CFI", cfi_path, class: "text-sky-600 hover:underline", data: {turbo: false}%> training at SimpliFly, we have an exciting opportunity for you. As a testament to our confidence in your abilities, we offer a guaranteed interview for a teaching position as a CFI within our flight school. This exclusive opportunity allows you to showcase the knowledge and skills you have acquired during your training journey with us. Join our team of dedicated instructors, inspire future aviators, and make a meaningful impact in the aviation community. Take the next step in your career as a CFI with SimpliFly and let your passion for aviation soar.</p>
+  </div>
+</section>
+
+<section class="flex flex-col lg:flex-row items-center pt-10 pb-0 lg:py-10 bg-slate-50">
+  <div class="flex flex-col items-center lg:w-1/2 p-text">
+    <h3 class="text-3xl font-semibold pb-10 font-sans mx-5 text-center uppercase font-header">Step 1. Flight Training</h3>
+    <p class="w-3/4">
+      During this phase, you will undertake 50 hours of cross-country flight, exposing you to diverse terrains, airspace, and navigation challenges. Guided by our instructors, you will gain invaluable experience in planning and executing cross country flights, enhancing your proficiency in flight planning, navigation, and communication. Additionally, you will dedicate 40 hours to instrument time where you will learn to operate solely by reference to instruments developing your skills in precision approaches, holding patterns, and flying in instrument meteorological conditions (IMC).
+    </p>
+    <p class="w-3/4 py-10">
+      Our expert instructors will provide personalized guidance and hands-on training to ensure you master the art of instrument flying and build the necessary confidence to tackle real-world challenges.
+    </p>
+  </div>
+  <div class="flex flex-col items-center lg:w-1/2">
+    <%=image_tag "imc.webp", alt: "Flight in IMC conditions", class: "lg:h-screen-1/2 lg:rounded-2xl"%>
+  </div>
+</section>
+
+<section class="flex flex-col lg:flex-row-reverse items-center pt-10 pb-0 lg:py-10 bg-slate-50">
+  <div class="flex flex-col items-center lg:w-1/2 p-text">
+    <h3 class="text-3xl font-semibold pb-10 font-sans mx-5 text-center uppercase font-header">Step 2. Written Exam</h3>
+    <p class="w-3/4">
+      Achieving instrument proficiency involves demonstrating a strong theoretical understanding of instrument flight principles. In this step, you will prepare for and successfully pass the instrument written exam. Our comprehensive training materials and knowledgeable instructors will provide you with the resources and guidance needed to thoroughly grasp the concepts covered in the exam.
+    </p>
+    <p class="w-3/4 py-10">
+      From instrument flight rules (IFR) regulations and procedures to weather theory and instrument navigation, we will equip you with the knowledge and problem-solving skills required to excel in the written exam. Through practice tests, in depth discussions, and one on one support, we will ensure that you are well-prepared to confidently tackle the exam and lay a solid foundation for your instrument training journey.
+    </p>
+  </div>
+  <div class="lg:w-1/2 flex flex-col items-center">
+    <%=image_tag "e6b-plotter.webp" , alt: "e6b and plotter", class: "lg:w-5/6 lg:rounded-2xl"%>
+  </div>
+</section>
+
+<section class="flex flex-col lg:flex-row items-center pt-10 pb-0 lg:py-10 bg-slate-50">
+  <div class="flex flex-col items-center lg:w-1/2 p-text">
+    <h3 class="text-3xl font-semibold pb-10 font-sans mx-5 text-center uppercase font-header">Step 3. Long Cross Country</h3>
+    <p class="w-3/4">
+      Put your newly acquired instrument skills to the test with an exciting long cross country flight, a significant milestone in your instrument training. During this phase, you will apply your knowledge in real world scenarios, mastering advanced navigation techniques and utilizing instrument procedures. Guided by our experienced instructors, you will plan and execute a challenging cross country flight, encountering varying weather conditions, complex airspace, and diverse terrain.
+    </p>
+    <p class="w-3/4 py-10">
+      This experience will refine your decision making abilities, enhance your situational awareness, and deepen your understanding of instrument flight operations. As you overcome the challenges of long distance flying, you will develop the confidence and competence required to navigate confidently through the instrument system and safely reach your destination.
+    </p>
+  </div>
+  <div class="flex flex-col items-center lg:w-1/2">
+    <%=image_tag "night-flight.webp", alt: "Student passing ppl checkride", class: "lg:w-5/6 lg:rounded-2xl"%>
+  </div>
+</section>
+
+<section class="flex flex-col lg:flex-row-reverse items-center pt-10 pb-0 lg:py-10 bg-slate-50">
+  <div class="flex flex-col items-center lg:w-1/2 p-text">
+    <h3 class="text-3xl font-semibold pb-10 font-sans mx-5 text-center uppercase font-header">Step 4. Checkride</h3>
+    <p class="w-3/4">
+      The final step before earning your instrument rating is preparing for the check ride. Our dedicated instructors will provide comprehensive check ride preparation, ensuring you are fully equipped to demonstrate your instrument flying proficiency. Through rigorous practice, simulated check ride scenarios, and detailed feedback, we will fine-tune your skills and knowledge to meet and exceed the evaluation standards.
+    </p>
+    <p class="w-3/4 py-10">
+      We will focus on honing your precision in instrument approaches, executing accurate instrument procedures, and showcasing your decision making capabilities. With our guidance and support, you will approach the check ride with confidence and readiness, ready to showcase your expertise and attain your well deserved instrument rating.
+    </p>
+  </div>
+  <div class="lg:w-1/2 flex flex-col items-center">
+    <%=image_tag "checkride-pass.webp" , alt: "Passing a checkride at SimpliFly", class: "lg:w-2/3 lg:rounded-2xl"%>
+  </div>
+</section>
+
+
+<%= render "shared/cta_pilot_simple"%>
+<%= render "shared/cta_next_steps"%>
+<%= render "shared/footer"%>
+
+
+
+
+
+<%# Sticky div %>
+</div>

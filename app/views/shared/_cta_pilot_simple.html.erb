@@ -1,0 +1,13 @@
+<section class="w-full h-screen bg-mountain bg-cover lg:bg-center flex justify-center items-center">
+  <div class="flex flex-col justify-center items-center drop-shadow-2xl transform-gpu" x-data>
+      <h2 class="w-4/5 font-header font-semibold text-3xl lg:text-7xl">FLY WITH THE TEAM THAT MAKES <span class="text-sky-500">BECOMING A PILOT SIMPLE</span></h2>
+      <p class="w-4/5 py-5 lg:py-10 text-lg lg:text-2xl font-semibold">We are a team of aviation experts in Mesa, AZ and Spanish Fork, UT with decades of combined experience in the flight training industry. Our simple and effective training programs are designed to get you safely in the air as quickly as possible.</p>
+      <div class="opacity-0 duration-[1500ms] translate-y-24 text-center w-full flex flex-col items-start" x-intersect="$el.classList.add('opacity-100', 'translate-y-1', 'z-0')">
+        <%=link_to enroll_path, target: "blank", data: { turbo: false }, class: "mx-auto" do%>
+          <div class="btn-primary text-xl lg:text-3xl">
+            START FLYING TODAY
+          </div>
+        <% end %>
+      </div>
+  </div>
+</section>

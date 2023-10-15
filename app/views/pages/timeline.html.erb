@@ -1,0 +1,100 @@
+<%# Head / Meta Data %>
+<% title("Timeline to be a Pilot | SimpliFly Flight School") %>
+<% meta_description(" Curious about the timeline to become a pilot? Simplifly offers a detailed timeline of the pilot training process.  Get a clear understanding of the steps involved in your pilot journey. Our flight schools are in Mesa, AZ and Spanish Fork, UT.  Many of our students come from Gilbert, Chandler, Tempe, Scottsdale, Apache Junction, Queen Creek, Fountain Hills, Gold Canyon, Maricopa, Pinal, Springville, Provo, Payson, Mapleton, Salem, Elk Ridge, Utah County, Juab County") %>
+<% meta_keywords("Timeline to Become a Pilot, Pilot Training Process, Mesa Flight School, Phoenix Flight School, Scottsdale Flight School, Spanish Fork Flight School, Salt Lake Flight School") %>
+
+<%= render "shared/header"%>
+
+<header class="bg-skyline text-white bg-cover h-screen-1/2 bg-center flex flex-col justify-center">
+  <h1 class="text-center text-4xl lg:text-6xl font-header font-semibold uppercase">Pilot Training Timeline</h1>
+  <h2 class="text-center text-xl lg:text-3xl italic font-semibold pt-10 mx-10">Accelerated and Flexible Pilot Training Options</h2>
+</header>
+
+
+<div class="flex flex-col items-center" x-data="{ accelerated: true }">
+  <div class="max-w-2xl mt-16 mx-5">
+    <div class="flex mb-10">
+      <button class="px-4 py-2 bg-sky-500 font-semibold border-slate-500 border-2 border-y border-l border-r-0 text-white rounded-l-3xl" :class="{ 'bg-sky-500 text-white border-0': accelerated, 'bg-slate-100' : !accelerated }" @click="accelerated = true">Accelerated</button>    
+      <button class="px-8 py-2 bg-slate-100 font-semibold border-2 border-r border-y border-l-0 border-slate-500 rounded-r-3xl" :class="{ 'bg-sky-500 text-white border-0': !accelerated }" @click="accelerated = false">Flexible</button>
+    </div>
+    
+    <ol class="relative border-l border-sky-500">                  
+      <li class="mb-10 ml-4">
+        <div class="absolute w-3 h-3 bg-sky-500 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+        <time class="mb-1 text-sm font-normal leading-none text-slate-400" x-text="accelerated ? '2-3 Months' : '6 Months to 1 Year'"></time>
+        <h3 class="text-lg font-semibold text-slate-900">Private Pilot Certificate</h3>
+        <p class="mb-4 text-base font-normal text-slate-500">The first step in becoming a pilot is obtaining your private pilot certificate.  You'll learn how to fly a plane and at the end of this training, you will be able to take off and land by yourself and be the pilot in command (PIC) of an aircraft.</p>
+        <%= link_to "EXPLORE PRIVATE PILOT", private_pilot_path, data: { turbo: false }, class: "btn-primary text-base" %>
+      </li>
+      <li class="mb-10 ml-4">
+        <div class="absolute w-3 h-3 bg-sky-500 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+        <time class="mb-1 text-sm font-normal leading-none text-slate-400" x-text="accelerated ? '4-6 Months' : '1½-2 Years'"></time>
+        <h3 class="text-lg font-semibold text-slate-900">Instrument Rating</h3>
+        <p class="mb-4 text-base font-normal text-slate-500">After getting your private pilot certificate, the next step would be getting an instrument rating where you can fly without visual references.  Having an instrument rating allows you to fly in instrument meteorological conditions (IMC) and challenging weather.</p>
+        <%= link_to "EXPLORE INSTRUMENT RATING", instrument_path, data: { turbo: false }, class: "btn-primary text-base" %>
+      </li>
+      <li class="mb-10 ml-4">
+        <div class="absolute w-3 h-3 bg-sky-500 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+        <time class="mb-1 text-sm font-normal leading-none text-slate-400" x-text="accelerated ? '8-10 Months' : '2-3 Years'"></time>
+        <h3 class="text-lg font-semibold text-slate-900">Commercial Certificate</h3>
+        <p class="mb-4 text-base font-normal text-slate-500">A major milestone in your pilot training.  Getting your commercial certificate allows you to fly for compensation or hire.  Many move on to becoming a CFI, but there are many other career options out there like surveying, charter, banner towing, and sky diving.</p>
+        <%= link_to "EXPLORE COMMERCIAL PILOT", commercial_path, data: { turbo: false }, class: "btn-primary text-base" %>
+      </li>
+      <li class="mb-10 ml-4">
+        <div class="absolute w-3 h-3 bg-sky-500 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+        <time class="mb-1 text-sm font-normal leading-none text-slate-400" x-text="accelerated ? '8-10 Months' : '2-3 Years'"></time>
+        <h3 class="text-lg font-semibold text-slate-900">Multi Engine Rating</h3>
+        <p class="mb-4 text-base font-normal text-slate-500">Eventually, adding on a multi engine rating will be beneficial for your pilot career and make you more competitive.  With this rating, you can fly airplanes with multiple engines. This opens a whole new door of opportunity where you can fly more complex and advanced aircraft.</p>
+        <%= link_to "EXPLORE MULTI ENGINE", multi_path, data: { turbo: false }, class: "btn-primary text-base" %>
+      </li>
+      <li class="mb-10 ml-4">
+        <div class="absolute w-3 h-3 bg-sky-500 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+        <time class="mb-1 text-sm font-normal leading-none text-slate-400" x-text="accelerated ? '10-12 Months' : '3-4 Years'"></time>
+        <h3 class="text-lg font-semibold text-slate-900">Certified Flight Instructor</h3>
+        <p class="mb-4 text-base font-normal text-slate-500">Touted as the best way to build time, become a CFI and help people new to aviation become pilots.  All while building the neccessary time needed to meet ATP minimums and airline requirements and then getting paid for it.</p>
+        <%= link_to "EXPLORE CFI", cfi_path, data: { turbo: false }, class: "btn-primary text-base" %>
+      </li>
+    </ol>
+
+    <h4 class="font-semibold text-xl pb-10">Become a CFI within a year in our accelerated flight training program.  Build the neccessary 1500 hours to qualify for ATP minimums and then become an airline pilot.</h4>
+
+    <div class="italic text-slate-500 pb-10">
+      Notes: Individual times may vary depending on frequency of training, aircraft and instructor availability, and skills.  Total times given are an approximate.
+    </div>
+  </div>
+</div>
+
+
+<section class="bg-gradient-to-t lg:bg-gradient-to-l from-sky-800 to-slate-900 text-white">
+  <div class="flex flex-col lg:flex-row-reverse lg:items-center pt-10 lg:py-10">
+    <!--Text Section-->
+    <div class="lg:w-1/2 flex flex-col justify-center items-center pb-10">
+      <p class="text-xl lg:text-3xl text-center">What Happens Next?</p>
+      <h2 class="font-bold text-3xl lg:text-4xl pt-5 text-center mx-10">Finish Building Time at SimpliFly</h2>
+      <p class="w-5/6 lg:w-4/5 pt-5 text-left lg:text-left text-lg lg:text-base p-text">
+      At SimpliFly, we take pride in the success stories of our graduates who have embarked on remarkable career journeys after obtaining their necessary flight hours with us. Numerous individuals have transitioned from our flight training program to prestigious positions within the airline industry or other exciting aviation career opportunities. 
+      </p>
+      <p class="w-5/6 lg:w-4/5 pt-5 text-left lg:text-left text-lg lg:text-base p-text">
+      Start your training today at SimpliFly and take the first step towards building seniority within the airlines, unlocking a world of exciting possibilities and experiences that await you in the aviation industry.
+      </p>
+      <div class="flex flex-col lg:flex-row gap-5 my-10">
+        <%= link_to "ENROLL NOW", enroll_path,  target: "blank", data: { turbo: false }, class: "btn-primary" %>
+        <%= link_to "CONTACT US", contact_path, data: { turbo: false }, class: "btn-secondary border-0" %>
+      </div>
+    </div>
+    <div class="lg:w-1/2">
+      <div class="grid place-items-center lg:mx-10">
+        <%= image_tag "airline_pilot.webp" , alt: "A SimpliFly commercial pilot", class: "lg:rounded-2xl lg:w-2/3"%>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= render "shared/testimonials"%>
+<%= render "shared/safe"%>
+<%= render "shared/cost"%>
+<%= render "shared/cta_pilot_simple"%>
+<%= render "shared/cta_book"%>
+<%= render "shared/cta_next_steps"%>
+<%= render "shared/footer"%>

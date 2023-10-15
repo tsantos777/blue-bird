@@ -1,0 +1,41 @@
+<div x-data="{ currentPage: 1 }">
+  
+    <div x-show="currentPage === 1">
+      <div class="my-5">
+        <%= form.label :first_name %>
+        <%= form.text_field :first_name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+      </div>
+
+      <div class="inline">
+        <button x-on:click="currentPage = 2" class="rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer">Next</button>
+      </div>
+    </div>
+
+    <div x-show="currentPage === 2">
+      <%= form.label :preferred_date %>
+      <%= form.date_field :preferred_date, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+
+      <div class="flex justify-between">
+        <button class="rounded-lg py-3 px-5 bg-gray-300 text-white inline-block font-medium cursor-pointer" @click="currentPage--" :disabled="currentPage === 1">Previous</button>
+        <button class="rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" @click="currentPage++">Next</button>
+      </div>
+    </div>
+
+    <div x-show="currentPage === 3">
+      <%= form.label :alternate_date %>
+      <%= form.date_field :alternate_date, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+
+      <div class="my-5">
+        <%= form.label :comments %>
+        <%= form.text_area :comments, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+      </div>
+
+      <div class="flex justify-between">
+        <button class="rounded-lg py-3 px-5 bg-gray-300 text-white inline-block font-medium cursor-pointer" @click="currentPage--">Previous</button>
+        <div class="inline">
+          <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

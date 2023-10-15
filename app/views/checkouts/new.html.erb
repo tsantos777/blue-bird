@@ -1,0 +1,27 @@
+<header class="w-full bg-home bg-hangarbg h-screen lg:h-screen bg-cover bg-center flex justify-center items-center">
+  <div class="px-5 py-40 lg:py-52 flex flex-col justify-center items-start w-full">
+      <h1 class="font-bold text-5xl text-center lg:text-start">Fly at Ideal Aviation Today</h1>
+      <h2 class="font-bold text-4xl text-center lg:text-start py-10 lg:hidden">Depart from St. Louis Downtown Airport</h2>
+      <h2 class="font-bold text-4xl text-center lg:text-start py-10 lg:block hidden">Depart from St. Louis <br>Downtown Airport</h2>
+      <div class="w-full flex flex-col items-center lg:hidden">
+        <a href="#quiz-frame", class="btn-primary"
+          onclick="event.preventDefault(); document.getElementById('quiz-frame').scrollIntoView({ behavior: 'smooth' });">
+          FLY NOW
+        </a>
+      </div>
+  </div>
+</header>
+
+<turbo-frame id="quiz-frame">
+  <div class=" lg:absolute right-5 top-10 z-50 bg-white rounded-xl border pb-5 lg:overflow-y-auto lg:max-h-[92vh]">
+    <%= render "form", checkout: @checkout %>
+  </div>
+</turbo-frame>
+
+<div class="hidden lg:block px-2">
+  <%= render "shared/bottom_footer"%>
+</div>
+
+<div class="lg:hidden w-full bg-ideal-blue-darker pt-16 pb-5 pl-5">
+  <%= render "shared/bottom_footer"%>
+</div>

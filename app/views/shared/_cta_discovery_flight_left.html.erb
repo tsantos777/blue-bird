@@ -1,0 +1,13 @@
+<section class="bg-gradient-to-b from-slate-50 to-white flex flex-col lg:flex-row-reverse items-center pt-10 pb-0 lg:py-10">
+  <div class="flex flex-col items-center justify-center lg:w-1/2 p-text">
+    <span class="font-sans font-semibold italic">Take the first step...</span>
+    <h2 class="text-3xl font-semibold pb-10 font-sans mx-5 text-center">Schedule a Discovery Flight</h2>
+    <p class="w-3/4 pb-10">Schedule a time to meet with our team, tour our facilities, and take flight in one of our aircraft.  During a discovery flight, you'll be paired up with one of our highly qualified FAA certificated flight instructors.</p>
+    <p class="w-3/4 pb-10">You'll get the chance to sit in the pilot seat and fly the aircraft.  Your instructor will help you taxi the aircraft out of the ramp and receive clearance from the control tower.  Once airborne, you'll take control of the aircraft and practice basic maneuvers like flying straight and level, turns, climbs, and descents.</p>
+    <p class="w-3/4 pb-10 font-semibold font-sans">Are you up for the opportunity that lies ahead?  Schedule a discovery flight now and see if flying is right for you.</p>
+    <%= link_to "SCHEDULE DISCOVERY FLIGHT", discovery_flight_path, data: { turbo: false }, class: "btn-primary mb-10" %>
+  </div>
+  <div class="flex flex-col items-center lg:w-1/2">
+    <%=image_tag "st_louis_arch_aerial.webp", alt: "Discovery flight over the St. Louis Arch", class: "lg:h-screen-2/3 lg:px-12 lg:py-8"%>
+  </div>
+</section>

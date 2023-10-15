@@ -1,0 +1,62 @@
+<div id="<%= dom_id checkout %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">First name:</strong>
+    <%= checkout.first_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Last name:</strong>
+    <%= checkout.last_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Email:</strong>
+    <%= checkout.email %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Phone:</strong>
+    <%= checkout.phone %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Certifications:</strong>
+    <%= checkout.certifications %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Interested aircraft:</strong>
+    <%= checkout.interested_aircraft %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Preferred date:</strong>
+    <%= checkout.preferred_date %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Preferred availability:</strong>
+    <%= checkout.preferred_availability %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Alternate date:</strong>
+    <%= checkout.alternate_date %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Alternate availability:</strong>
+    <%= checkout.alternate_availability %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Comments:</strong>
+    <%= checkout.comments %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this checkout", checkout, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this checkout', edit_checkout_path(checkout), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

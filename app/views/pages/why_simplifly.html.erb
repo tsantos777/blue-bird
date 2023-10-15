@@ -1,0 +1,147 @@
+<%# Head / Meta Data %>
+<% title("Accelerated Pilot Training | SimpliFly Flight School") %>
+<% meta_description("Discover why Simplifly is the leading flight school in Mesa, Phoenix, Scottsdale, and Spanish Fork, Salt Lake. Our experienced instructors, affordable aircraft, and personalized training approach make us the perfect choice for pilot training. Our flight schools are in Mesa, AZ and Spanish Fork, UT.  Many of our students come from Gilbert, Chandler, Tempe, Scottsdale, Apache Junction, Queen Creek, Fountain Hills, Gold Canyon, Maricopa, Pinal, Springville, Provo, Payson, Mapleton, Salem, Elk Ridge, Utah County, Juab County") %>
+<% meta_keywords("Flight School Mesa, Flight School Phoenix, Flight School Scottsdale, Flight School Spanish Fork, Flight School Salt Lake, Pilot Training, Experienced Instructors, Modern Aircraft, Personalized Training") %>
+
+<%= render "shared/header"%>
+
+<header class="w-full bg-thumbs bg-cover h-screen-1/2 lg:h-screen-4/5 bg-center flex justify-center items-center shapedividers-1">
+  <div class="flex flex-col w-full">
+      <!--Desktop-->
+      <h1 class="font-semibold text-[12rem] font-header text-right uppercase outline-letters pr-10 pb-12 hidden lg:block">Why Simplifly?</h1>
+      <!--Mobile-->
+      <h1 class="font-semibold text-7xl font-header text-right uppercase text-white outline-letters-sm pr-5 lg:hidden">Why Simplifly?</h1>
+  </div>
+</header>
+
+<section class="bg-white py-20 flex flex-col items-center">
+  <h2 class="font-header uppercase text-5xl text-center font-semibold">Exceptional Flight Training</h2>
+  <p class="max-w-4xl text-xl mx-5 pt-5">At SimpliFly, we are a Part 61 flight school dedicated to ensuring your success. Our comprehensive flight training program encompasses all the necessary materials, ground school sessions, and flight hours required to thoroughly prepare you for your checkride.</p>
+</section>
+
+
+<section class="bg-gradient-to-r from-sky-300 to-sky-500 text-white py-10">
+
+    <div class="flex flex-col lg:flex-row">
+      <div class="lg:w-1/2 flex flex-col items-center justify-center">
+        <p class="text-4xl italic text-center font-semibold pb-10 lg:pb-0">"Safety in aviation through education"</p>
+      </div>
+      <div class="lg:w-1/2 flex flex-col justify-center">
+        <h2 class="font-semibold text-2xl font-header uppercase text-center pb-10 px-5">Knowledgeable Experienced Flight Instructors</h2>
+        <p class="px-10">Our team makes safety our primary concern so you can the best pilot that you can be as well as the safest pilot that you can be.</p>
+        <p class="px-10 pt-5">Our Instructors are experienced, active aviation professionals with current involvement in airline, corporate and charter operations.</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col lg:flex-row mt-10 mx-10 lg:mx-40 gap-5" x-data>
+      <div class="lg:w-1/3 lg:hover:scale-105 shadow-2xl transition-all duration-300 rounded-tl-3xl rounded-br-3xl border-4 border-white flex flex-col items-center">
+        <p class="py-3">  
+          <div class="flex flex-row font-bold text-5xl" x-data="{ current: 0, target: 10000, time: 1000}" x-intersect.once="() => {
+            start = current; 
+            const interval = Math.max(time / (target - start), 5); 
+            const step = (target - start) /  (time / interval);  
+            const handle = setInterval(() => {
+                if(current < target) 
+                    current += step
+                else {
+                    clearInterval(handle);
+                    current = target
+                }   
+                }, interval)
+            }">
+            <div class="card"x-text="Math.round(current).toLocaleString()"></div>+
+          </div>
+        </p>
+        <p class="pb-5">Hours of combined experience</p>
+      </div>
+      <div class="lg:w-1/3 lg:hover:scale-105 shadow-2xl transition-all duration-300 rounded-tl-3xl rounded-br-3xl border-4 border-white flex flex-col items-center">
+        <p class="py-3">
+          <div class="flex flex-row font-bold text-5xl" x-data="{ current: 0, target: 93, time: 2000}" x-intersect.once="() => {
+            start = current; 
+            const interval = Math.max(time / (target - start), 5); 
+            const step = (target - start) /  (time / interval);  
+            const handle = setInterval(() => {
+                if(current < target) 
+                    current += step
+                else {
+                    clearInterval(handle);
+                    current = target
+                }   
+                }, interval)
+            }">
+            <div class="card"x-text="Math.round(current)"></div>%
+          </div>
+        </p>
+        <p class="pb-5">Checkride pass rate</p>
+      </div>
+      <div class="lg:w-1/3 lg:hover:scale-105 shadow-2xl transition-all duration-300 rounded-tl-3xl rounded-br-3xl border-4 border-white flex flex-col items-center">
+        <p class="py-3">
+          <div class="flex flex-row font-bold text-5xl" x-data="{ current: 0, target: 100, time: 3000}" x-intersect.once="() => {
+            start = current; 
+            const interval = Math.max(time / (target - start), 5); 
+            const step = (target - start) /  (time / interval);  
+            const handle = setInterval(() => {
+                if(current < target) 
+                    current += step
+                else {
+                    clearInterval(handle);
+                    current = target
+                }   
+                }, interval)
+            }">
+            <div class="card"x-text="Math.round(current)"></div>+
+          </div>
+        </p>
+        <p class="pb-5">Students graduated from SimpliFly</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-100 flex flex-col items-center px-5">
+    <h3 class="font-header uppercase text-4xl lg:text-5xl font-semibold pt-20 pb-10 text-center">What Makes SimpliFly Extraordinary?</h3>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 max-w-4xl">
+      <!--Care about students instead of profit-->
+      <div class="flex flex-row">
+        <div class="pr-10">
+          <%=image_tag "handshake.webp", alt: "handshake icon", class: " border-2 border-sky-500 rounded-full p-2 bg-white"%>
+        </div>
+        <div class="flex flex-col">
+          <h4 class="font-header uppercase font-semibold text-xl">Student Centered</h4>
+          <p>You're more than a number at SimpliFly.  At SimpliFly, we genuinely care about your success.  Our primary focus is you.</p>
+        </div>
+      </div>
+      <!--Family Environment-->
+      <div class="flex flex-row pt-10 lg:pt-0">
+        <div class="pr-10">
+          <%=image_tag "family.webp", alt: "family icon", class: "border-2 border-sky-500 rounded-full p-3 bg-white"%>
+        </div>
+        <div class="flex flex-col">
+          <h4 class="font-header uppercase font-semibold text-xl">Family Environment</h4>
+          <p>SimpliFly is a close knit community that supports and uplifts each other on the journey to achieving aviation dreams.</p>
+        </div>
+      </div>
+    </div>
+    <!--2nd row on desktop-->
+    <div class="py-10">
+      <!--Affordable-->
+      <div class="lg:max-w-md  flex flex-row ">
+        <div class="pr-10">
+          <%=image_tag "affordable.webp", alt: "affordable icon", class: " border-2 border-sky-500 rounded-full py-3 pr-2 pl-3 bg-white"%>
+        </div>
+        <div class="flex flex-col">
+          <h4 class="font-header uppercase font-semibold text-xl">Affordable</h4>
+          <p>SimpliFly offers affordable rates that make pilot training accessible to aspiring aviators from all walks of life.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%= render "shared/testimonials"%>
+  <%= render "shared/cta_discovery_flight_right"%>
+  <%= render "shared/cta_pilot_simple"%>
+  <%= render "shared/cta_next_steps"%>
+
+
+
+<%= render "shared/footer"%>

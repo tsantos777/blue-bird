@@ -1,0 +1,59 @@
+<%# Head / Meta Data %>
+<% title("SimpliFly Blog - News and Pilot Training Resources") %>
+<% meta_description("Explore the Simplifly blog for the latest insights and updates on pilot training in Mesa, Phoenix, Scottsdale, and Spanish Fork, Salt Lake. Stay informed and get inspired on your aviation journey.") %>
+<% meta_keywords("Pilot Training Blog, Flight School Blog, Aviation News, Mesa Flight School, Phoenix Flight School, Scottsdale Flight School, Spanish Fork Flight School, Salt Lake Flight School") %>
+
+<%= render "shared/header"%>
+
+<div class="w-full bg-gradient-to-b from-slate-50 to-blue-100 h-max">
+  <div class="containr px-6 mx-auto">
+
+    <!-- Section: Design Block -->
+    <section class="mb-32 text-gray-800 pt-12 lg:pt-24 text-center md:text-left">
+
+      <h2 class="text-3xl font-bold mb-12 text-center">Latest articles</h2>
+
+      <% @posts.sort_by(&:post_date).reverse_each do |post| %> 
+        
+          <div class="flex flex-wrap mb-6">
+            <div class="grow-0 shrink-0 basis-auto w-full md:w-3/12 px-3 mb-6 md:mb-0 ml-auto">
+              <div
+                class="relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg mb-6"
+                data-mdb-ripple="true" data-mdb-ripple-color="light">
+                <% if post.feature_image.present?%>
+                  <%= image_tag post.feature_image.url, class: "w-full max-h-48 object-cover", alt: "picture for article: #{post.title}"%>
+                <%end%>
+                <%= link_to post, class: "" do%>
+                  <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
+                    style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                <%end%>
+              </div>
+            </div>
+
+            
+            <div class="grow-0 shrink-0 basis-auto w-full md:w-9/12 xl:w-7/12 px-3 mb-6 md:mb-0 mr-auto">
+              <%= link_to post, class: "" do%>
+              <h5 class="text-lg font-bold mb-3"><%=post.title%></h5>
+              <div class="mb-3 text-ideal-blue font-medium text-sm flex items-center justify-center md:justify-start">
+                <%= post.category %>
+              </div>
+              <p class="text-gray-500 mb-6">
+                <small>Published <u><%= I18n.localize(post.post_date, :format => '%^b %-d %Y') %></u> by
+                  <span href="" class="text-gray-900"><%= post.author%></span></small>
+              </p>
+              <p class="text-gray-500">
+                <%= post.meta_desription%>
+              </p>
+              <%end%>
+            </div>
+          </div>
+        
+      <%end%>
+
+
+    </section>
+    <!-- Section: Design Block -->
+
+  </div>
+</div>
+<%= render "shared/footer"%>

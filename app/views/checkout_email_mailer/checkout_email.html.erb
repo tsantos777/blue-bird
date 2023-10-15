@@ -1,0 +1,39 @@
+<p>Dear <%=@checkout.first_name%>, 
+
+<p>Thank you for requesting an aircraft checkout on our website.  We'll reach out to your shortly to confirm the exact time and date.</p>
+
+<p>At Ideal Aviation, we are committed to providing the best possible aviation education and training. We offer a variety of programs and courses designed to meet the needs of both aspiring pilots and experienced aviators.</p>
+
+<p>If you are interested in pursuing a career as a pilot, we offer comprehensive training programs that will help you achieve your goals. Our programs cover everything from private pilot certification to advanced training in commercial aviation.</p>
+
+<p>Whatever your goals may be, we are confident that we can help you achieve them. If you have any questions about our programs, please don't hesitate to contact us.</p>
+
+<p>
+The team at Ideal Aviation<br>
+1-618-350-4408<br>
+info@idealaviationstl.com<br>
+</p>
+<br>
+<br>
+  -------- Your Form Submission Details --------
+<br>
+<br>
+First Name: <%=@checkout.first_name%><br>
+Last Name: <%=@checkout.last_name%><br>
+Phone: <%=@checkout.phone%><br>
+Email: <%=@checkout.email%><br>
+<br>
+<br>
+Which aircraft are you interested in: <%=@checkout.interested_aircraft%>
+<br>
+<br>
+What pilot certifications do you hold: <%=@checkout.certifications%>
+<br>
+<br>
+Is there anything else you'd like us to know: <%=@checkout.comments%>
+<br>
+<br>
+Selected Date: <%=@checkout.preferred_date%><br>
+Selected Time: <%=@checkout.preferred_availability%><br>
+Alternate Date: <%=@checkout.alternate_date%><br>
+Alternate Time: <%=@checkout.alternate_availability%><br>

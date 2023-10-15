@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Site Created By:    
+       _____  _       _     _     _____           _     _           
+      |  __ \(_)     | |   | |   |  __ \         | |   | |          
+      | |__) |_  __ _| |__ | |_  | |__) |   _  __| | __| | ___ _ __ 
+      |  _  /| |/ _` | '_ \| __| |  _  / | | |/ _` |/ _` |/ _ \ '__|
+      | | \ \| | (_| | | | | |_  | | \ \ |_| | (_| | (_| |  __/ |   
+      |_|  \_\_|\__, |_| |_|\__| |_|  \_\__,_|\__,_|\__,_|\___|_|   
+      |  \/  |   __/ |  | |      | | (_)                            
+      | \  / | _|___/ __| | _____| |_ _ _ __   __ _                 
+      | |\/| |/ _` | '__| |/ / _ \ __| | '_ \ / _` |                
+      | |  | | (_| | |  |   <  __/ |_| | | | | (_| |                
+      |_|  |_|\__,_|_|  |_|\_\___|\__|_|_| |_|\__, |                
+                                               __/ |                
+                                              |___/                 
+
+    Nice to see you here.  Find new student pilots with Right Rudder Marketing.  https://rightruddermarketing.com -->
+
+    <%###### UPDATE TITLE%>
+    <!--Title-->
+    <title>
+      <% if content_for?(:title) %>
+        <%= yield(:title) %>
+      <% else %>
+        Flight School
+      <% end %>
+    </title>
+
+<%# UPDATE FAVICON%>
+<%
+=begin %>
+    <!--Favicon--> 
+    <%= favicon_link_tag asset_path('favicon/favicon.ico') %>
+    <% %w(57 72 76 114 120 144 152 180).each do |size| %>
+      <%= favicon_link_tag "favicon/apple-touch-icon-#{size}x#{size}.png", rel: 'apple-touch-icon', type: 'image/png', sizes: "#{size}x#{size}" %>
+    <% end %>
+<%
+=end %>
+  
+    <!--Meta Tags-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <%####### UPDATE TITLE/DESC/KEYWORDS%>
+    <meta name="title" content="<%= if content_for?(:title) then yield(:title) else 'Flight School Title' end %>">
+    <meta name="description" content="<%= if content_for?(:meta_description) then yield(:meta_description) else 'Flight School Description' end %>">
+    <meta name="keywords" content="<%= if content_for?(:meta_keywords) then yield(:meta_keywords) else 'right rudder marketing, tim jedrek' end %>">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="1 days">
+    <meta name="author" content="Right Rudder Marketing">
+
+    <%###### UPDATE TITLE/DESC/IMAGE%>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%= request.original_url %>">
+    <meta property="og:title" content="<%= if content_for?(:title) then yield(:title) else 'Flight School Title' end %>">
+    <meta property="og:description" content="<%= if content_for?(:meta_description) then yield(:meta_description) else 'Flight School Description' end %>">
+    <meta property="og:image" content="<%= if content_for?(:og_image) then yield(:og_image) else image_url('') end %>">
+
+    <%###### UPDATE TITLE/DESC/IMAGE%>
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="<%= request.original_url %>">
+    <meta property="twitter:title" content="<%= if content_for?(:title) then yield(:title) else "Flight School Title" end %>">
+    <meta property="twitter:description" content="<%= if content_for?(:meta_description) then yield(:meta_description) else 'Flight School Description' end %>">
+    <meta property="twitter:image" content="<%= if content_for?(:twitter_image) then yield(:twitter_image) else image_url('') end %>">
+
+    <!--CSS-->
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+    <%###### UPDATE FONTS%>
+    <!--Google Fonts-->
+    <!--**Not sure if this is still needed for font**  <link rel="preconnect" href="https://fonts.googleapis.com">-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!--async FONTs-->
+    <link rel="stylesheet"  media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,600;0,700;1,600;1,700&display=swap">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,600;0,700;1,600;1,700&display=swap">
+    <!-- no-JS fallback -->
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,600;0,700;1,600;1,700&display=swap">
+    </noscript>
+
+    <!--JS-->
+    <%= javascript_importmap_tags %>
+    <!-- Alpine Plugins -->
+    <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <!-- Alpine Core -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!--For Alpine Intersect-->
+    <style>
+      [x-cloak] { display: none !important; }
+    </style>
+  </head>
+  
+  <body>
+    <main class="">
+    <% if admin_signed_in? %>
+      <!--USER MENU-->
+      <%= render "shared/admin_menu" %>
+    <% end %>
+      <%= yield %>
+    </main>
+
+<%
+=begin %>
+
+    <%#### UPDATES COMPANY FOR CALLRAIL%>
+    <!-- #### CALLRAIL SCRIPT
+    <script type="text/javascript" src="//cdn.callrail.com/companies/400810513/51d2a7c293b47e7f67d2/12/swap.js"></script> 
+    -->
+
+    <%#### UPDATE COMPANY FOR GTAG 'CURRENT GTAG=PITCAIRN'  %>
+    <%# GOOGLE TAG ONLY SHOW DURING PRODUCTION ENVIRONMENT%>
+    <% if Rails.env.production? %>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-PDEKLRKQDD"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-PDEKLRKQDD');
+      </script>
+    <%end%>
+<%
+=end %>
+  </body>
+</html>

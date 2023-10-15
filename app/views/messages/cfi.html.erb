@@ -1,0 +1,66 @@
+<%# Head / Meta Data %>
+<% title("Start Your Pilot Career | SimpliFly Flight School") %>
+<% meta_description(" Join the team of instructors at Simplifly in Mesa, Phoenix, Scottsdale, and Spanish Fork, Salt Lake. Share your passion for aviation and inspire future pilots as an instructor. Apply now.") %>
+<% meta_keywords("Flight Instructor Position, CFI Job, Instruct at Simplifly, Mesa Flight School, Phoenix Flight School, Scottsdale Flight School, Spanish Fork Flight School, Salt Lake Flight School") %>
+
+<%= render "shared/header"%>
+<!--
+<header class="w-full bg-gradient-to-r from-white to-sky-300  h-screen-3/4 lg:h-screen-4/5 flex justify-center items-center text-black">
+  <div class="px-5 py-40 lg:py-52 flex flex-col justify-center items-center w-full">
+      <h1 class="font-semibold font-header text-5xl lg:text-8xl lg:px-20 text-center">BE A CFI AT SIMPLIFLY</h1>
+      <h2 class="font-bold text-xl lg:text-3xl italic text-center py-5 lg:py-10">How to become a CFI and gain experience</h2>
+      <a href="#contact" class="btn-primary"
+        onclick="event.preventDefault(); 
+                const contactElement = document.getElementById('contact');
+                const targetOffset = contactElement.offsetTop -20;
+                window.scrollTo({ top: targetOffset, behavior: 'smooth' });">
+        APPLY TODAY
+      </a>
+  </div>
+</header>-->
+
+<section class="bg-gradient-to-b from-slate-50 to-sky-200 flex flex-col items-center">
+  <div class="max-w-4xl flex flex-col pt-10 px-5">
+    <h3 class="text-5xl font-header uppercase font-semibold">Get Started on Your Pilot Career</h3>
+    <h4 class="text-3xl text-slate-600 italic py-5">Simplifly Offers Accelerated and Flexible Training Options</h4>
+    <p class="text-lg">Start your pilot career after getting your commercial certificate. Start flying now and build the necessary hours to become an airline pilot. One way SimpliFly can help is by becoming a certified flight instructor (CFI).  Being a CFI offers a valuable opportunity to rapidly accumulate flight experience for the minimum requirements of airlines and corporate aviation companies. It is a great opportunity that allows you to apply all the knowledge and skills acquired during your own flight training. Flight instructors play a crucial role as ambassadors of the aviation community, imparting their knowledge and experience to their students. For many, it serves as their first aviation job that not only is an invaluable experience but also provides compensation.</p>
+    
+    <h3 class="text-5xl font-header uppercase font-semibold pt-20 pb-5">How Long Will it Take?</h3>
+    <p class="text-lg">Becoming a flight instructor does not have a minimum time, but you do need a commercial pilot license along with an instrument rating. To qualify for a commercial pilot license, a pilot must accumulate a minimum of 250 flight hours. That being said, if the minimum requirements are met it can take a little over a week to complete training if you are studying full time (accelerated).  If studying part time when able (flexible), it can take from a few weeks to a few months to be prepared for the CFI checkride and receive your endorsement.</p>
+
+    <h3 class="text-5xl font-header uppercase font-semibold pt-20 pb-5">What are the Eligibility Requirements?</h3>
+    <ul class="list-disc text-lg pl-10 lg:pl-16">
+      <li>Be 18 years of age</li>
+      <li>Read, speak, write and understand the English language</li>
+      <li>Hold a commercial pilot certificate and an instrument rating</li>
+      <li>Have logged at least 250 hours of flight time</li>
+      <li>Hold a valid FAA 3rd Class Medical Cerificate (or higher)</li>
+      <li>Receive a logbook endorsement from an authorized instructor on the fundamentals of instructing</li>
+      <li>Pass a knowledge test on the aeronautical knowledge areas appropriate to the flight instructor rating sought</li>
+    </ul>
+    <p class="text-slate-600 italic pt-5">Reference 14 CFR §61.183 for the entire list of eligibility requirements.</p>
+
+    <h3 class="text-5xl font-header uppercase font-semibold pt-20 pb-5">The SimpliFly Guarantee</h3>
+    <p class="text-lg pb-20">If you have completed your <%= link_to "private", private_pilot_path, class: "text-sky-600 hover:underline", data: {turbo: false}%>, <%= link_to "instrument", instrument_path, class: "text-sky-600 hover:underline", data: {turbo: false}%>, <%= link_to "commercial", commercial_path, class: "text-sky-600 hover:underline", data: {turbo: false}%>, and CFI training at SimpliFly, we have an exciting opportunity for you. As a testament to our confidence in your abilities, we offer a guaranteed interview for a teaching position as a CFI within our flight school. This exclusive opportunity allows you to showcase the knowledge and skills you have acquired during your training journey with us. Join our team of dedicated instructors, inspire future aviators, and make a meaningful impact in the aviation community. Take the next step in your career as a CFI with SimpliFly and let your passion for aviation soar.</p>
+  </div>
+</section>
+
+
+<section class="bg-gradient-to-l from-slate-200 to-blue-50"  id="contact">
+  <h1 class="font-bold text-4xl pt-10 text-center">Instruct at SimpliFly</h1>
+  <div class="lg:flex lg:flex-row-reverse items-center lg:items-start">
+  
+
+    <div class="mx-10 lg:px-16 lg:w-1/2">
+      <%= render "form", message: @message %>      
+    </div>
+
+    <div class="mx-0 lg:w-1/2">
+      <%=image_tag "simplifly-team.webp", class: "lg:pt-10", alt: ""%>
+    </div>
+
+  </div>
+</section>
+
+
+<%= render "shared/footer"%>

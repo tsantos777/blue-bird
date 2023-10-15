@@ -1,0 +1,63 @@
+<%# Head / Meta Data %>
+<% title("Financing with Meritize at SimpliFly Flight School") %>
+<% meta_description("Simplifly offers flexible financing options for pilot training. Explore our partnership with Meritize Finance and start your journey to becoming a pilot today. Our flight schools are in Mesa, AZ and Spanish Fork, UT.  Many of our students come from Gilbert, Chandler, Tempe, Scottsdale, Apache Junction, Queen Creek, Fountain Hills, Gold Canyon, Maricopa, Pinal.") %>
+<% meta_keywords("Flight School Financing, Pilot Training Financing, Meritize Finance, Mesa Flight School, Phoenix Flight School, Scottsdale Flight School, Spanish Fork Flight School, Salt Lake Flight School") %>
+
+<%= render "shared/header"%>
+
+<section class="bg-gradient-to-b from-slate-50 to-sky-200 flex flex-col items-center">
+  <div class="max-w-4xl flex flex-col pt-10 px-5">
+    <h1 class="hidden">Finance Your Aviation Goals with Meritize at SimpliFly</h1>
+    <div class="px-5 flex flex-col items-center">
+      <%= image_tag "meritize.webp", alt: "Stratus Financial logo", class: "pt-10 pb-20 lg:w-2/5 "%>
+    </div>
+    <p class="pb-5">
+      SimpliFly has teamed up with Meritize to offer our students a unique financing option. Meritize works with students, educators, and employers to help people excel in skills-based careers.
+    </p>
+
+    <p class="pb-5">
+      Meritize knows you are more than your credit score, and that is why they look at your past achievements to potentially enhance your loan options.
+    </p>
+
+    <p class="">
+      A few reasons why Meritize is a great option for students include:
+    </p>
+    <ul class="list-disc pl-10 lg:pl-16 pb-5">
+      <li>Fixed and variable interest rates available**</li>
+      <li>Flexible payment options, including deferring full principal and interest payments until 3 months after you complete your training</li>
+      <li>Customer support available 5 days a week</li>
+      <li>0.25% interest rate deduction once you begin full repayment on your loan, if you sign up for autopay</li>
+    </ul>
+
+    <p class="pb-5">
+      Checking your loan options with Meritize has never been easier. You can fill out a short application to check your loan options <strong>without impacting your credit score</strong>.
+    </p>
+
+    <p>
+      If loan options are available to you, Meritize will request your merit information to finalize your application. This could be in the form of:
+    </p>
+    <ul class="list-disc pl-10 lg:pl-16 pb-5">
+      <li>Academic Experience (Official or unofficial transcript or HSE certification)</li>
+      <li>Military Experience (DD214)</li>
+    </ul>
+
+    <p class="pb-5">
+      Want to learn more? Check out their FAQ page here: <%=link_to "https://www.meritize.com/students/faq/", "https://www.meritize.com/students/faq/", target: "blank", class: "text-sky-700 hover:underline"%> or give them a call at <%= link_to "833-MERIT-4-U", "tel:833-MERIT-4-U", class: "text-sky-700 hover:underline"%>. Ready to see if you qualify? Check your options here: <%= link_to "https://apply.meritize.com/", "https://apply.meritize.com/?pc=19144", target: "blank", class: "text-sky-700 hover:underline"%>
+    </p>
+
+    <p class="text-xs italic text-slate-500 pb-5"> 
+      *SimpliFly does not endorse a particular lender, nor is it affiliated with Meritize Financial, Inc. ("Meritize").
+      Meritize Lending, LLC, NMLS ID 1661035 (NMLS Consumer Access https://www.nmlsconsumeraccess.org/)
+      Meritize Financial, Inc. NMLS ID 1986399 (NMLS Consumer Access https://www.nmlsconsumeraccess.org/)
+      Terms and Conditions apply. Meritize branded loan products are educational loans issued by Meritize Lending, LLC**. Meritize reserves the right to modify or discontinue products and benefits at any time without notice. To qualify, a borrower must be a U.S. citizen, permanent resident or hold an Employment Authorization Document and meet Meritize’s underwriting requirements. If approved for a loan the actual loan amount, term, payment, and APR amount of loan that a customer qualifies for may vary based on credit determination, state law and other factors. Meritize does not warrant or guarantee any claims made herein, including, but not limited to, gaining admission to a program, concerning the quality or financial strength of any educational institution, securing funding or obtaining employment. Our final loan offer may differ as a result of the school chosen and the associated cost of tuition. Not all schools are eligible for funding. Meritize does not offer educational loans in the following states: IN, ME, NV, VT, WI, PR. All rights reserved.
+      <br>
+      **For residents of SC, loan is made by Meritize Financial, Inc.
+      <br>
+      *Variable rates are subject to change.
+      <br>
+      The information on this document is the most up to date as of April 1, 2023. Please see Meritize website for additional details.
+    </p>
+  </div>
+</section>
+
+<%= render "shared/footer"%>

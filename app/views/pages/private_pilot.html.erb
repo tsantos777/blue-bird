@@ -1,0 +1,116 @@
+<%# Head / Meta Data %>
+<% title("Instrument Rating | SimpliFly Flight School") %>
+<% meta_description("Start your pilot journey with private pilot training at Simplifly in Mesa, Phoenix, Scottsdale, and Spanish Fork, Salt Lake. Learn the fundamentals of flying and obtain your private pilot license. Get started today. Enroll with us now.  Many of our students come from Gilbert, Chandler, Tempe, Scottsdale, Apache Junction, Queen Creek, Fountain Hills, Gold Canyon, Maricopa, Pinal, Springville, Provo, Payson, Mapleton, Salem, Elk Ridge, Utah County, Juab County") %>
+<% meta_keywords("Private Pilot Training, Private Pilot License, Mesa Flight School, Phoenix Flight School, Scottsdale Flight School, Spanish Fork Flight School, Salt Lake Flight School, Learn to Fly") %>
+
+<%= render "shared/header"%>
+
+<section class="bg-gradient-to-t lg:bg-gradient-to-l from-sky-800 to-slate-900 text-white">
+  <div class="flex flex-col lg:flex-row-reverse lg:items-center pt-10 lg:py-10">
+    <!--Text Section-->
+    <div class="lg:w-1/2 flex flex-col justify-center items-center pb-10">
+      <p class="text-xl lg:text-3xl text-center">How to Become a Pilot at SimpliFly</p>
+      <h2 class="font-bold text-3xl lg:text-5xl pt-5 text-center">Private Pilot Certificate</h2>
+      <p class="w-5/6 lg:w-4/5 pt-5 text-left lg:text-left text-lg lg:text-base p-text">
+      The first step in your aviation journey is to get your private pilot certificate.  There are three main tests that you need to pass to get your pilot license: the medical exam, written test, and the flight test (checkride).
+      </p>
+      <p class="w-5/6 lg:w-4/5 pt-5 text-left lg:text-left text-lg lg:text-base p-text">
+      We believe that the key to your success lies in our commitment to providing the highest quality flight training available, with a focus on safety, professionalism, and personalized attention.
+      </p>
+    </div>
+    <div class="lg:w-1/2">
+      <div class="grid place-items-center lg:mx-10">
+        <%= image_tag "two-pilot-smiling.webp" , alt: "Two SimpliFly pilots smiling", class: "lg:rounded-2xl lg:w-5/6"%>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="bg-gradient-to-b from-slate-50 to-sky-200 flex flex-col items-center">
+  <div class="max-w-4xl flex flex-col pt-10 px-5">
+    <h3 class="text-5xl font-header uppercase font-semibold">Get Your Private Pilot Certificate</h3>
+    <h4 class="text-3xl text-slate-600 italic py-5">Simplifly Offers Accelerated and Flexible Training Options</h4>
+    <p class="text-lg">The first step in becoming a pilot is to get your private pilot certificate.  With a private pilot certificate, you are given the privilege of flying an aircraft and being the pilot in command (PIC). Flight training includes aircraft maneuvers, navigation, emergency procedures and cross-country flight planning. While people may seek the license for hobby or sport reasons, a private pilot certification is the first major milestone on the road to becoming an airline pilot.</p>
+    
+    <h3 class="text-5xl font-header uppercase font-semibold pt-20 pb-5">How Long Will it Take?</h3>
+    <p class="text-lg">The amount of time required to earn a private pilot certificate varies and largely depends on weather, availability, finances, and how often a student is available to fly. In our accelerated program, a pilot certificate can be earned in approximately two months. If flying only a few times a week, expect to be ready for your checkride in a few months to a year.</p>
+
+    <h3 class="text-5xl font-header uppercase font-semibold pt-20 pb-5">What are the Eligibility Requirements?</h3>
+    <ul class="list-disc text-lg pl-10 lg:pl-16">
+      <li>Be 17 years of age</li>
+      <li>Read, speak, write and understand the English language</li>
+      <li>Hold a valid student pilot certificate</li>
+      <li>Receive flight training and a logbook endorsement from an authorized instructor</li>
+      <li>Meet the aeronautical experience requirements for the aircraft rating sought</li>
+      <li>Pass a practical test for the aircraft rating sought</li>
+    </ul>
+    <p class="text-slate-600 italic pt-5">Reference 14 CFR §61.103 for the entire list of eligibility requirements.</p>
+
+    <h3 class="text-5xl font-header uppercase font-semibold pt-20 pb-5">The SimpliFly Guarantee</h3>
+    <p class="text-lg pb-20">If you have completed your private, <%= link_to "instrument", instrument_path, class: "text-sky-600 hover:underline", data: {turbo: false}%>, <%= link_to "commercial", commercial_path, class: "text-sky-600 hover:underline", data: {turbo: false}%>, and <%= link_to "CFI", cfi_path, class: "text-sky-600 hover:underline", data: {turbo: false}%> training at SimpliFly, we have an exciting opportunity for you. As a testament to our confidence in your abilities, we offer a guaranteed interview for a teaching position as a CFI within our flight school. This exclusive opportunity allows you to showcase the knowledge and skills you have acquired during your training journey with us. Join our team of dedicated instructors, inspire future aviators, and make a meaningful impact in the aviation community. Take the next step in your career as a CFI with SimpliFly and let your passion for aviation soar.</p>
+  </div>
+</section>
+
+<section class="flex flex-col lg:flex-row items-center pt-10 pb-0 lg:py-10 bg-slate-50">
+  <div class="flex flex-col items-center lg:w-1/2 p-text">
+    <h3 class="text-3xl font-semibold pb-10 font-sans mx-5 text-center uppercase font-header">Step 1. Medical Exam</h3>
+    <p class="w-3/4">
+      The Federal Aviation Administration (FAA) requires all pilots to meet certain medical standards to ensure that they are physically and mentally fit to fly. At SimpliFly, we understand that the medical exam can seem daunting, which is why we provide support and guidance to our students throughout the process.
+    </p>
+    <p class="w-3/4 py-10">
+      We work closely with certified aviation medical examiners and will be able to link you up with an Aviation Medical Examiner (AME).  Our experienced team of instructors will help you through the exam process, explain what the exam entails, and what conditions may disqualify you from obtaining a pilot's license. We'll provide you with tips on how to prepare for the exam, including what to bring, what to expect on the day, and how to deal with any potential issues that may arise. 
+    </p>
+  </div>
+  <div class="flex flex-col items-center lg:w-1/2">
+    <%=image_tag "FAA.webp", alt: "FAA Logo", class: "lg:h-screen-1/2 px-10 object-contain"%>
+  </div>
+</section>
+
+<section class="flex flex-col lg:flex-row-reverse items-center pt-10 pb-0 lg:py-10 bg-slate-50">
+  <div class="flex flex-col items-center lg:w-1/2 p-text">
+    <h3 class="text-3xl font-semibold pb-10 font-sans mx-5 text-center uppercase font-header">Step 2. Written Exam</h3>
+    <p class="w-3/4">
+      Obtaining your pilot's license involves passing a written exam, which serves as the crucial second step in the process. This comprehensive examination encompasses a wide range of subjects, including regulations, airspace, weather, aerodynamics, and aircraft performance. It serves as a means to assess your knowledge and ensure that you possess a deep understanding of the essential aspects required to be a safe and competent pilot.
+    </p>
+    <p class="w-3/4 py-10">
+      At SimpliFly, we recognize the challenges that the written exam may present, and we are committed to supporting our students in their preparation. Our dedicated approach includes providing comprehensive ground school training, led by experienced instructors who will assist you in navigating the study materials. Through their guidance, you will gain a clear comprehension of the key concepts covered in the exam, empowering you to approach it with confidence and proficiency.
+    </p>
+  </div>
+  <div class="lg:w-1/2 flex flex-col items-center">
+    <%=image_tag "ground-lesson.webp" , alt: "Student pilot and CFI doing a ground school lesson outside", class: "lg:w-5/6 lg:rounded-2xl"%>
+  </div>
+</section>
+
+<section class="flex flex-col lg:flex-row items-center pt-10 pb-0 lg:py-10 bg-slate-50">
+  <div class="flex flex-col items-center lg:w-1/2 p-text">
+    <h3 class="text-3xl font-semibold pb-10 font-sans mx-5 text-center uppercase font-header">Step 3. Flight Exam</h3>
+    <p class="w-3/4">
+      The flight exam, also known as the checkride, is the final step towards obtaining your pilot's license. It is designed to assess your ability to operate an aircraft safely and competently in various flight scenarios. The exam consists of both oral and practical components and is conducted by a certified FAA examiner.
+    </p>
+    <p class="w-3/4 py-10">
+      SimpliFly provides our students with comprehensive flight training to ensure that they are well prepared. You can be confident that you're receiving the best possible training and support to pass the flight exam and become a licensed pilot. Our experienced instructors will ensure that you have everything you need to succeed. 
+    </p>
+    <p class="w-3/4 pb-10 font-semibold font-sans">
+    Start your flight training with us today and experience the thrill of flying!
+    </p>
+  </div>
+  <div class="flex flex-col items-center lg:w-1/2">
+    <%=image_tag "ppl-pass.webp", alt: "Student passing ppl checkride", class: "lg:h-screen-3/4 lg:rounded-2xl"%>
+  </div>
+</section>
+
+
+<%= render "shared/cta_fly_with"%>
+<%= render "shared/cta_book"%>
+<%= render "shared/cta_next_steps"%>
+<%= render "shared/footer"%>
+
+
+
+
+
+<%# Sticky div %>
+</div>

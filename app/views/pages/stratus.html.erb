@@ -1,0 +1,76 @@
+<%# Head / Meta Data %>
+<% title("Financing with Stratus at SimpliFly Flight School") %>
+<% meta_description("Simplifly offers flexible financing options for pilot training. Explore our partnership with Stratus Finance and start your journey to becoming a pilot today. Our flight schools are in Mesa, AZ and Spanish Fork, UT.  Many of our students come from Gilbert, Chandler, Tempe, Scottsdale, Apache Junction, Queen Creek, Fountain Hills, Gold Canyon, Maricopa, Pinal.") %>
+<% meta_keywords("Flight School Financing, Pilot Training Financing, Stratus Finance, Mesa Flight School, Phoenix Flight School, Scottsdale Flight School, Spanish Fork Flight School, Salt Lake Flight School") %>
+<%# og_image(image_url("meta_pic_rrm.webp")) %>
+<%# twitter_image(image_url("meta_pic_rrm_twitter.webp")) %>
+
+<%= render "shared/header"%>
+
+<section class="bg-gradient-to-b from-slate-50 to-sky-200 flex flex-col items-center">
+  <div class="max-w-4xl flex flex-col pt-10 px-5">
+    <h1 class="hidden">Finance Your Aviation Goals with Stratus Finance at SimpliFly</h1>
+    <div class="px-5 flex flex-col items-center">
+      <%= image_tag "stratus_logo.webp", alt: "Stratus Financial logo", class: "pt-10 pb-20 lg:w-4/5 "%>
+    </div>
+    <p class="pb-5">
+      Stratus Financial was founded by FAA Certificated Flight and Ground Instructors passionate about helping others achieve their aviation dreams.  We know it's not just about achieving your dreams (because we looked up in the sky every time, we heard an airplane too!), but funding your family's dreams as well.  That's why Stratus was created, because with Stratus, the sky is no longer the limit.
+    </p>
+
+    <h2 class="text-4xl font-header uppercase font-semibold pb-5">Your Aviation Dreams Start Here</h2>
+    <p class="pb-5">
+      You're not just a number, and it shows with Stratus.  We look beyond the typical FICO scores and look at you as a whole aviator.  We want to set you up for success before you even apply with us!  
+    </p>
+
+    <p class="">
+      We offer exceptional lending packages, including:
+    </p>
+    <ul class="list-disc pl-10 lg:pl-16 pb-5">
+      <li>The best rate you'll get anywhere to go from zero to hero!</li>
+      <li>Full financing for your entire flight training and more</li>
+      <li>Affordable payment options, including deferment for 12 months while you complete your training AND find a job</li>
+      <li>Pay your loan off any time you want with no consequences or penalties whatsoever</li>
+    </ul>
+
+    <h2 class="text-4xl font-header uppercase font-semibold pb-5">Stratus Has You Covered For Resources For Your Aviation Career</h2>
+    <ul class="list-disc pl-10 lg:pl-16 pb-5">
+      <li>Counseling with our team of flight instructors and ground instructors to support you through flight training, check rides and interviews with airlines</li>
+      <li>Resume reviewing, editing, and building</li>
+      <li>AMA Phone Calls with Pilots in the 121 and 135 Industry - What It's like, How They Got Their Job, etc.</li>
+    </ul>
+
+    <p class="pb-5">
+      We look forward to helping you achieving your aviation dreams and seeing you in the sky!
+    </p>
+
+    <p class="pb-5">
+      If you are interested in getting started, please click here to apply now: 
+    </p>
+    <div class="pb-10 flex">
+      <%= link_to "APPLY TODAY", "https://form.jotform.com/231573918290461 ", target: "blank", data: { turbo: false }, class: "btn-primary text-base" %>
+    </div>
+
+    <p class="pb-5">
+      If you have limited credit or low income you may need a Co-Borrower; if so, please have your co-borrower complete their application here: 
+    </p>
+    <div class="pb-10 flex">
+      <%= link_to "APPLY TODAY", "https://form.jotform.com/231573918290461 ", target: "blank", data: { turbo: false }, class: "btn-primary text-base" %>
+    </div>
+
+    <h3 class="text-4xl font-header uppercase font-semibold pb-5">Need More Information?</h3>
+    <p class="pb-5">
+      We've prepared a free informational booklet to help you understand how financing with Stratus Financial works. Click below to find out more and download the booklet or check out the Stratus Financial website.
+    </p>
+
+    <div class="flex flex-col lg:flex-row gap-5 pb-10">
+      <%= link_to "https://stratus.finance", target: "blank", data: { turbo: false } do%>
+        <div class="btn-primary text-base w-64">VISIT WEBSITE</div>
+      <%end%>
+      <%= link_to "https://drive.google.com/file/d/1AiDCTqE746dCHuYuW2g-Sh_Z0tNQPttq/view?usp=share_link", target: "blank", data: { turbo: false } do%>
+        <div class="btn-secondary text-base w-64">DOWNLOAD BOOKLET</div>
+      <%end%>
+    </div>
+  </div>
+</section>
+
+<%= render "shared/footer"%>

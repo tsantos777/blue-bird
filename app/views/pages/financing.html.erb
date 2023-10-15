@@ -1,0 +1,105 @@
+<%# Head / Meta Data %>
+<% title("Financing Options | SimpliFly Flight School") %>
+<% meta_description("Simplifly offers financing options to our students.  We've partnered with leading financing lenders like Stratus Financial and Meritize. Our experienced instructors, affordable aircraft, and personalized training approach make us the perfect choice for pilot training. Our flight schools are in Mesa, AZ and Spanish Fork, UT.  Many of our students come from Gilbert, Chandler, Tempe, Scottsdale, Apache Junction, Queen Creek, Fountain Hills, Gold Canyon, Maricopa, Pinal, Springville, Provo, Payson, Mapleton, Salem, Elk Ridge, Utah County, Juab County") %>
+<% meta_keywords("Pilot Training Financing, Flight School Financing, Mesa Flight School, Phoenix Flight School, Scottsdale Flight School, Spanish Fork Flight School, Salt Lake Flight School, Affordable Pilot Training") %>
+
+<%= render "shared/header"%>
+
+<section class="bg-gradient-to-t lg:bg-gradient-to-l from-sky-800 to-slate-900 text-white">
+  <div class="flex flex-col lg:flex-row-reverse lg:items-center pt-10 lg:py-10">
+    <!--Text Section-->
+    <div class="lg:w-1/2 flex flex-col justify-center items-center pb-10">
+      <p class="text-xl lg:text-3xl text-center">Wondering if you can afford it?</p>
+      <h1 class="font-bold text-3xl lg:text-5xl pt-5 text-center">Financing for Pilot Training</h1>
+      <p class="w-5/6 lg:w-4/5 pt-5 text-left lg:text-left text-lg lg:text-base p-text">
+      We understand that financing your flight training can be a significant consideration on your path to becoming a pilot. We are committed to helping you achieve your aviation dreams, which is why we have partnered with reputable financing companies to offer you convenient options tailored to your needs.
+      </p>
+      <p class="w-5/6 lg:w-4/5 pt-5 text-left lg:text-left text-lg lg:text-base p-text">
+      Our financing partners include Meritize, Stratus Financial, and AOPA Finance, who specialize in providing financial solutions specifically designed for flight training. These trusted partners have extensive experience in aviation financing and offer competitive rates, flexible repayment terms, and personalized guidance throughout the process.
+      </p>
+    </div>
+    <div class="lg:w-1/2">
+      <div class="grid place-items-center lg:mx-10">
+        <%= image_tag "pilot_thumbs.webp" , alt: "A SimpliFly pilot giving the thumbs up", class: "lg:rounded-2xl lg:w-2/3"%>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= render "shared/finance"%>
+
+<section class="bg-gradient-to-r from-slate-100 to-sky-200 flex flex-col items-center">
+  <div class="max-w-4xl flex flex-col pt-10 px-5 mb-10">
+    
+    <h3 class="text-5xl font-header uppercase font-semibold pb-5">Stratus Financial</h3>
+    <p class="text-lg pb-5">  
+      Stratus Financial was founded by FAA Certificated Flight and Ground Instructors passionate about helping others achieve their aviation dreams.  We know it's not just about achieving your dreams (because we looked up in the sky every time, we heard an airplane too!), but funding your family's dreams as well.  That's why Stratus was created, because with Stratus, the sky is no longer the limit.
+    </p>
+    <p class="text-lg pb-5">
+      Stratus Financial specializes in offering comprehensive loan programs designed specifically for flight training and aircraft financing. With Stratus Financial, you can benefit from financing options that align with the unique requirements of pursuing a career in aviation.
+    </p>
+    <p class="text-lg pb-5">
+      Stratus Financial helps pilots acheive their dreams and fills the constant pilot demand through student pilots' access to instructional funding, including flight school loans, and fast traction built by flight schools.
+    </p>
+    <p class="text-lg pb-5">
+      We've prepared a free informational booklet to help you understand how financing with Stratus Financial works.  Click below to find out more and download the booklet.
+    </p>
+    <div class="flex flex-col lg:flex-row gap-5">
+      <%= link_to stratus_path, data: { turbo: false } do%>
+        <div class="btn-primary text-base w-64">CHECK OUT STRATUS</div>
+      <%end%>
+      <%= link_to "https://drive.google.com/file/d/1AiDCTqE746dCHuYuW2g-Sh_Z0tNQPttq/view?usp=share_link", target: "blank", data: { turbo: false } do%>
+        <div class="btn-secondary text-base w-64">DOWNLOAD BOOKLET</div>
+      <%end%>
+    </div>
+    
+    <h2 class="text-5xl font-header uppercase font-semibold pt-20">Meritize</h2>
+    <p class="text-lg pb-5 ">
+      We have partnered with Meritize to provide our students with financing options to fund your education. Check your loan options in minutes without impacting your credit score at <%= link_to "https://apply.meritize.com ", target: "blank" %>
+    </p>
+    <p class="text-xs italic text-slate-500 pb-5"> 
+    *SimpliFly does not endorse a particular lender, nor is it affiliated with Meritize Financial, Inc. ("Meritize").
+    Meritize Lending, LLC, NMLS ID 1661035 (NMLS Consumer Access https://www.nmlsconsumeraccess.org/)
+    Meritize Financial, Inc. NMLS ID 1986399 (NMLS Consumer Access https://www.nmlsconsumeraccess.org/)
+    Terms and Conditions apply. Meritize branded loan products are educational loans issued by Meritize Lending, LLC**. Meritize reserves the right to modify or discontinue products and benefits at any time without notice. To qualify, a borrower must be a U.S. citizen, permanent resident or hold an Employment Authorization Document and meet Meritize’s underwriting requirements. If approved for a loan the actual loan amount, term, payment, and APR amount of loan that a customer qualifies for may vary based on credit determination, state law and other factors. Meritize does not warrant or guarantee any claims made herein, including, but not limited to, gaining admission to a program, concerning the quality or financial strength of any educational institution, securing funding or obtaining employment. Our final loan offer may differ as a result of the school chosen and the associated cost of tuition. Not all schools are eligible for funding. Meritize does not offer educational loans in the following states: IN, ME, NV, VT, WI, PR. All rights reserved.
+    **For residents of SC, loan is made by Meritize Financial, Inc.
+    *Variable rates are subject to change.
+    The information on this document is the most up to date as of April 1, 2023. Please see Meritize website for additional details.
+
+    </p>
+    <div class="flex flex-col lg:flex-row gap-5">
+      <%= link_to meritize_path, data: { turbo: false } do%>
+        <div class="btn-primary text-base w-64">CHECK OUT MERITIZE</div>
+      <%end%>
+      <%= link_to "https://apply.meritize.com/?pc=19144", target: "blank", data: { turbo: false } do%>
+        <div class="btn-secondary text-base w-64">APPLY TO MERITIZE</div>
+      <%end%>
+    </div>
+
+
+    
+
+    <h3 class="text-5xl font-header uppercase font-semibold pt-20 pb-5">Flight Training Finance</h3>
+    <p class="text-lg pb-5">
+      Flight Training Finance offers finance programs for part-time fixed wing pilot training.  Check out their website to get more information and apply.
+    </p>
+    <%= link_to "https://www.flighttrainingfinancellc.com", target: "blank", data: { turbo: false } do%>
+      <div class="btn-primary text-base w-72">FLIGHT TRAINING FINANCE</div>
+    <%end%>
+
+    <h3 class="text-5xl font-header uppercase font-semibold pt-20 pb-5">AOPA</h3>
+    <p class="text-lg pb-5">
+      Backed by the Aircraft Owners and Pilots Association, AOPA Finance understands the distinct needs of aspiring pilots. They provide access to customized financing solutions and offer exceptional customer service to support you throughout the financing process.
+    </p>
+    <%= link_to "https://finance.aopa.org", target: "blank", data: { turbo: false } do%>
+      <div class="btn-primary text-base w-64">CHECK OUT AOPA</div>
+    <%end%>
+
+    
+  </div>
+</section>
+
+<%= render "shared/cost"%>
+
+<%= render "shared/footer"%>

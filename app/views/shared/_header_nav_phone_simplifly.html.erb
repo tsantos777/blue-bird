@@ -1,0 +1,14 @@
+<nav class="flex flex-row-reverse justify-center lg:justify-between items-center bg-gradient-to-r from-sky-400 to-sky-500 font-semibold text-slate-50 py-2 px-6">
+  <div class="flex-row gap-8 hidden lg:flex" >
+    <%= link_to "ENROLL TODAY", enroll_path, target: "blank", data: { turbo: false }, class: "hover:scale-105 border-4 border-white px-2 py-1 transition duration-300"%>
+    <%= link_to "DISCOVERY FLIGHT", discovery_flight_path, target: "blank", data: { turbo: false }, class: "hover:scale-105 border-4 border-white px-2 py-1 transition duration-300"%>
+    
+  </div>
+  <div class="text-2xl">
+    <%= link_to "(480) 256-8355", "tel:1-480-256-8355" %>
+  </div>
+  <div class="text-neutral-900 text-xs absolute z-0 overflow-hidden -left-[100rem]">
+    <%###### UPDATE BACKLINK%>
+    <%= link_to "Flight School Website Designed and Developed by Right Rudder Marketing", "https://rightruddermarketing.com"%>
+  </div>
+</nav>

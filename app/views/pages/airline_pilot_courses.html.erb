@@ -1,0 +1,86 @@
+<%# Head / Meta Data %>
+<% title("Become an Airline Pilot at SimpliFly Flight School") %>
+<% meta_description("Become an Airline pilot with SimpliFly's pilot training courses.  We offer flexible and accelerated options to get your training done on your schedule.  Our students and alumni have moved on to the airlines and other aviation careers. Many of our students come from Gilbert, Chandler, Tempe, Scottsdale, Apache Junction, Queen Creek, Fountain Hills, Gold Canyon, Maricopa, Pinal, Springville, Provo, Payson, Mapleton, Salem, Elk Ridge, Utah County, Juab County") %>
+<% meta_keywords("Airline Pilot Courses, Airline Pilot Training, Mesa Flight School, Phoenix Flight School, Scottsdale Flight School, Spanish Fork Flight School, Salt Lake Flight School, Aviation Career, Professional Pilot Training") %>
+
+<%= render "shared/header"%>
+
+<header class="w-full bg-airline-cockpit bg-cover bg-[center_right_5rem] h-screen-3/4 lg:h-screen-4/5 flex justify-center items-center text-white">
+  <div class="px-5 py-40 lg:py-52 flex flex-col justify-center items-center w-full">
+      <h1 class="font-semibold font-header text-5xl lg:text-8xl lg:px-20 text-center">AIRLINE PILOT COURSES</h1>
+      <h2 class="font-bold text-xl lg:text-3xl italic text-center py-5 lg:py-10">Start flight training today and join the SimpliFly family</h2>
+      <%= link_to "ENROLL TODAY", enroll_path, target: "blank", data: { turbo: false }, class: "btn-primary" %>
+  </div>
+</header>
+
+<header class="bg-gradient-to-b from-slate-50 to-blue-100">
+  <div class="flex flex-col lg:flex-row">
+    <div class="flex flex-col items-center lg:w-1/2">
+      <span class="p-text text-xl lg:text-2xl pt-20 text-center">SimpliFly Offers</span>
+      <h1 class="font-bold text-5xl pt-5 text-center">Pathways to the Airlines</h1>
+      <h2 class="font-semibold text-xl italic pt-5 pb-10 text-center lg:block hidden">Flexible and Accelerated Airline Pilot Training Programs</h2>
+      <h2 class="font-semibold text-lg italic pt-5 pb-10 text-center lg:hidden">We'll help you achieve your aviation goals.  <br>Every step of the way.</h2>
+      <p class="p-text w-3/4 pb-20">
+        If you're just starting your journey in the world of aviation, you've probably come across a variety of resources on the internet and you don't know where to start.  How long is it going to take?  How much is pilot training going to cost?  Are small airplanes safe?  We'll answer those questions and more below.
+      </p>
+    </div>
+    <div class="flex flex-col items-center lg:w-1/2">
+      <%= image_tag "airline_pilot.webp", alt: "A SimpliFly alumni now flying at the airlines", class: "lg:w-3/4"%>
+    </div>
+  </div>
+</header>
+
+<section class="bg-gradient-to-b from-sky-500 to-sky-600 flex flex-col items-center text-white">
+  <div class="pt-10 flex flex-col items-center">
+    <h2 class="text-center text-4xl font-bold lg:block hidden">Determine if Pilot Training is Right For You</h2>
+    <h2 class="text-center text-4xl font-bold lg:hidden">Determine if Pilot Training is Right For You</h2>
+    <p class="p-text w-3/4 lg:w-1/2  pt-10">Embarking on the journey of becoming a pilot requires careful consideration. Take a personal inventory of your aspirations and long term goals to determine how aviation aligns with your path. Are you seeking leisurely flights with loved ones, exploring scenic views from above, and enjoying lunch in neighboring cities? Alternatively, do you envision a career in aviation, perhaps as an airline pilot or in a different pilot job role?</p>
+    <p class="p-text w-3/4 lg:w-1/2  py-10">Assess the time you can dedicate to flight training and ensure you have the support of your loved ones. Before starting pilot training, it's essential to ask yourself these crucial questions. Rest assured, regardless of your circumstances and ambitions, the dedicated team at SimpliFly is here to guide you towards reaching your goals.</p>
+  </div>
+</section>
+
+<section class="bg-gradient-to-b from-slate-50 to-white flex flex-col lg:flex-row items-center pt-10 pb-0 lg:py-10">
+  <div class="flex flex-col items-center justify-center lg:w-1/2 p-text">
+    <h2 class="text-3xl font-semibold pb-10 font-sans mx-5 text-center">Pilots are Professionals</h2>
+    <p class="w-3/4 pb-10">Pilots, as professionals responsible for operating and navigating aircraft, typically possess a range of characteristics and traits that contribute to their success in their field.</p>
+    <p class="w-3/4 pb-10">If you're ready to soar to new heights or up for the exhilarating challenge of becoming a pilot yourself, don't hesitate to get in touch with us. Contact us today to embark on an exciting journey in the world of aviation.</p>
+    <p class="w-3/4 pb-10 font-semibold font-sans">Get in contact with the team at SimpliFly and let's work together to complete your aviation goals.</p>
+    <%= link_to "CONTACT US", contact_path, data: { turbo: false }, class: "btn-primary mb-10" %>
+  </div>
+  <div class="flex flex-col items-center lg:w-1/2 pb-10 lg:pb-0">
+    <h2 class="text-3xl font-semibold pb-10 font-sans mx-5 text-center">Do You Have What it Takes?</h2>
+    <div class="flex flex-col w-3/4">
+      <div class="flex flex-row flex-start">
+        <div class="text-sky-400 pr-2 font-extrabold">✈</div>
+        <h3 class="text-lg px-5 text-left">Strong situational awareness</h3>
+      </div>
+      <div class="pl-11 italic text-slate-500">Pilots need to be able to make quick decisions ensure safety.  They must have a keen ability to assess their surroundings, including weather, air traffic, and their aircraft. </div>
+      <div class="flex flex-row flex-start pt-3">
+        <div class="text-sky-400 pr-2 font-extrabold">✈</div>
+        <h3 class="text-lg px-5 text-left">Cool under pressure</h3>
+      </div>
+      <div class="pl-11 italic text-slate-500">The ability to remain calm and composed in high stress situations is crucial for pilots. Pilots must maintain their focus and make rational decisions, even in challenging or emergency scenarios.</div>
+      <div class="flex flex-row flex-start pt-3">
+        <div class="text-sky-400 pr-2 font-extrabold">✈</div>
+        <h3 class="text-lg px-5 text-left">Excellent communication skills</h3>
+      </div>
+      <div class="pl-11 italic text-slate-500">Effective communication is essential for pilots. Pilots must convey important information clearly and accurately and listen attentively to instructions or updates.</div>
+      <div class="flex flex-row flex-start pt-3">
+        <div class="text-sky-400 pr-2 font-extrabold">✈</div>
+        <h3 class="text-lg px-5 text-left">Professionalism and discipline</h3>
+      </div>
+      <div class="pl-11 italic text-slate-500">Pilots are expected to maintain a high level of professionalism at all times. They follow standard operating procedures, adhere to regulations, and prioritize the safety and comfort of passengers.</div>
+    </div>
+  </div>
+</section>
+
+<%= render "shared/flex_vs_accel"%>
+<%= render "shared/pilot_programs"%>
+<%= render "shared/safe"%>
+<%= render "shared/cost"%>
+
+<%= render "shared/cta_book"%>
+<%= render "shared/cta_fly_with"%>  
+<%= render "shared/footer"%>
+<!--Sticky div-->
+</div>

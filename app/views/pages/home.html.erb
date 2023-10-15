@@ -1,0 +1,239 @@
+<%# Head / Meta Data %>
+<%# title("Advanced Traiing at Ideal Aviation") %>
+<%# meta_description("Come train at Ideal Aviation.  We offer courses from private pilot to CFII and MEI.  Get your instrument rating and commercial certificate done in the best flight school in St. Louis") %>
+<%# meta_keywords("Instrument rating st. louis, multi-engine training st. louis, flight instructor CFI rating st louis, piper seminole in st louis, guimbal cabri st louis") %>
+<%# og_image(image_url("meta_pic_rrm.webp")) %>
+<%# twitter_image(image_url("meta_pic_rrm_twitter.webp")) %>
+
+<%= render "shared/header"%>
+
+<header class="w-full bg-home bg-cover h-screen-3/4 lg:h-screen-4/5 bg-center flex justify-center items-center">
+  <div class="px-5 py-40 lg:py-52 flex flex-col justify-center items-center w-full">
+      <h1 class="font-semibold font-header text-5xl lg:text-8xl lg:px-20 text-center">PILOT TRAINING. <br>MADE SIMPLE</h1>
+
+      <h2 class="font-bold text-xl lg:text-3xl italic text-center py-5 lg:py-10">Accelerated and Flexible Programs in Mesa, AZ and Spanish Fork, UT</h2>
+      <!--Hide button for now-->
+      <%#= link_to "LEARN HOW TODAY", airline_pilot_courses_path, data: { turbo: false }, class: "btn-primary" %>
+  </div>
+</header>
+
+<section class="flex flex-col lg:flex-row-reverse pt-10 pb-0 lg:py-10 bg-white">
+  <div class="flex flex-col items-center lg:w-1/2 p-text">
+    <span class="text-3xl ">Step 1.</span>
+    <h3 class="text-5xl font-semibold pb-10 font-header mx-5 text-center">YOUR DISCOVERY FLIGHT</h3>
+    <p class="w-3/4">
+      A discovery flight is the perfect way to get your feet off the
+      ground and experience the joy of flying for the first
+      time. During this introductory flight, you'll take the
+      controls and work with one of our experienced
+      instructors to learn the basics of flying.
+    </p>
+    <p class="w-3/4 py-10">
+      Doing a discovery flight is the best way to
+      determine if flying is for you and help you make an
+      informed decision about pursuing your pilot's
+      license. If you're ready to take the first step, sign
+      up for a Discovery Flight today and discover the
+      thrill of flying for yourself!
+    </p>
+    <%= link_to "SIGN UP NOW", discovery_flight_path, target: "blank", data: { turbo: false }, class: "btn-primary mb-10" %>
+  </div>
+  <div class="flex flex-col items-center lg:w-1/2">
+    <%=image_tag "discovery-flight.webp", alt: "Student pilot taking a discovery flight", class: "lg:h-screen-2/3 lg:rounded-2xl lg:drop-shadow-2xl"%>
+  </div>
+</section>
+
+<section class="flex flex-col lg:flex-row pt-10 pb-0 lg:py-10 bg-white">
+  <div class="flex flex-col items-center lg:w-1/2 p-text">
+    <span class="text-3xl ">Step 2.</span>
+    <h3 class="text-5xl font-semibold pb-10 font-header mx-5 text-center">FLY AT SIMPLIFLY</h3>
+    <p class="w-3/4">
+      We'll help you every step of the way to get your private pilot certificate and fly a plane. 
+      You'll gain the knowledge, skills, and confidence to safely navigate the skies with precision.  
+      With a private pilot certificate from SimpliFly you'll have the freedom to embark on exciting cross country adventures, fly friends and family to new destinations, and be the pilot in command of your own aircraft. 
+
+    </p>
+    <p class="w-3/4 py-10">
+      Then, expand your skills, enhance your aviation knowledge, and open doors to a wide range of career opportunities.  SimpliFly offers instrument rating and commercial certificate programs to equip you with the skills and expertise needed to navigate confidently in challenging conditions and unlock new opportunities in your aviation career.
+    </p>
+    <%= link_to "VIEW PROGRAMS", pilot_training_path, data: { turbo: false }, class: "btn-primary mb-10" %>
+  </div>
+  <div class="flex flex-col items-center lg:w-1/2">
+    <%=image_tag "pilot_pass_checkride.webp", alt: "Student pilot passing a checkride", class: "lg:w-4/5 lg:rounded-2xl lg:drop-shadow-2xl"%>
+  </div>
+</section>
+
+<section class="flex flex-col lg:flex-row-reverse pt-10 pb-0 lg:py-10 bg-white">
+  <div class="flex flex-col items-center lg:w-1/2 p-text">
+    <span class="text-3xl ">Step 3.</span>
+    <h3 class="text-5xl font-semibold pb-10 font-header mx-5 text-center">BEGIN YOUR PILOT CAREER</h3>
+    <p class="w-3/4">
+      After obtaining your commercial pilot certificate, the path to becoming an airline pilot involves building a minimum of 1,500 flight hours. 
+      Instructing at SimpliFly allows you to accumulate flight time while helping others achieve their aviation dreams. Our comprehensive certified flight instructor (CFI) training program will equip you with the skills, knowledge, and mentoring needed to excel in this crucial role.
+
+    </p>
+    <p class="w-3/4 py-10">
+      Our commitment to excellence, combined with a supportive and collaborative environment, ensures that you'll thrive as an instructor. Join our team of dedicated professionals at SimpliFly and embark on a rewarding journey that not only helps you build your flight hours but also allows you to inspire and mentor the next generation of pilots.
+    </p>
+    <%= link_to "APPLY TODAY", cfi_path, data: { turbo: false }, class: "btn-primary mb-10" %>
+  </div>
+  <div class="flex flex-col items-center lg:w-1/2">
+    <%=image_tag "student-pilot-after-solo-with-instructor.webp", alt: "Student pilot at SimpliFly after soloing pictured with instructor", class: "lg:w-4/5 lg:rounded-2xl lg:drop-shadow-2xl"%>
+  </div>
+</section>
+
+<section class="flex flex-col lg:flex-row pt-10 pb-0 lg:py-10 bg-white">
+  <div class="flex flex-col items-center lg:w-1/2 p-text">
+    <span class="text-3xl ">Step 4.</span>
+    <h3 class="text-5xl font-semibold pb-10 font-header mx-5 text-center">AIRLINE PILOT CAREER</h3>
+    <p class="w-3/4">
+      Once you have achieved the necessary flight hours, SimpliFly will provide guidance and resources to help you transition to the next phase of your career: the Airline Transport Pilot (ATP) certificate. Our team of experienced mentors will assist you in navigating the ATP certification process, ensuring you meet the required qualifications and standards set by the FAA.
+
+    </p>
+    <p class="w-3/4 py-10">
+      SimpliFly understands that the journey to an airline pilot career is an exciting and challenging one. We are here to support you every step of the way, providing guidance, resources, and a network of industry connections. Join us as you embark on this remarkable adventure, and let SimpliFly be your partner in reaching new heights as an airline pilot. 
+    </p>
+    <%= link_to "START TODAY", enroll_path, target: "blank", data: { turbo: false }, class: "btn-primary mb-10" %>
+  </div>
+  <div class="flex flex-col items-center lg:w-1/2">
+    <%=image_tag "airline_pilot_simplifly_alumni.webp", alt: "SimpliFly alumni flying at the airlines", class: "lg:w-4/5 lg:rounded-2xl lg:drop-shadow-2xl"%>
+  </div>
+</section>
+
+<%= render "shared/cta_next_steps"%>
+
+<%= render "shared/testimonials"%>
+
+<%= render "shared/cta_pilot_simple"%>
+
+<section class="bg-gradient-to-b from-sky-200 to-white">
+  <h3 class="text-5xl font-semibold py-10 font-header mx-5 text-center">FREQUENTLY ASKED QUESTIONS</h3>
+  <div class="bg-white max-w-xl mx-5 lg:mx-auto border border-gray-200 rounded-2xl mb-10">
+    <ul class="shadow-box">					
+      <li class="relative border-b border-gray-200" x-data="{selected:null}">
+        <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 1 ? selected = 1 : selected = null">
+          <div class="flex items-center justify-between">
+            <span class="font-semibold text-lg">How long does it take to complete the flight training program?</span>
+            <span class="ico-plus"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container1" x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-6 p-text">
+            <p>Total time depends on a variety of factors including weather, aircraft availability, instructor availability, and student skill level.  While times may vary, obtaining your private pilot certificate can be done in less than a year.  Check out our timeline page for more details.</p>
+          </div>
+        </div>
+      </li>
+      <li class="relative border-b border-gray-200" x-data="{selected:null}">
+        <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 2 ? selected = 2 : selected = null">
+          <div class="flex items-center justify-between">
+            <span class="font-semibold text-lg">What type of aircraft are used for training?</span>
+            <span class="ico-plus"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container2" x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
+          <div class="p-6 p-text">
+            <p>Our primary workhorse is our fleet of Cessna 172s.  Depending on which airplane you fly, our Cessna 172s are outfitted with six pack steam gauges, Garmin G5 flight displays, and Garmin G3X flight displays.  For multi-engine training, we have a Piper Seneca with a G5 and autopilot.</p>
+          </div>
+        </div>
+      </li>
+      <li class="relative border-b border-gray-200" x-data="{selected:null}">
+        <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 3 ? selected = 3 : selected = null">
+          <div class="flex items-center justify-between">
+            <span class="font-semibold text-lg">What is the cost of the flight training program?</span>
+            <span class="ico-plus"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container3" x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
+          <div class="p-6 p-text">
+            <p>The total cost of flight training varies depending on how many hours you need, certificate sought, and airplane chosen.  For a private pilot certificate plan to budget between $10,000 to $15,000.  For more information, check out our cost estimator page.</p>
+          </div>
+        </div>
+      </li>
+      <li class="relative border-b border-gray-200" x-data="{selected:null}">
+        <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 4 ? selected = 4 : selected = null">
+          <div class="flex items-center justify-between">
+            <span class="font-semibold text-lg">Is financial assistance or scholarships available for students?</span>
+            <span class="ico-plus"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container4" x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''">
+          <div class="p-6 p-text">
+            <p>While we don't directly offer financing or scholarships to our students, we have partnered with a few financing companies to help students fund their pilot training.  Check out our financing page for more details.</p>
+          </div>
+        </div>
+      </li>
+      <li class="relative border-b border-gray-200" x-data="{selected:null}">
+        <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 4 ? selected = 4 : selected = null">
+          <div class="flex items-center justify-between">
+            <span class="font-semibold text-lg">What are the different pilot licenses or ratings I can obtain through your flight school?</span>
+            <span class="ico-plus"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container4" x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''">
+          <div class="p-6 p-text">
+            <p>SimpliFly offers training all the way up to certified flight instructor (CFI).  This includes private, instrument, commercial, multi-engine, and CFI training.  Many of our students have used the experience and training received here at SimpliFly and started successful airline carriers.</p>
+          </div>
+        </div>
+      </li>
+      <li class="relative border-b border-gray-200" x-data="{selected:null}">
+        <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 4 ? selected = 4 : selected = null">
+          <div class="flex items-center justify-between">
+            <span class="font-semibold text-lg">Do you provide accommodation or assistance in finding accommodation for out of town students?</span>
+            <span class="ico-plus"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container4" x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''">
+          <div class="p-6 p-text">
+            <p>We do not offer accommodation or assistance finding accomadation.</p>
+          </div>
+        </div>
+      </li>
+      <li class="relative border-b border-gray-200" x-data="{selected:null}">
+        <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 4 ? selected = 4 : selected = null">
+          <div class="flex items-center justify-between">
+            <span class="font-semibold text-lg">Can I choose between part-time and full-time training options?</span>
+            <span class="ico-plus"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container4" x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''">
+          <div class="p-6 p-text">
+            <p>Of course!  SimpliFly offers both flexible and accelerated programs to help you get your pilot certificate and ratings.  Check out our individual program pages for more details.</p>
+          </div>
+        </div>
+      </li>
+      <li class="relative border-b border-gray-200" x-data="{selected:null}">
+        <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 4 ? selected = 4 : selected = null">
+          <div class="flex items-center justify-between">
+            <span class="font-semibold text-lg">Are there any medical requirements or restrictions for becoming a pilot?</span>
+            <span class="ico-plus"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container4" x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''">
+          <div class="p-6 p-text">
+            <p>The FAA has medical standards that all pilots must meet in order to be the pilot in command (PIC) of an aircraft.  This is done by a medical exam from an FAA approved medical doctor.  However to just get started, you can do a discovery flight and start flight training. But by the time you're ready to solo, you'll have needed to complete a FAA medical exam. Talk to an instructor or one of our team members for more information.</p>
+          </div>
+        </div>
+      </li>
+      <li class="relative " x-data="{selected:null}">
+        <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 5 ? selected = 5 : selected = null">
+          <div class="flex items-center justify-between">
+            <span class="font-semibold text-lg">Are there any opportunities for flight experience beyond the standard training curriculum?</span>
+            <span class="ico-plus"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container5" x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''">
+          <div class="p-6 p-text">
+            <p>Of course! After you complete training at SimpliFly, we guarantee an interview to be a certified flight instructor (CFI). Being a CFI helps build experience and hours to help prepare you for further in your aviation career.  Check out our page about beginning your pilot career as a CFI for more details. </p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<%= render "shared/footer"%>
+
+
+
+<!--Sticky div-->
+</div>

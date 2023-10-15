@@ -1,0 +1,83 @@
+<section class="bg-gradient-to-t lg:bg-gradient-to-l from-ideal-blue to-ideal-blue flex flex-col items-center text-white">
+  
+  <%# Different Headers%>
+  <% if current_page?(programs_path) %>
+    <h2 class="font-bold text-3xl lg:text-5xl pt-16 pb-6 text-center">Become a Pilot at St. Louis Downtown Airport</h2>
+  <% else %>
+    <h2 class="font-bold text-3xl lg:text-5xl pt-16 pb-6 text-center">Ideal Aviation Aircraft Fleet</h2>
+  <% end %>
+
+  <div class="grid lg:grid-cols-2 grid-cols-1 w-full py-10">
+    <div class="flex flex-col items-center ">
+      <div class="block max-w-xl rounded-lg bg-white shadow-lg mx-5 mb-10 h-full">
+        <%= image_tag "helicopter_training_program.webp", class: "rounded-t-lg", alt: "Picture of a pilot and helicopter"%>
+        <div class="flex flex-col justify-between">
+          <div class="p-6">
+            <%# Different Headers%>
+            <% if current_page?(programs_path) %> 
+              <h2 class="mb-2 text-xl font-medium leading-tight text-neutral-800 ">
+                Helicopter Pilot Training
+              </h2>
+            <% else %>
+              <h2 class="mb-2 text-xl font-medium leading-tight text-neutral-800 ">
+                Rotary Wing Aircraft
+              </h2>
+            <% end %>
+            <%# limit this paragraph to programs page only %>
+            <% if current_page?(programs_path) %>
+              <p class="mb-4 text-neutral-600 p-text">
+                At Ideal Aviation, we understand that every student has unique needs and aspirations, which is why we offer comprehensive helicopter pilot training programs that are tailored to fit both your schedule and career objectives, regardless of whether you are a beginner or seeking to further your career.
+              </p>
+              <div class="mb-6">
+                <%= link_to "HELICOPTER PILOT TRAINING", helicopter_training_path, class: "btn-primary text-base lg:text-xl" %>
+              </div>
+              <hr class="mb-4">
+            <% end %>
+            <p class="mb-4 text-neutral-600 p-text">
+              Our hangar is home to an impressive fleet of helicopters. Our Guimbal Cabri helicopters are well-maintained and equipped with the latest avionics and safety features, so you can feel confident and secure during your training flights.  Give us a call and visit the Ideal Aviation hangar and see what all the pilots in St. Louis are talking about.
+            </p>
+          </div>
+          <div class="mb-10 ml-5">
+            <%= link_to "ROTARY WING FLEET", rotary_wing_path, class: "btn-primary text-base lg:text-xl" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center ">
+      <div class="block max-w-xl rounded-lg bg-white shadow-lg mx-5 mb-10 h-full">
+        <%= image_tag "airplane_training_program.webp", class: "rounded-t-lg", alt: "Picture of airplane in hangar"%>
+        <div class="flex flex-col justify-between">
+          <div class="p-6">
+            <%# Different Headers%>
+            <% if current_page?(programs_path) %> 
+              <h2 class="mb-2 text-xl font-medium leading-tight text-neutral-800 ">
+                Airplane Pilot Training
+              </h2>
+            <% else %>
+              <h2 class="mb-2 text-xl font-medium leading-tight text-neutral-800 ">
+                Fixed Wing Aircraft
+              </h2>
+            <% end %>
+            <%# limit this paragraph to programs page only %>
+            <% if current_page?(programs_path) %>
+              <p class="mb-4 text-neutral-600 p-text">
+                The Ideal Aviation training facility is home to a modern fleet of fixed-wing aircraft that are well maintained and equipped with advanced avionics and safety features. Our aircraft are regularly serviced and inspected to ensure that they are always in top condition and ready for your next training flight.
+              </p>
+              <div class="mb-6">
+                <%= link_to "AIRPLANE PILOT TRAINING", airplane_training_path, class: "btn-primary text-base lg:text-xl" %>
+              </div>
+              <hr class="mb-4">
+            <% end %>
+            <p class="mb-4 text-neutral-600 p-text">
+              Our extensive aircraft fleet offers a broad selection of models, from the trustworthy and versatile Cessna 172 to the powerful and advanced Piper Seminole.  In addition our fleet also comprises of Piper Pilots, Piper Seminoles, and Tecnam planes that can aid in your skill development and enable you to succeed in pursuing your goals and missions.
+            </p>
+          </div>
+          <div class="mb-10 ml-5">
+            <%= link_to "FIXED WING FLEET", fixed_wing_path, class: "btn-primary text-base lg:text-xl" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

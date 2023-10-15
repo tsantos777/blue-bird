@@ -1,0 +1,8 @@
+<section class="flex flex-col items-center pb-10">
+  <div class="max-w-4xl flex flex-col pt-10 px-5">
+    <h3 class="text-5xl font-header uppercase font-semibold pt-20 pb-5">The SimpliFly Guarantee</h3>
+    <p class="text-lg pb-10">When you complete your <%= link_to "private", private_pilot_path, class: "text-sky-600 hover:underline", data: {turbo: false}%>, <%= link_to "instrument", instrument_path, class: "text-sky-600 hover:underline", data: {turbo: false}%>, <%= link_to "commercial", commercial_path, class: "text-sky-600 hover:underline", data: {turbo: false}%>, and <%= link_to "CFI", cfi_path, class: "text-sky-600 hover:underline", data: {turbo: false}%> training at SimpliFly, we have an exciting opportunity for you. As a testament to our confidence in your abilities, we offer a guaranteed interview for a teaching position as a CFI within our flight school. This exclusive opportunity allows you to showcase the knowledge and skills you have acquired during your training journey with us. Join our team of dedicated instructors, inspire future aviators, and make a meaningful impact in the aviation community. Take the next step in your career as a CFI with SimpliFly and let your passion for aviation soar.</p>
+  </div>
+  <div class="flex gap-5">
+    <%= link_to "APPLY TO BE A CFI", cfi_path,  target: "blank", data: { turbo: false }, class: "btn-primary" %>
+</section>

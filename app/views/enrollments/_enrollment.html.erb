@@ -1,0 +1,67 @@
+<div id="<%= dom_id enrollment %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">First name:</strong>
+    <%= enrollment.first_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Last name:</strong>
+    <%= enrollment.last_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Phone:</strong>
+    <%= enrollment.phone %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Email:</strong>
+    <%= enrollment.email %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Goals:</strong>
+    <%= enrollment.goals %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Location:</strong>
+    <%= enrollment.location %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Previous training:</strong>
+    <%= enrollment.previous_training %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Comments:</strong>
+    <%= enrollment.comments %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Preferred date:</strong>
+    <%= enrollment.preferred_date %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Preferred availability:</strong>
+    <%= enrollment.preferred_availability %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Alternate date:</strong>
+    <%= enrollment.alternate_date %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Alternate availability:</strong>
+    <%= enrollment.alternate_availability %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this enrollment", enrollment, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this enrollment', edit_enrollment_path(enrollment), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

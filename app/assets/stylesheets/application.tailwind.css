@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+
+@layer components {
+  .btn-primary {
+    @apply py-2 px-4 bg-blue-200;
+  }
+}
+
+*/
+
+@layer components {
+  .p-text {
+    @apply font-paragraph text-lg;
+  }
+
+  .btn-primary {
+    @apply font-sans font-semibold bg-red-900 border-red-900 hover:bg-red-800 hover:border-red-800 border-2 hover:scale-105 text-xl lg:text-2xl transition-all duration-300 text-white rounded-lg text-center py-2 px-5;
+  }
+  .btn-secondary {
+    @apply font-sans font-semibold bg-white border-sky-500 border-2 hover:scale-105 text-xl lg:text-2xl transition-all duration-300 text-sky-500 rounded-lg text-center py-2 px-5;
+  }
+}
+
+@layer base {
+  .no-tailwindcss-base h1, .no-tailwindcss-base h2, .no-tailwindcss-base h3, 
+.no-tailwindcss-base h4, .no-tailwindcss-base h5, .no-tailwindcss-base h6 {
+    font-size: revert;
+    font-weight: revert;
+ }
+  .no-tailwindcss-base ol, .no-tailwindcss-base ul {
+    list-style: revert;
+    margin: revert;
+    padding: revert;
+ }
+ .no-tailwindcss-base a {
+  @apply text-blue-700 underline;
+ }
+}

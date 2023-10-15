@@ -1,0 +1,58 @@
+<%# Head / Meta Data %>
+<% title("SimpliFly Pilot Prgrams") %>
+<% meta_description("Simplifly offers a range of pilot programs in Mesa, Phoenix, Scottsdale, and Spanish Fork, Salt Lake. Explore our customized programs for aspiring pilots at different stages of their aviation journey. Many of our students come from Gilbert, Chandler, Tempe, Scottsdale, Apache Junction, Queen Creek, Fountain Hills, Gold Canyon, Maricopa, Pinal, Springville, Provo, Payson, Mapleton, Salem, Elk Ridge, Utah County, Juab County") %>
+<% meta_keywords("Pilot Programs, Flight Training Programs, Mesa Flight School, Phoenix Flight School, Scottsdale Flight School, Spanish Fork Flight School, Salt Lake Flight School, Customized Pilot Training") %>
+
+<%= render "shared/header"%>
+
+<header class="bg-gradient-to-b from-slate-50 to-blue-100">
+  <div class="flex flex-col lg:flex-row">
+    <div class="flex flex-col items-center lg:w-1/2">
+      <h1 class="font-bold text-5xl pt-10 text-center">Pilot Training Programs</h1>
+      <h2 class="font-semibold text-xl italic pt-5 pb-3 px-10 text-center">Pilot training courses to help you reach your goals</h2>
+      <p class="p-text w-3/4 pb-5">
+        Ideal Aviation is the place to become a pilot in St. Louis, MO.  Offering training in both helicopters and airplanes, we can help you get your private pilot certificate and more.
+      </p>
+      <div class="flex flex-col px-5 gap-3">
+        <div class="flex flex-row ">
+          <div class="text-green-500 pr-2 font-extrabold">✓</div>
+          <h3 class="lg:px-10 pl-4 p-text text-left">Professional, safe, friendly instructors</h3>
+        </div>
+        <div class="flex flex-row ">
+          <div class="text-green-500 pr-2 font-extrabold">✓</div>
+          <h3 class="lg:px-10 pl-4 p-text text-left">Aircraft availability and large fleet</h3>
+        </div>
+        <div class="flex flex-row ">
+          <div class="text-green-500 pr-2 font-extrabold">✓</div>
+          <h3 class="lg:px-10 pl-4 p-text text-left">Modern and well maintained aircraft</h3>
+        </div>
+        <div class="flex flex-row ">
+          <div class="text-green-500 pr-2 font-extrabold">✓</div>
+          <h3 class="lg:px-10 pl-4 p-text text-left">Private classrooms and tailored lessons</h3>
+        </div>
+        <div class="flex flex-row ">
+          <div class="text-green-500 pr-2 font-extrabold">✓</div>
+          <h3 class="lg:px-10 pl-4 p-text text-left">Part 61 and part 141 FAA approved training center</h3>
+        </div>
+      </div>
+      <%= link_to "SEND US A MESSAGE", contact_path, data: { turbo: false }, class: "btn-primary my-3" %>
+    </div>
+    <div class="flex flex-col items-center lg:w-1/2">
+      <%= image_tag "thumbs_up.webp", alt: "Pilot giving the thumbs up by a cessna 172", class: "lg:w-4/5"%>
+    </div>
+  </div>
+</header>
+
+<%= render "shared/cta_discovery_flight_left"%>
+
+<%= render "shared/helicopter_airplane_fleet"%>
+
+<%= render "shared/pilot_programs"%>
+<%= render "shared/testimonials"%>
+<%= render "shared/cta_fly_with"%>
+<%= render "shared/cta_book"%>
+<%= render "shared/cta_next_steps"%>
+<%= render "shared/footer"%>
+
+<!--Sticky div-->
+</div>

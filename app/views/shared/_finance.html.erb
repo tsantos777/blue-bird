@@ -1,0 +1,28 @@
+<div class="flex flex-col items-center">
+  <div class="pt-10">
+    <h2 class="text-xl font-semibold italic text-center px-16">SimpliFly has partnered with the following companies to help our students fund their pilot training</h2>
+  </div>
+  <div class="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-20 px-20 md:px-48  lg:px-5 pt-10 pb-20 lg:py-10">
+    <!--STRATUS-->
+    <%= link_to stratus_path, class: "lg:w-1/5" do %>
+      <%= image_tag "stratus_logo.webp", alt: "Stratus Financial logo", class: "hover:scale-105 transition-all duration-300"%>
+    <%end%>
+    
+    <!--Meritize-->
+    <%= link_to meritize_path, class: "lg:w-1/6" do %>
+      <%= image_tag "meritize.webp", alt: "Meritize logo", class: "hover:scale-105 transition-all duration-300"%>
+    <%end%>
+    
+    <!--Flight training finance-->
+    <%= link_to "https://www.flighttrainingfinancellc.com", class: "lg:w-1/5", target: :blank do %>
+      <%= image_tag "flight-training-finance.webp", alt: "Flight Training Finance logo", class: "hover:scale-105 transition-all duration-300 rounded-xl"%>
+    <%end%>
+    <!--AOPA-->
+    <%= link_to "https://finance.aopa.org", class: "", target: :blank do %>
+      <%= image_tag "aopa.webp", alt: "AOPA logo", class: "hover:scale-105 transition-all duration-300"%>
+    <%end%>
+  </div>
+</div>
+<div class="py-10 w-full grid place-items-center">
+  <%= link_to "VIEW FINANCING", financing_path, data: { turbo: false }, class: "btn-primary" %>
+</div>

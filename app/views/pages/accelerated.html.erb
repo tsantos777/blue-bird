@@ -1,0 +1,91 @@
+<%# Head / Meta Data %>
+<% title("Accelerated Pilot Training | SimpliFly Flight School") %>
+<% meta_description("Simplifly offers accelerated Pilot Training Programs.  Go from Zero to Hero (PPL to CFII) in a year. Our flight schools are in Mesa, AZ and Spanish Fork, UT.  Many of our students come from Gilbert, Chandler, Tempe, Scottsdale, Apache Junction, Queen Creek, Fountain Hills, Gold Canyon, Maricopa, Pinal, Springville, Provo, Payson, Mapleton, Salem, Elk Ridge, Utah County, Juab County") %>
+<% meta_keywords("Accelerated Pilot Training, Fast Track Pilot Training, Mesa Flight School, Phoenix Flight School, Scottsdale Flight School, Spanish Fork Flight School, Salt Lake Flight School") %>
+
+<%= render "shared/header"%>
+<header class="bg-gradient-to-b from-slate-50 to-blue-100">
+  <div class="flex flex-col lg:flex-row-reverse lg:items-center">
+    <div class="flex flex-col items-center lg:w-1/2">
+      <h1 class="font-bold text-5xl font-header uppercase pt-10 text-center">Accelerated Pilot Training</h1>
+      <h2 class="font-semibold text-xl italic pt-5 pb-3 px-10 lg:max-w-lg text-center">Full time pilot training to get your certificate and ratings done as quick as possible</h2>
+      <p class="p-text w-3/4 pb-5">
+        SimpliFly makes becoming a pilot simple.  SimpliFly's accelerated pilot programs are designed specifically for individuals like you who are eager to take to the skies and accelerate their training journey.
+      </p>
+      <div class="flex flex-col px-5 gap-3 pb-5">
+        <div class="flex flex-row ">
+          <div class="text-sky-500 pr-2 font-extrabold">✈</div>
+          <h3 class="lg:px-10 pl-4 p-text text-left">Intensive focus, rapid progress</h3>
+        </div>
+        <div class="flex flex-row ">
+          <div class="text-sky-500 pr-2 font-extrabold">✈</div>
+          <h3 class="lg:px-10 pl-4 p-text text-left">Experienced instructors, exceptional guidance</h3>
+        </div>
+        <div class="flex flex-row ">
+          <div class="text-sky-500 pr-2 font-extrabold">✈</div>
+          <h3 class="lg:px-10 pl-4 p-text text-left">Efficient progression, optimal results</h3>
+        </div>
+        <div class="flex flex-row ">
+          <div class="text-sky-500 pr-2 font-extrabold">✈</div>
+          <h3 class="lg:px-10 pl-4 p-text text-left">Your pathway to an aviation career</h3>
+        </div>
+      </div>
+      <%= link_to "ENROLL TODAY", enroll_path,  target: "blank", data: { turbo: false }, class: "btn-primary mt-3 mb-10" %>
+    </div>
+    <div class="flex flex-col items-center lg:w-1/2">
+      <div class="lg:px-10">
+        <%= image_tag "ally-cfi.webp", alt: "SimpliFly CFI", class: "object-contain lg:rounded-2xl"%>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="flex flex-col items-center pb-10">
+  <div class="max-w-4xl flex flex-col pt-10 px-5">
+    <h3 class="text-5xl font-header uppercase font-semibold">How It Works</h3>
+    <h4 class="text-3xl text-slate-600 italic py-5">Find out how to enroll in our accelerated program</h4>
+    <p class="text-lg">The first thing we recommend is to do a discovery flight. Your discovery flight is designed to give you a taste of what it's like to be a pilot. You'll spend approximately 60 minutes in the air with one of our certified flight instructors, who will guide you through the basics of flying and answer any questions you may have. You'll also have the opportunity to take the controls and experience the thrill of flying first hand.</p>
+    <div class="pt-10 flex">
+      <%= link_to "BOOK DISCOVERY FLIGHT", discovery_flight_path,  target: "blank", data: { turbo: false }, class: "btn-primary my-3" %>
+    </div>
+    
+    <h3 class="text-5xl font-header uppercase font-semibold pt-20">After the Discovery Flight</h3>
+    <h4 class="text-3xl text-slate-600 italic py-5">Enroll at SimpliFly and start training</h4>
+    <p class="text-lg">Our team will pair you with a certified flight instructor (CFI) who will work with you to create a personalized plan with your goals in mind. You will train full time and work on getting your pilot certificate and ratings.  Below are the certificate and ratings you can expect to receive upon successful completion of our accelerated pilot training program.</p>
+  </div>
+</section>
+
+<%= render "shared/pilot_programs"%>
+
+<section class="bg-gradient-to-t lg:bg-gradient-to-l from-sky-800 to-slate-900 text-white">
+  <div class="flex flex-col lg:flex-row-reverse lg:items-center pt-10 lg:py-10">
+    <!--Text Section-->
+    <div class="lg:w-1/2 flex flex-col justify-center items-center pb-10">
+      <h2 class="font-bold text-3xl lg:text-4xl pt-5 text-center mx-10">Enroll Today and Start Flying</h2>
+      <p class="w-5/6 lg:w-4/5 pt-5 text-left lg:text-left text-lg lg:text-base p-text">
+      At SimpliFly, we take pride in the success stories of our graduates who have embarked on remarkable career journeys after obtaining their necessary flight hours with us. Numerous individuals have transitioned from our flight training program to prestigious positions within the airline industry or other exciting aviation career opportunities. This could be you!
+      </p>
+      <p class="w-5/6 lg:w-4/5 pt-5 text-left lg:text-left text-lg lg:text-base p-text">
+      Start your training today at SimpliFly and take the first step towards building seniority within the airlines.  Get there quicker and start training today with our accelerated pilot training program.
+      </p>
+      <div class="flex gap-5 my-10">
+        <%= link_to "ENROLL NOW", enroll_path,  target: "blank", data: { turbo: false }, class: "btn-primary" %>
+        <%= link_to "VIEW TIMELINE", timeline_path, data: { turbo: false }, class: "btn-secondary border-0" %>
+      </div>
+    </div>
+    <div class="lg:w-1/2">
+      <div class="grid place-items-center lg:mx-10">
+        <%= image_tag "landon-certificate.webp" , alt: "A SimpliFly pilot passing a checkride", class: "lg:rounded-2xl"%>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= render "shared/guarantee"%>
+
+<%= render "shared/cost"%>
+<%= render "shared/finance"%>
+<%= render "shared/cta_fly_with"%>
+<%= render "shared/cta_next_steps"%>
+<%= render "shared/footer"%>

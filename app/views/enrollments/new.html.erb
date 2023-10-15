@@ -1,0 +1,83 @@
+<%# Head / Meta Data %>
+<% title("Enroll to be a Pilot at SimpliFly") %>
+<% meta_description("Enroll at Simplifly, the leading flight school in Mesa, Phoenix, Scottsdale, and Spanish Fork, Salt Lake. Start your pilot training with us and embark on an exciting career in aviation.") %>
+<% meta_keywords("Enroll at Simplifly, Flight School Enrollment, Mesa Flight School, Phoenix Flight School, Scottsdale Flight School, Spanish Fork Flight School, Salt Lake Flight School") %>
+
+<header class="w-full bg-behind h-screen lg:h-screen bg-cover bg-center flex flex-col justify-between items-center">
+  <div class="px-5 py-40 lg:py-52 flex flex-col justify-center items-start w-full h-full">
+      <h1 class="font-semibold text-5xl text-center lg:text-start font-header uppercase">Are you ready to become a pilot?</h1>
+      <h2 class="font-bold text-4xl text-center lg:text-start py-10 ">Fill out an application to enroll at SimpliFly</h2>
+      <div class="w-full flex flex-col items-center lg:hidden">
+        <a href="#quiz-frame", class="btn-primary"
+        onclick="event.preventDefault(); document.getElementById('quiz-frame').scrollIntoView({ behavior: 'smooth' });">
+          START NOW
+        </a>
+      </div>
+  </div>
+
+  
+
+  <div class="hidden lg:block lg:fixed  right-5 top-10 z-50 bg-white rounded-xl border pb-5 overflow-y-auto max-h-[88vh]">
+  <%= render "form", enrollment: @enrollment %>
+  </div>
+</header>
+
+<section class="flex flex-col items-start bg-gradient-to-b from-sky-200 to slate-400">
+  <div class="lg:w-2/3 flex flex-col items-center">
+    <h2 class="font-header uppercase font-semibold text-4xl pt-20 pb-10 text-center">Why Fly at SimpliFly?</h2>
+    <p class="max-w-2xl px-5 pb-10">
+      Your success is our <strong>priority</strong>.  Learning to fly is a transformative experience, and we are dedicated to providing you with the knowledge, skills, and support you need to reach new heights. Whether your goal is to fly for pleasure or pursue a professional career as a pilot, we'll ensure you receive the highest quality training that sets you up for success.
+    </p>
+    <h2 class="font-header uppercase font-semibold text-4xl pb-10 text-center">Programs to Fit Your Schedule</h2>
+    <p class="max-w-2xl px-5 pb-10">
+      Pursuing your passion for flying shouldn't mean sacrificing your other commitments. That's why we offer a range of programs designed to fit seamlessly into your busy schedule. Whether you prefer an accelerated full time training program or a flexible part time option, we have the perfect solution to match your needs.
+    </p>
+    <h2 class="font-header uppercase font-semibold text-4xl pb-10 text-center">Start Your Career</h2>
+    <p class="max-w-2xl px-5 pb-10">
+      Many of our students have completed our pilot training programs and then moved to the airlines.  This is your chance to be a part of the action.  If you're looking to start a career in aviation or even if you want to pursue aviation as a hobby, fill out the form on this page and let's get in touch. 
+    </p>
+
+    <div class="pt-10 flex flex-row gap-3 justify-center">
+      <%= link_to pilot_training_path do %>
+        <div class="btn-secondary mb-10">
+          VIEW PROGRAMS
+        </div>
+      <% end %>
+      <a href="#top", class="hidden lg:block"
+        onclick="event.preventDefault(); document.getElementById('top').scrollIntoView({ behavior: 'smooth' });">
+        <div class="btn-primary mb-10 border-2 border-sky-500 hover:border-sky-600 lg:px-16">
+        FLY NOW
+        </div>
+      </a>
+      <a href="#quiz-frame", class="lg:hidden"
+        onclick="event.preventDefault(); document.getElementById('quiz-frame').scrollIntoView({ behavior: 'smooth' });">
+        <div class="btn-primary mb-10 border-2 border-sky-500 hover:border-sky-600 lg:px-16">
+        FLY NOW
+        </div>
+      </a>
+    </div>
+  </div>
+
+  
+
+
+</section>
+
+<!--desktop-->
+  <div class="hidden lg:block w-full px-4 bg-white opacity-50">
+    <%= render "shared/bottom_footer"%>
+  </div>
+
+<!--Mobile // use turbo frame to keep view in place-->
+<turbo-frame id="quiz-frame">
+  <div class="lg:hidden right-5 top-10 z-50 bg-white pb-5 overflow-y-auto">
+    <%= render "form", enrollment: @enrollment %>
+  </div>
+</turbo-frame>
+
+
+
+
+<div class="lg:hidden w-full bg-ideal-blue-darker pt-16 pb-5 pl-5">
+  <%= render "shared/bottom_footer"%>
+</div>

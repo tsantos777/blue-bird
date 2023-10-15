@@ -1,0 +1,96 @@
+<%= render "shared/header"%>
+
+<header class="w-full bg-sunset bg-cover h-screen-3/4 lg:h-screen-4/5 bg-center flex justify-center items-center text-white">
+  <div class="px-5 py-40 lg:py-52 flex flex-col justify-center items-center w-full">
+      <h1 class="font-bold text-5xl text-center">Rotary Wing Aircraft</h1>
+      <h2 class="font-bold text-4xl text-center py-10">Fly a helicopter today at Ideal Aviation</h2>
+      <%= link_to "GET CHECKED OUT NOW", rental_checkout_path, data: { turbo: false }, class: "btn-primary" %>
+  </div>
+</header>
+
+<section class="flex flex-col lg:flex-row-reverse pt-10 pb-0 lg:py-10">
+  <div class="flex flex-col items-center lg:w-1/2 p-text">
+    <h3 class="text-3xl font-semibold pb-10 font-sans mx-5 text-center">The Guimbal Cabri</h3>
+    <p class="w-3/4 pb-5">
+      As the only flight school in St. Louis to offer the Guimbal Cabri helicopter, Ideal Aviation provides a unique and exceptional training experience. The Cabri is a modern and reliable helicopter that is designed for training purposes. With its advanced safety features, including a rigid main rotor system and a crash-resistant fuel system, the Cabri is the safest helicopter in its class.
+    </p>
+    <p class="w-3/4 pb-10">
+      The Cabri's spacious cabin, comfortable seats, and excellent visibility provide an optimal learning environment for pilots of all skill levels. Whether you are a beginner or an experienced pilot, our Cabri helicopter will allow you to master the art of helicopter flight in a safe and controlled setting. With its advanced technology and exceptional safety features, the Guimbal Cabri is the perfect helicopter for flight training, and Ideal Aviation is proud to offer this exceptional aircraft to our students.
+    </p>
+    <%= link_to "FLY THE GUIMBAL CABRI", rental_checkout_path, data: { turbo: false }, class: "btn-primary mb-10" %>
+  </div>
+  <div class="flex flex-col items-center lg:w-1/2">
+    <!--Slider--->
+    <div x-data="{
+      slide: 0,
+      images: [
+        '<%= image_url "cabri1.webp" %>',
+        '<%= image_url "cabri2.webp" %>',
+        '<%= image_url "cabri3.webp" %>'
+      ],
+      autoplay: null,
+      startAutoplay() {
+        this.autoplay = setInterval(() => {
+          this.nextSlide();
+        }, 10000);  //timer
+      },
+      stopAutoplay() {
+        clearInterval(this.autoplay);
+        this.autoplay = null;
+      },
+      nextSlide() {
+        this.slide = (this.slide + 1) % this.images.length;
+      },
+      prevSlide() {
+        this.slide = this.slide - 1 < 0 ? this.images.length - 1 : this.slide - 1;
+      }
+    }" x-init="startAutoplay()" id="slider" class="w-full lg:w-3/4">
+      <div x-show="images.length > 1" class="relative">
+    <template x-for="(image, index) in images" :key="index">
+      <img x-show="slide === index" :src="image" :alt="'Modern Tecnam Airplane ' + (index + 1)" class="w-full"
+        x-transition:enter="opacity-0 duration-500" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+        x-transition:leave="opacity-100 duration-500" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+        :class="{'hidden': index !== slide}" x-init="setTimeout(() => { $el.classList.remove('hidden'); }, 100)">
+    </template>
+
+        <button x-show="images.length > 1" x-on:mouseover="stopAutoplay()" x-on:mouseleave="startAutoplay()" x-on:click="prevSlide()" class="absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 rounded-md text-white bg-ideal-blue hover:bg-ideal-blue-light focus:outline-none focus:shadow-outline-gray transition duration-150 ease-in-out mx-3">
+          <span class="sr-only">Previous</span>
+          <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button x-show="images.length > 1" x-on:mouseover="stopAutoplay()" x-on:mouseleave="startAutoplay()" x-on:click="nextSlide()" class="absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 rounded-md text-white bg-ideal-blue hover:bg-ideal-blue-light focus:outline-none focus:shadow-outline-gray transition duration-150 ease-in-out mx-3">
+          <span class="sr-only">Next</span>
+          <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+        <div class="absolute bottom-0 left-0 w-full flex justify-center space-x-2 pb-2">
+          <template x-for="(image, index) in images" :key="index">
+            <button x-on:click="slide = index" :class="{'bg-ideal-blue': index === slide, 'bg-slate-50': index !== slide}" class="h-2 w-2 rounded-full"></button>
+          </template>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="flex flex-col lg:flex-row pt-10 pb-0 lg:py-10">
+  <div class="flex flex-col items-center lg:w-1/2 p-text">
+    <h3 class="text-3xl font-semibold pb-10 font-sans mx-5 text-center">Elite Simulator</h3>
+    <p class="w-3/4 pb-5">
+      The Elite Helicopter Simulator is a state of the art training device that provides pilots with a highly realistic and immersive training experience. With its advanced motion platform, high resolution visual system, and realistic flight controls, the simulator offers a true to life simulation of helicopter flight.
+    </p>
+    <p class="w-3/4 pb-10">
+      The simulator's customizable scenarios and weather conditions allow pilots to practice a wide range of flight maneuvers and emergency procedures, making it a valuable tool for pilots of all levels. Whether you're a new pilot looking to build your skills or an experienced pilot looking to maintain your proficiency, the Elite Simulator is the perfect training tool to help you achieve your goals.
+    </p>
+    <%= link_to "FLY ELITE SIMULATOR", rental_checkout_path, data: { turbo: false }, class: "btn-primary mb-10" %>
+  </div>
+  <div class="flex flex-col items-center lg:w-1/2">
+    <%= image_tag "elite.webp", alt: "Elite Helicopter simulator training", class: "lg:w-3/4"%>
+  </div>
+</section>
+
+<%= render "shared/cta_arch"%>
+<%= render "shared/cta_next_steps"%>
+<%= render "shared/footer"%>

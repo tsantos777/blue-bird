@@ -1,0 +1,101 @@
+<section class="bg-gradient-to-r from-sky-100 to-blue-50 md:px-16">
+  <% if current_page?(accelerated_path) || current_page?(flexible_path)%>
+  <div class="pt-10"></div>
+  <% else%>
+  <h2 class="text-3xl font-semibold py-10 font-sans text-center px-5">Pilot Training Courses</h2>
+
+  <div class="flex flex-col items-center">
+    <p class="lg:w-1/2 lg:mx-16 mx-5 items-center p-text mb-10">
+      At SimpliFly, we are committed to providing the highest quality training programs for our students. Our team is here ensure that you receive the best possible training. Contact us today to learn more about our pilot training programs and take the first step towards achieving your aviation career goals!
+    </p>
+  </div>
+  <%end%>
+
+  <div class="min-h-screen flex items-center justify-center">
+    <div class="flex flex-col md:grid grid-cols-9 mx-auto p-2">
+      <div class="flex flex-row-reverse md:contents">
+        <div class="w-full col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto bg-sky-200">
+          <h3 class="font-semibold text-xl mb-1 ">Private Pilot Certificate</h3>
+          <p class="text-slate-800 p-text pb-5">Embark on your aviation journey with a private pilot certificate, the first stepping stone for aspiring pilots. This certification allows you to operate an aircraft for non-commercial purposes. Our experienced instructors are committed to providing thorough guidance, ensuring you master the fundamental skills of flight. Learn to confidently take off, land, and navigate the skies with the support of our knowledgeable team.</p>
+          <%= link_to "PRIVATE PILOT TRAINING", private_pilot_path, data: { turbo: false }, class: "btn-primary bg-sky-500 hover:bg-sky-600 text-base" %>
+        </div>
+
+        <div class="col-start-5 col-end-6 md:mx-auto hidden md:block relative mr-10">
+          <div class="h-full w-6 flex items-center justify-center">
+            <div class="h-full w-0.5 bg-sky-300 pointer-events-none"></div>
+          </div>
+
+          <div class="w-6 h-6 absolute top-1/2 -mt-3 border-2 border-ideal-blue rounded-full bg-sky-300 shadow"></div>
+        </div>
+      </div>
+
+      <div class="flex md:contents">
+        <div class="col-start-5 col-end-6 mr-10 md:mx-auto hidden md:block relative">
+          <div class="h-full w-6 flex items-center justify-center">
+            <div class="h-full w-0.5 bg-sky-300 pointer-events-none"></div>
+          </div>
+
+          <div class="w-6 h-6 absolute top-1/2 -mt-3 border-2 border-ideal-blue rounded-full bg-sky-300 shadow"></div>
+        </div>
+
+        <div class="w-full col-start-6 col-end-10 my-4 mr-auto p-4 bg-sky-200 rounded-xl">
+          <h3 class="font-semibold text-xl mb-1 ">Instrument Rating</h3>
+          <p class="text-slate-800 p-text pb-5">The Instrument Rating empowers you with the expertise and abilities to navigate through low visibility and challenging weather conditions, relying solely on your aircraft's instruments. This rating unlocks a multitude of opportunities, enhancing your safety and proficiency as a pilot.</p>
+          <%= link_to "INSTRUMENT TRAINING", instrument_path, data: { turbo: false }, class: "btn-primary bg-sky-500 hover:bg-sky-600 text-base" %>
+        </div>
+      </div>
+
+      <div class="flex flex-row-reverse md:contents">
+        <div class="w-full col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto bg-sky-200">
+          <h3 class="font-semibold text-xl mb-1 ">Commercial Pilot Certificate</h3>
+          <p class="text-slate-800 p-text pb-5">A commercial certificate grants you the privilege to fly for compensation or hire. With the guidance of our seasoned instructors, you'll acquire the mastery of operating advanced aircraft, encompassing advanced maneuvers and emergency procedures. Rest assured, you will be thoroughly prepared and equipped to overcome any challenges in your aviation career.</p>
+          <%= link_to "COMMERCIAL TRAINING", commercial_path, data: { turbo: false }, class: "btn-primary bg-sky-500 hover:bg-sky-600 text-base" %>
+        </div>
+
+        <div class="col-start-5 col-end-6 md:mx-auto hidden md:block relative mr-10">
+          <div class="h-full w-6 flex items-center justify-center">
+            <div class="h-full w-0.5 bg-sky-300 pointer-events-none"></div>
+          </div>
+
+          <div class="w-6 h-6 absolute top-1/2 -mt-3 border-2 border-ideal-blue rounded-full bg-sky-300 shadow"></div>
+        </div>
+      </div>
+
+      <div class="flex md:contents">
+        <div class="col-start-5 col-end-6 mr-10 md:mx-auto hidden md:block relative">
+          <div class="h-full w-6 flex items-center justify-center">
+            <div class="h-full w-0.5 bg-sky-300 pointer-events-none"></div>
+          </div>
+
+          <div class="w-6 h-6 absolute top-1/2 -mt-3 border-2 border-ideal-blue rounded-full bg-sky-300 shadow"></div>
+        </div>
+
+        <div class="w-full col-start-6 col-end-10 my-4 mr-auto p-4 bg-sky-200 rounded-xl">
+          <h3 class="font-semibold text-xl mb-1 ">Multi Engine</h3>
+          <p class="text-slate-800 p-text pb-5">A multi engine rating allows you to to handle complex aircraft with multiple engines. You will learn advanced systems and procedures including engine management, emergency protocols, and more. Our advanced training program will empower you with the skills and confidence to effortlessly pilot multi-engine aircraft.</p>
+          <%= link_to "MULTI ENGINE TRAINING", multi_path, data: { turbo: false }, class: "btn-primary bg-sky-500 hover:bg-sky-600 text-base" %>
+        </div>
+      </div>
+
+      <div class="flex flex-row-reverse md:contents">
+        <div class="w-full col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto bg-sky-200">
+          <h3 class="font-semibold text-xl mb-1 ">Certified Flight Instructor (CFI)</h3>
+          <p class="text-slate-800 p-text pb-5">Share your expertise and proficiency with aspiring pilots, while accumulating valuable flight hours and experience.  Once you get your CFI at SimpliFly, we offer guaranteed interviews to instruct at SimpliFly.  Build you hours here and then qualify to go to the airlines.</p>
+          <%= link_to "CFI TRAINING", cfi_path, data: { turbo: false }, class: "btn-primary bg-sky-500 hover:bg-sky-600 text-base" %>
+        </div>
+
+        <div class="col-start-5 col-end-6 md:mx-auto hidden md:block relative mr-10">
+          <div class="h-full w-6 flex items-center justify-center">
+            <div class="h-full w-0.5 bg-sky-300 pointer-events-none"></div>
+          </div>
+
+          <div class="w-6 h-6 absolute top-1/2 -mt-3 border-2 border-ideal-blue rounded-full bg-sky-300 shadow"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% if current_page?(accelerated_path) || current_page?(flexible_path)%>
+  <div class="pt-10"></div>
+  <% else%>
+  <%end%>
+</section>

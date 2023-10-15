@@ -1,0 +1,93 @@
+<div id="<%= dom_id quiz_result %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">First name:</strong>
+    <%= quiz_result.first_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Last name:</strong>
+    <%= quiz_result.last_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Email:</strong>
+    <%= quiz_result.email %>
+  </p>
+
+<p class="my-5">
+    <strong class="block font-medium mb-1">Phone:</strong>
+    <%= quiz_result.phone %>
+  </p>
+
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Program:</strong>
+    <%= quiz_result.program %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Why pilot:</strong>
+    <%= quiz_result.why_pilot %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Previous training:</strong>
+    <%= quiz_result.previous_training %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Wings lift:</strong>
+    <%= quiz_result.wings_lift %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Goals:</strong>
+    <%= quiz_result.goals %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Preferred date:</strong>
+    <%= quiz_result.preferred_date %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Preferred availability:</strong>
+    <%= quiz_result.preferred_availability %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Alternate date:</strong>
+    <%= quiz_result.alternate_date %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Alternate availability:</strong>
+    <%= quiz_result.alternate_availability %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Comments:</strong>
+    <%= quiz_result.comments %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Learning Style:</strong>
+    <%= quiz_result.learn_style %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Structure:</strong>
+    <%= quiz_result.structure %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Guidance:</strong>
+    <%= quiz_result.guidance %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this quiz result", quiz_result, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this quiz result', edit_quiz_result_path(quiz_result), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

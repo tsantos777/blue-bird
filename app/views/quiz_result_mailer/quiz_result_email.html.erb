@@ -1,0 +1,59 @@
+<p>Dear <%=@quiz_result.first_name%>, 
+
+<p>Thank you for taking our quiz on our website. We hope you found it fun and informative.  We'll reach out to your shortly to discuss your answers.</p>
+
+<p>At Ideal Aviation, we are committed to providing the best possible aviation education and training. We offer a variety of programs and courses designed to meet the needs of both aspiring pilots and experienced aviators.</p>
+
+<p>If you haven't taken a discovery flight yet, we reccomend giving it a try and see if becoming a pilot is right for you.</p>
+
+<p>If you are interested in pursuing a career as a pilot, we offer comprehensive training programs that will help you achieve your goals. Our programs cover everything from private pilot certification to advanced training in commercial aviation.</p>
+
+<p>Whatever your goals may be, we are confident that we can help you achieve them. If you have any questions about our programs, please don't hesitate to contact us.</p>
+
+<p>
+The team at Ideal Aviation<br>
+1-618-350-4408<br>
+info@idealaviationstl.com<br>
+</p>
+<br>
+<br>
+  -------- Your Form Submission Details --------
+<br>
+<br>
+First Name: <%=@quiz_result.first_name%><br>
+Last Name: <%=@quiz_result.last_name%><br>
+Phone: <%=@quiz_result.phone%><br>
+Email: <%=@quiz_result.email%><br>
+<br>
+<br>
+What type of training are you interested in:  <%=@quiz_result.program%>
+<br>
+<br>
+Why do you want to become a pilot: <%=@quiz_result.why_pilot%>
+<br>
+<br>
+What are your aviation goals: <%=@quiz_result.goals%>
+<br>
+<br>
+Do you have any previous training: <%=@quiz_result.previous_training%>
+<br>
+<br>
+How do you learn best: <%=@quiz_result.learn_style%>
+<br>
+<br>
+Do you prefer to have a lot of structure and clear expectations, or do you prefer a more flexible approach: <%=@quiz_result.structure%>
+<br>
+<br>
+What kind of guidance and support would you prefer from your flight instructor: <%=@quiz_result.guidance%>
+<br>
+<br>
+Do you know how a wing generates lift: <%=@quiz_result.wings_lift%>
+<br>
+<br>
+Anything else you'd like us to know: <%=@quiz_result.comments%>
+<br>
+<br>
+Selected Date: <%=@quiz_result.preferred_date%><br>
+Selected Time: <%=@quiz_result.preferred_availability%><br>
+Alternate Date: <%=@quiz_result.alternate_date%><br>
+Alternate Time: <%=@quiz_result.alternate_availability%><br>

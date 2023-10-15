@@ -1,0 +1,86 @@
+<section class="bg-gradient-to-t from-slate-50 to-blue-100 py-10">
+  <h2 class="text-3xl font-semibold pb-10 font-sans mx-5 text-center">What happens after the discovery flight?</h2>
+  <div class=" max-w-2xl mx-5 lg:mx-auto p-text pb-12">
+    So, you've completed your discovery flight and are ready to take the next step? Ideal Aviation is here to help you take flight towards your aviation dreams and attain your goals.  Let's dive into what happens after your first flight with us.  
+  </div>
+
+  <div class="bg-white max-w-xl mx-5 lg:mx-auto border border-gray-200 rounded-2xl mb-10">
+		<ul class="shadow-box">					
+		  <li class="relative border-b border-gray-200" x-data="{selected:null}">
+			  <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 1 ? selected = 1 : selected = null">
+				  <div class="flex items-center justify-between">
+					  <span class="font-semibold text-lg">Work with our team to create a plan</span>
+					  <span class="ico-plus"></span>
+				  </div>
+        </button>
+			  <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container1" x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+				  <div class="p-6 p-text">
+					  <p>Our team will pair you with a certified flight instructor (CFI) who will work with you to create a personalized plan that fits your schedule and goals. Together, you will establish a flight training schedule, review the syllabus, and discuss any questions or concerns you may have.</p>
+				  </div>
+			  </div>
+		  </li>
+		  <li class="relative border-b border-gray-200" x-data="{selected:null}">
+			  <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 2 ? selected = 2 : selected = null">
+				  <div class="flex items-center justify-between">
+					  <span class="font-semibold text-lg">Take care of the prerequisites</span>
+					  <span class="ico-plus"></span>
+				  </div>
+				</button>
+			  <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container2" x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
+				  <div class="p-6 p-text">
+					  <p>Before you can start your flight training, you will need to complete a medical exam, purchase your books, and work on completing your ground school and written exam. Our team will be with you every step of the way to ensure you have everything you need to succeed.</p>
+				  </div>
+			  </div>
+		  </li>
+      <li class="relative border-b border-gray-200" x-data="{selected:null}">
+			  <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 3 ? selected = 3 : selected = null">
+				  <div class="flex items-center justify-between">
+					  <span class="font-semibold text-lg">Start flight training and ground school</span>
+					  <span class="ico-plus"></span>
+				  </div>
+				</button>
+			  <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container3" x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
+				  <div class="p-6 p-text">
+					  <p>Once you have completed your prerequisites, it's time to start building your flight hours and experience. You will work with your CFI to complete flight lessons and ground school, mastering the skills needed to become a proficient pilot.</p>
+				  </div>
+			  </div>
+		  </li>
+      <li class="relative border-b border-gray-200" x-data="{selected:null}">
+			  <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 4 ? selected = 4 : selected = null">
+				  <div class="flex items-center justify-between">
+					  <span class="font-semibold text-lg">Pass your checkride</span>
+					  <span class="ico-plus"></span>
+				  </div>
+				</button>
+			  <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container4" x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''">
+				  <div class="p-6 p-text">
+					  <p>As you near the end of your flight training, you will work with your CFI to prepare for your check ride. Our team will ensure that you are well-prepared and confident.  We'll have stage checks along the way so you can successfully pass your check ride and earn your pilot's license.</p>
+				  </div>
+			  </div>
+		  </li>
+      <li class="relative " x-data="{selected:null}">
+        <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 5 ? selected = 5 : selected = null">
+          <div class="flex items-center justify-between">
+            <span class="font-semibold text-lg">Enjoy flying and continue your aviation journey</span>
+            <span class="ico-plus"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container5" x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''">
+          <div class="p-6 p-text">
+            <p>Congratulations, you are now a certified pilot! Your aviation journey doesn't have to end here though. Our team can help you continue to improve your skills and earn additional ratings, such as an instrument rating or commercial certificate. Whether you want to fly for fun or pursue a career in aviation, we are here to support you every step of the way.</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+	</div>
+
+  <div class=" max-w-2xl mx-5 lg:mx-auto p-text pb-10 flex flex-col items-center">
+    At Ideal Aviation, we are passionate about aviation and sharing the joy of flying with others. Don't procrastinate. Contact us today to get started on your aviation journey.
+      <%=link_to contact_path, data: { turbo: false }, class: "mx-auto" do%>
+        <div class="btn-primary mt-5">
+          CONTACT US
+        </div>
+      <% end %>
+  </div>
+
+</section>

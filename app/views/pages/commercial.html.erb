@@ -1,0 +1,77 @@
+<%# Head / Meta Data %>
+<% title("Commercial Pilot Training | SimpliFly Flight School") %>
+<% meta_description("Simplifly provides comprehensive commercial pilot training in Mesa, AZ and Spanish Fork, UT.  Prepare for a rewarding career in aviation with our professional training programs. Enroll with us now.  Many of our students come from Gilbert, Chandler, Tempe, Scottsdale, Apache Junction, Queen Creek, Fountain Hills, Gold Canyon, Maricopa, Pinal, Springville, Provo, Payson, Mapleton, Salem, Elk Ridge, Utah County, Juab County") %>
+<% meta_keywords("Commercial Pilot Training, Mesa Flight School, Phoenix Flight School, Scottsdale Flight School, Spanish Fork Flight School, Salt Lake Flight School, Aviation Career, Professional Pilot Training") %>
+
+<%= render "shared/header"%>
+
+<section class="bg-gradient-to-t lg:bg-gradient-to-l from-sky-800 to-slate-900 text-white">
+  <div class="flex flex-col lg:flex-row-reverse lg:items-center pt-10 lg:py-10">
+    <!--Text Section-->
+    <div class="lg:w-1/2 flex flex-col justify-center items-center pb-10">
+      <p class="text-xl lg:text-3xl text-center">Become a Commercial Pilot at SimpliFly</p>
+      <h2 class="font-bold text-3xl lg:text-5xl pt-5 text-center">Commercial Pilot Certificate</h2>
+      <p class="w-5/6 lg:w-4/5 pt-5 text-left lg:text-left text-lg lg:text-base p-text">
+      After flying for a while, a commercial certificate would be the next step in your aviation journey.  A commercial certificate allows for you to get paid as a pilot and fly for compensation.
+      </p>
+      <p class="w-5/6 lg:w-4/5 pt-5 text-left lg:text-left text-lg lg:text-base p-text">
+      Commercial pilots are paid to fly as a pilot which may include transporting cargo and passengers, as well as perform other operations such as aerial surveying and banner towing. 
+      </p>
+    </div>
+    <div class="lg:w-1/2">
+      <div class="grid place-items-center lg:mx-10">
+        <%= image_tag "simplifly-cfi.webp" , alt: "A SimpliFly commercial pilot", class: "lg:rounded-2xl lg:w-2/3"%>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="bg-gradient-to-b from-slate-50 to-sky-200 flex flex-col items-center">
+  <div class="max-w-4xl flex flex-col pt-10 px-5">
+    <h3 class="text-5xl font-header uppercase font-semibold">Your Commercial Pilot Certificate</h3>
+    <h4 class="text-3xl text-slate-600 italic py-5">Simplifly Offers Accelerated and Flexible Training Options</h4>
+    <p class="text-lg">
+      The first major milestone on the journey to becoming an airline pilot is obtaining your commercial pilot certificate. Building upon the foundation of your private pilot certificate, the commercial pilot certificate opens up new opportunities and privileges in the aviation industry. As a commercially certified pilot, you gain the ability to fly for compensation or hire, paving the way for a professional career in aviation. Our comprehensive flight training program for the commercial pilot certificate focuses on advanced aircraft maneuvers, precision navigation, emergency procedures, and in depth cross country flight planning. While some individuals pursue this certification for personal or recreational reasons, it serves as a crucial step for those aspiring to embark on a fulfilling career as an airline pilot or in other professional pilot job roles.
+    </p>
+    
+    <h3 class="text-5xl font-header uppercase font-semibold pt-20 pb-5">What's the Difference Between Commercial Pilots and Airline Pilots</h3>
+    <p class="text-lg">
+    
+    Airline pilots fly regularly scheduled flights and must have an Airline Transport Pilot Certificate which is the highest pilot license the FAA issues.  However, before earning your ATP, you must get your private, instrument, and commercial certificates first.</p>
+
+    <h3 class="text-5xl font-header uppercase font-semibold pt-20 pb-5">How Long Will it Take?</h3>
+    <p class="text-lg">The amount of time required to earn a commercial pilot certificate varies and largely depends on weather, availability, finances, and how often a student is available to fly. In our accelerated program, a commercial certificate can be earned in approximately six months. If flying only a few times a week, expect to be ready for your checkride after a year.</p>
+
+    <h3 class="text-5xl font-header uppercase font-semibold pt-20 pb-5">What are the Eligibility Requirements?</h3>
+    <ul class="list-disc text-lg pl-10 lg:pl-16">
+      <li>Hold a valid private pilot certificate</li>
+      <li>250 hours total flight time</li>
+      <li>100 hours pilot in command (PIC)</li>
+      <li>50 hours cross country</li>
+      <li>10 hours instrument</li>
+      <li>10 hours in a technically advanced aircraft</li>
+      <li>Receive flight training and a logbook endorsement from an authorized instructor</li>
+      <li>Pass a practical test for the aircraft rating sought</li>
+    </ul>
+    <p class="text-slate-600 italic pt-5">Reference 14 CFR §61.123 for the entire list of eligibility requirements.</p>
+
+    <h3 class="text-5xl font-header uppercase font-semibold pt-20 pb-5">The SimpliFly Guarantee</h3>
+    <p class="text-lg pb-20">If you have completed your <%= link_to "private", private_pilot_path, class: "text-sky-600 hover:underline", data: {turbo: false}%>, <%= link_to "instrument", instrument_path, class: "text-sky-600 hover:underline", data: {turbo: false}%>, commercial, and <%= link_to "CFI", cfi_path, class: "text-sky-600 hover:underline", data: {turbo: false}%> training at SimpliFly, we have an exciting opportunity for you. As a testament to our confidence in your abilities, we offer a guaranteed interview for a teaching position as a CFI within our flight school. This exclusive opportunity allows you to showcase the knowledge and skills you have acquired during your training journey with us. Join our team of dedicated instructors, inspire future aviators, and make a meaningful impact in the aviation community. Take the next step in your career as a CFI with SimpliFly and let your passion for aviation soar.</p>
+  </div>
+</section>
+
+
+
+<%= render "shared/cta_pilot_simple"%>
+<%= render "shared/cta_next_steps"%>
+<%= render "shared/footer"%>
+
+
+
+
+
+<%# Sticky div %>
+</div>

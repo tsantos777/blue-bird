@@ -1,0 +1,242 @@
+<%= form_with(model: checkout, class: "contents") do |form| %>
+
+  <div x-data="{ currentPage: 1 }" class="lg:w-[28rem] px-5">
+    <div class="max-w-sm">
+      <% if checkout.errors.any? %>
+        <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+          <h2><%= pluralize(checkout.errors.count, "mistake") %> need to be fixed</h2>
+
+          <ul>
+            <% checkout.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+    <div x-show="currentPage === 1" class="flex flex-col justify-between">
+      <div class="">
+        <div class="my-5 flex flex-col">
+          <span class="text-slate-700 font-semibold text-lg">First Name</span>
+          <%= form.text_field :first_name, class: "block rounded-md border border-slate-200 outline-none px-3 py-2 mt-2 w-full focus:border-ideal-blue focus:ring-ideal-blue" %>
+        </div>
+
+        <div class="my-5 flex flex-col">
+          <span class="text-slate-700 font-semibold text-lg">Last Name</span>
+          <%= form.text_field :last_name, class: "block rounded-md border border-slate-200 outline-none px-3 py-2 mt-2 w-full focus:border-ideal-blue focus:ring-ideal-blue" %>
+        </div>
+
+        <div class="my-5 flex flex-col">
+          <span class="text-slate-700 font-semibold text-lg">Email</span>
+          <%= form.text_field :email, class: "block rounded-md border border-slate-200 outline-none px-3 py-2 mt-2 w-full focus:border-ideal-blue focus:ring-ideal-blue" %>
+        </div>
+
+        <%= invisible_captcha :confirm_email, :checkout %>
+
+        <div class="my-5 flex flex-col">
+          <span class="text-slate-700 font-semibold text-lg">Phone</span>
+          <%= form.text_field :phone, class: "block rounded-md border border-slate-200 outline-none px-3 py-2 mt-2 w-full focus:border-ideal-blue focus:ring-ideal-blue" %>
+        </div>
+      </div>
+
+      <div class="inline">
+        <input type="button" x-on:click="currentPage = 2" class="btn-primary" value="NEXT">
+      </div>
+    </div>
+
+    <div x-show="currentPage === 2" x-cloak>
+      
+      <div class="my-3" x-data="{ interested_aircraft: '' }">
+        <span class="text-slate-700 text-base font-semibold">Which aircraft are you interested in?</span>
+        <div class="grid grid-cols-2 mt-5 gap-3">
+          <% availability_options = ['Tecnam P92', 'Guimbal Cabri', 'Piper Pilot', 'Cessna 172', 'Piper Seminole', 'Redbird Sim', 'Elite Sim' ] %>
+          <% availability_options.each do |option| %>
+            <label class="">
+              <%= form.radio_button :interested_aircraft, option, { class: "hidden", "data-x-model" => "interested_aircraft" } %>
+              <span class="relative">
+                <span class="inline-flex items-center justify-center text-slate-700 border border-slate-300 rounded-md bg-slate-50 w-5/6" :class="{ 'bg-ideal-blue': interested_aircraft == '<%= option %>' }">
+                  <span class="px-4 py-2 font-sans text-sm text-slate-800" :class="{ 'text-slate-50': interested_aircraft == '<%= option %>' }"><%= option %></span>
+                </span>
+                <span class="absolute top-0 bottom-0 left-0 right-0 cursor-pointer" @click="interested_aircraft = '<%= option %>'"></span>
+              </span>
+            </label>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="my-5" x-data="{ certifications: [], otherCertifications: '' }">
+        <div class="text-slate-700 font-semibold text-base mb-2">What pilot certifications do you hold? (Select all that apply)</div>
+        
+        <div class="flex mb-2">
+          <input type="checkbox" x-model="certifications" value="None, but I want to start flying" class="form-checkbox h-5 w-5 text-ideal-blue focus:ring-0 mt-1">
+          <span class="ml-2 text-slate-700">None, but I want to start flying</span>
+        </div>
+        
+        <div class="flex mb-2">
+          <input type="checkbox" x-model="certifications" value="Student Pilot" class="form-checkbox h-5 w-5 text-ideal-blue focus:ring-0 mt-1">
+          <span class="ml-2 text-slate-700">Student Pilot</span>
+        </div>
+        
+        <div class="flex mb-2">
+          <input type="checkbox" x-model="certifications" value="Private Pilot" class="form-checkbox h-5 w-5 text-ideal-blue focus:ring-0 mt-1">
+          <span class="ml-2 text-slate-700">Private Pilot</span>
+        </div>
+
+        <div class="flex mb-2">
+          <input type="checkbox" x-model="certifications" value="Instrument" class="form-checkbox h-5 w-5 text-ideal-blue focus:ring-0 mt-1">
+          <span class="ml-2 text-slate-700">Instrument </span>
+        </div>
+
+        <div class="flex mb-2">
+          <input type="checkbox" x-model="certifications" value="Multi-Engine" class="form-checkbox h-5 w-5 text-ideal-blue focus:ring-0 mt-1">
+          <span class="ml-2 text-slate-700">Multi-Engine </span>
+        </div>
+
+        <div class="flex mb-2">
+          <input type="checkbox" x-model="certifications" value="Commercial" class="form-checkbox h-5 w-5 text-ideal-blue focus:ring-0 mt-1">
+          <span class="ml-2 text-slate-700">Commercial </span>
+        </div>
+
+        <div class="flex mb-2">
+          <input type="checkbox" x-model="certifications" value="CFI" class="form-checkbox h-5 w-5 text-ideal-blue focus:ring-0 mt-1">
+          <span class="ml-2 text-slate-700">CFI </span>
+        </div>
+
+        <div class="flex mb-2">
+          <input type="checkbox" x-model="certifications" value="ATP" class="form-checkbox h-5 w-5 text-ideal-blue focus:ring-0 mt-1">
+          <span class="ml-2 text-slate-700">ATP </span>
+        </div>
+        
+        <div class="flex mb-2">
+          <input type="checkbox" x-model="certifications" value="Other" class="form-checkbox h-5 w-5 text-ideal-blue focus:ring-0 mt-1">
+          <span class="ml-2 text-slate-700">Other</span>
+        </div>
+        
+        <div x-show="certifications.includes('Other')" class="mb-2">
+          <textarea type="text"
+            x-model="otherCertifications"
+            x-init="otherCertifications = ''"
+            placeholder="Enter other certifications you hold"
+            rows=4
+            class="form-textarea mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-ideal-blue focus:ring focus:ring-ideal-blue-light focus:ring-opacity-50 placeholder-slate-500"
+          ></textarea>
+        </div>
+        <%= form.hidden_field :certifications, "x-bind:value": "certifications.concat(otherCertifications ? [otherCertifications] : []).join(', ')" %>
+      </div>
+
+      <div class="flex justify-between">
+        <input type="button" class="btn-primary" @click="currentPage--" :disabled="currentPage === 1" value="PREVIOUS">
+        <input type="button" class="btn-primary" @click="currentPage++" value="NEXT">
+      </div>
+    </div>
+
+    <div x-show="currentPage === 3" x-cloak>
+      <div class="my-5" x-data="{ selectedDate: '' }">
+        <%= form.label "Select Checkout Flight Date", class: "font-semibold text-lg text-slate-700" %>
+        <div class="grid grid-cols-3 pt-5">
+          <% today = Date.today %>
+          <% (0..17).each do |i| %>
+            <% date = today + i.days %>
+            <label class="inline-flex items-center pb-5">
+              <%= form.radio_button :preferred_date, date.strftime('%Y-%m-%d'), { class: "hidden", "data-x-model" => "selectedDate" } %>
+              <span class="relative">
+                <span class="inline-flex items-center justify-center bg-slate-50 border  border-slate-300 rounded-md cursor-pointer hover:border-slate-400" :class="{ 'bg-ideal-blue text-white': selectedDate == '<%= date.strftime('%Y-%m-%d') %>' }">
+                  <span class="px-4 py-2 text-base" :class="{ 'text-slate-700': selectedDate != '<%= date.strftime('%Y-%m-%d') %>', 'text-white': selectedDate == '<%= date.strftime('%Y-%m-%d') %>' }"><%= date.strftime('%B %d') %></span>
+                </span>
+                <span class="absolute top-0 bottom-0 left-0 right-0 cursor-pointer" @click="selectedDate = '<%= date.strftime('%Y-%m-%d') %>'"></span>
+              </span>
+            </label>
+          <% end %>
+        </div>
+      </div>
+
+
+      <div class="my-5" x-data="{ selectedAvailability: '' }">
+        <span class="text-slate-700 font-semibold text-lg">Select preferred availability</span>
+        <div class="grid grid-cols-2 mt-5 gap-3">
+          <% availability_options = ['7 AM to 10 AM', '10 AM to 1 PM', '1 PM to 4 PM', '4 PM to 7 PM'] %>
+          <% availability_options.each do |option| %>
+            <label class="">
+              <%= form.radio_button :preferred_availability, option, { class: "hidden", "data-x-model" => "selectedAvailability" } %>
+              <span class="relative">
+                <span class="inline-flex items-center justify-center text-slate-700 border border-slate-300 rounded-md bg-slate-50 " :class="{ 'bg-ideal-blue': selectedAvailability == '<%= option %>' }">
+                  <span class="px-4 py-2 font-sans text-base text-slate-800" :class="{ 'text-slate-50': selectedAvailability == '<%= option %>' }"><%= option %></span>
+                </span>
+                <span class="absolute top-0 bottom-0 left-0 right-0 cursor-pointer" @click="selectedAvailability = '<%= option %>'"></span>
+              </span>
+            </label>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="flex justify-between">
+        <input type="button" class="btn-primary" @click="currentPage--" :disabled="currentPage === 1" value="PREVIOUS">
+        <input type="button" class="btn-primary" @click="currentPage++" value="NEXT">
+      </div>
+    </div>
+
+    <div x-show="currentPage === 4" x-cloak>
+      <div class="my-5" x-data="{ alternateDate: '' }">
+        <%= form.label "Select Alternate Flight Date", class: "font-semibold text-lg text-slate-700" %>
+        <div class="grid grid-cols-3 pt-5">
+          <% today = Date.today %>
+          <% (0..17).each do |i| %>
+            <% date = today + i.days %>
+            <label class="inline-flex items-center pb-5">
+              <%= form.radio_button :alternate_date, date.strftime('%Y-%m-%d'), { class: "hidden", "data-x-model" => "alternateDate" } %>
+              <span class="relative">
+                <span class="inline-flex items-center justify-center bg-slate-50 border  border-slate-300 rounded-md cursor-pointer hover:border-slate-400" :class="{ 'bg-ideal-blue text-white': alternateDate == '<%= date.strftime('%Y-%m-%d') %>' }">
+                  <span class="px-4 py-2 text-base" :class="{ 'text-slate-700': alternateDate != '<%= date.strftime('%Y-%m-%d') %>', 'text-white': alternateDate == '<%= date.strftime('%Y-%m-%d') %>' }"><%= date.strftime('%B %d') %></span>
+                </span>
+                <span class="absolute top-0 bottom-0 left-0 right-0 cursor-pointer" @click="alternateDate = '<%= date.strftime('%Y-%m-%d') %>'"></span>
+              </span>
+            </label>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="my-5" x-data="{ alternateAvailability: '' }">
+        <span class="text-slate-700 text-lg font-semibold">Select alternate date availability</span>
+        <div class="grid grid-cols-2 mt-5 gap-3">
+          <% availability_options = ['7 AM to 10 AM', '10 AM to 1 PM', '1 PM to 4 PM', '4 PM to 7 PM'] %>
+          <% availability_options.each do |option| %>
+            <label class="">
+              <%= form.radio_button :alternate_availability, option, { class: "hidden", "data-x-model" => "alternateAvailability" } %>
+              <span class="relative">
+                <span class="inline-flex items-center justify-center text-slate-700 border border-slate-300 rounded-md bg-slate-50 " :class="{ 'bg-ideal-blue': alternateAvailability == '<%= option %>' }">
+                  <span class="px-4 py-2 font-sans text-base text-slate-800" :class="{ 'text-slate-50': alternateAvailability == '<%= option %>' }"><%= option %></span>
+                </span>
+                <span class="absolute top-0 bottom-0 left-0 right-0 cursor-pointer" @click="alternateAvailability = '<%= option %>'"></span>
+              </span>
+            </label>
+          <% end %>
+        </div>
+      </div>
+      <div class="flex justify-between">
+        <input type="button" class="btn-primary" @click="currentPage--" :disabled="currentPage === 1" value="PREVIOUS">
+        <input type="button" class="btn-primary" @click="currentPage++" value="NEXT">
+      </div>
+    </div>
+    <div x-show="currentPage === 5" x-cloak>
+      <div class="my-5">
+        <span class="p-text">Hi There! Looking forward to flying with you.  Is there anything you'd like us to know?  We'll give you a call shortly.</span>
+        <%= form.text_area :comments, rows: 4, class: "block shadow rounded-md border border-slate-200 outline-none px-3 py-2 mt-2 w-full focus:border-ideal-blue focus:ring-ideal-blue" %>
+      </div>
+
+      <div class="flex justify-between">
+        <input type="button" class="btn-primary" value="PREVIOUS" @click="currentPage--">
+        <div class="inline">
+          <%= form.submit "SCHEDULE", class: "btn-primary", data: { turbo: false } %>
+        </div>
+      </div>
+
+      <div class="mt-10 text-slate-600 italic text-sm">This form is a request to complete a checkout at Ideal Aviation.  The requested or alternate dates for a checkout flight may or may not be available depending on demand and availability.  </div>
+      <div class="mt-10">
+        <%= image_tag "ideal_logo.webp"%>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+<%#interested_aircraft certifications%>

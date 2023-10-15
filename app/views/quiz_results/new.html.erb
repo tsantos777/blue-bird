@@ -1,0 +1,33 @@
+<header class="w-full bg-home bg-pilot-thumbs h-screen lg:h-screen bg-cover bg-center flex flex-col justify-between items-center">
+  <div class="px-5 py-40 lg:py-52 flex flex-col justify-center items-start w-full">
+      <h1 class="font-bold text-5xl text-center lg:text-start">Are you ready to become a pilot?</h1>
+      <h2 class="font-bold text-4xl text-center lg:text-start py-10 ">Take our quick quiz to find out</h2>
+      <div class="w-full flex flex-col items-center lg:hidden">
+        <a href="#quiz-frame", class="btn-primary"
+        onclick="event.preventDefault(); document.getElementById('quiz-frame').scrollIntoView({ behavior: 'smooth' });">
+          START NOW
+        </a>
+      </div>
+  </div>
+
+  <!--desktop-->
+  <div class="hidden lg:block w-full px-4 bg-white opacity-50">
+    <%= render "shared/bottom_footer"%>
+  </div>
+
+  <div class="hidden lg:block lg:fixed  right-5 top-10 z-50 bg-white rounded-xl border pb-5 overflow-y-auto max-h-[88vh]">
+  <%= render "form", quiz_result: @quiz_result %>
+  </div>
+</header>
+
+
+<!--Mobile // use turbo frame to keep view in place-->
+<turbo-frame id="quiz-frame">
+  <div class="lg:hidden right-5 top-10 z-50 bg-white rounded-xl border pb-5 overflow-y-auto">
+    <%= render "form", quiz_result: @quiz_result %>
+  </div>
+</turbo-frame>
+
+<div class="lg:hidden w-full bg-ideal-blue-darker pt-16 pb-5 pl-5">
+  <%= render "shared/bottom_footer"%>
+</div>

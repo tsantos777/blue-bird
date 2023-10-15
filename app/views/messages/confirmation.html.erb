@@ -1,0 +1,8 @@
+<%= turbo_frame_tag 'form-section' do %>
+  <div class="flex flex-col justify-center h-full">
+    <p class="px-5">
+      Thank you for contacting Pitcairn Flight.  We are looking forward to working with you soon.  We will review your message and get back with you within 1-5 business days.  <br><br>
+      You can also give us a call at <%=link_to "(610) 495-7000", "tel:1-610-495-7000" %> or email us at <%= mail_to 'marisa@pitcairnflight.com', class: "text-slate-800 hover:underline"%>
+    </p>
+  </div>
+<% end %>

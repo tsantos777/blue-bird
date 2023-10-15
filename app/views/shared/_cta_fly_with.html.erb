@@ -1,0 +1,13 @@
+<section class="w-full h-screen bg-planes-parked bg-cover bg-bottom flex justify-center items-center">
+  <div class="flex flex-col justify-center items-center drop-shadow-2xl transform-gpu" x-data>
+      <h2 class="w-4/5 font-bold text-3xl sm:text-5xl lg:text-7xl">Fly with <span class="text-sky-400">experienced safe aviators</span> that know the flight training industry.</h2>
+      <p class="w-4/5 py-5 lg:py-10 text-xl lg:text-2xl font-semibold">We are a team of aviators that are experts in the flight training industry.  We have decades of combined experience to get you safely in the air.  Start your flight training today and see what we're talking about by scheduling a discovery flight.</p>
+      <div class="opacity-0 duration-[1500ms] translate-y-24 text-center w-full flex flex-col items-start" x-intersect="$el.classList.add('opacity-100', 'translate-y-1', 'z-0')">
+        <%=link_to discovery_flight_path, target: "blank", data: { turbo: false }, class: "mx-auto" do%>
+          <div class="btn-primary text-xl lg:text-3xl">
+            SCHEDULE DISCOVERY FLIGHT
+          </div>
+        <% end %>
+      </div>
+  </div>
+</section>
