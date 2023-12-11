@@ -14,7 +14,7 @@
 # Configure Using Gemfile
 # gem "pg"
 #
-default: &default
+ default: &default
   adapter: postgresql
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
@@ -24,6 +24,20 @@ default: &default
 development:
   <<: *default
   database: rrm_development
+
+#default: &default
+ # adapter: sqlite3
+  #pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  #timeout: 5000
+
+#development:
+ # <<: *default
+  #database: db/development.sqlite3
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

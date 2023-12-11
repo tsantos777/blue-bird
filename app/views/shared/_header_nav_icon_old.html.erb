@@ -1,0 +1,185 @@
+<nav class="sticky top-0 z-50 h-16 lg:h-20 flex flex-row justify-between items-start bg-sky-600/90 text-white drop-shadow-2xl transform-gpu">
+  <div class="pl-5 lg:pl-3 lg:pt-2 z-50">
+    <%= link_to root_path, data: { turbo: false } do %>
+      <%= image_tag "bluebird-cyan.webp", alt: "Sun City Aviation Academy Logo", class: "w-24 lg:w-48 top-0"%>
+    <% end %>
+  </div>
+  <!--JS for drops-->
+  <div class="hidden lg:flex flex-row gap-5 xl:gap-10 items-center font-bold text-lg xl:text-xl h-full pr-5 overflow-x-hidden overflow-visible " 
+    x-data="{ 
+      fly_drop: false, 
+      pilot_drop: false, 
+      financing_drop: false, 
+      about_drop: false
+      }" 
+    x-on:mouseleave="
+      fly_drop = false, 
+      pilot_drop = false, 
+      financing_drop = false, 
+      about_drop = false"
+    >
+    <!--LINKS-->
+
+    <!--HOME-->
+    <div class="">
+      <%= link_to "HOME", root_path, data: { turbo: false }, class: "link-underline link-overline py-3" %>
+    </div>
+
+    <!--ABOUT US-->
+    <div class="" x-on:mouseover="about_drop = true">
+      <%= link_to "ABOUT US", root_path, data: { turbo: false }, class: "link-underline link-overline py-3" %>
+      <div class="dropshadow-xl bg-black/90 rounded-b-xl absolute z-50 pb-5 pt-2 right-[46.75rem]" x-cloak x-show="about_drop"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 transform scale-90"
+        x-transition:enter-end="opacity-100 transform scale-100"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100 transform scale-100"
+        x-transition:leave-end="opacity-0 transform scale-90" >
+        <!--Drop down Menu-->
+        <div class="flex flex-col gap-3 mx-5 items-start" >
+          <div class="items-center">
+            <%= link_to 'our-team', data: { turbo: false }, target: "blank", class: "hover:text-custom-50 duration-300" do %>
+              <div class="flex flex-row items-center" x-data="{ isHovered: false, isOut: false }" x-on:mouseenter="isHovered = true, isOut = false" x-on:mouseleave="isHovered = false, isOut = true; setTimeout(() => { isOut = false }, 500)">
+                OUR TEAM
+              </div>
+            <% end %>
+          </div>
+          <div class="items-center">
+            <%= link_to root_path, data: { turbo: false }, target: "blank", class: "hover:text-custom-50 duration-300" do %>
+              <div class="flex flex-row items-center" x-data="{ isHovered: false, isOut: false }" x-on:mouseenter="isHovered = true, isOut = false" x-on:mouseleave="isHovered = false, isOut = true; setTimeout(() => { isOut = false }, 500)">
+                AIRPLANE FLEET
+              </div>
+            <% end %>
+          </div>
+          <div class="items-center">
+            <%= link_to root_path, data: { turbo: false }, class: "hover:text-custom-50 duration-300" do %>
+              <div class="flex flex-row items-center" x-data="{ isHovered: false, isOut: false }" x-on:mouseenter="isHovered = true, isOut = false" x-on:mouseleave="isHovered = false, isOut = true; setTimeout(() => { isOut = false }, 500)">
+                CONTACT US
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--PILOT TRAINING GUIDE-->
+    <div class="" x-on:mouseover="pilot_drop = true">
+      <%= link_to "PILOT TRAINING GUIDE" , root_path, data: { turbo: false }, class: "link-underline link-overline py-3"%>
+      <div class="dropshadow-xl bg-black/90 rounded-b-xl absolute z-50 pb-5 pt-2 right-[34rem]" x-cloak x-show="pilot_drop"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 transform scale-90"
+        x-transition:enter-end="opacity-100 transform scale-100"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100 transform scale-100"
+        x-transition:leave-end="opacity-0 transform scale-90" >
+        <!--Drop down Menu-->
+        <div class="flex flex-col gap-3 mx-5 items-start">
+          <div class="items-center">
+            <%= link_to root_path, data: { turbo: false }, class: "hover:text-custom-50 duration-300" do %>
+              <div class="flex flex-row items-center" x-data="{ isHovered: false, isOut: false }" x-on:mouseenter="isHovered = true, isOut = false" x-on:mouseleave="isHovered = false, isOut = true; setTimeout(() => { isOut = false }, 500)">
+                WHY BECOME A PILOT
+              </div>
+            <% end %>
+          </div>
+          <div class="items-center">
+            <%= link_to root_path, data: { turbo: false }, class: "hover:text-custom-50 duration-300" do %>
+              <div class="flex flex-row items-center" x-data="{ isHovered: false, isOut: false }" x-on:mouseenter="isHovered = true, isOut = false" x-on:mouseleave="isHovered = false, isOut = true; setTimeout(() => { isOut = false }, 500)">
+                DISCOVERY FLIGHT
+              </div>
+            <% end %>
+          </div>
+          <div class="items-center">
+            <%= link_to root_path, class: "hover:text-custom-50 duration-300", data: { turbo: false } do %>
+              <div class="flex flex-row items-center" x-data="{ isHovered: false, isOut: false }" x-on:mouseenter="isHovered = true, isOut = false" x-on:mouseleave="isHovered = false, isOut = true; setTimeout(() => { isOut = false }, 500)">
+                FLIGHT TRAINING
+              </div>
+            <% end %>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <!--TRAINING COURSES-->
+    <div class="" x-on:mouseover="financing_drop = true">
+      <%= link_to "TRAINING COURSES", root_path, data: { turbo: false }, class: "link-underline link-overline py-3" %>
+      <div class="dropshadow-xl bg-black/90 rounded-b-xl absolute z-50 pb-5 pt-2 right-[9rem]" x-cloak x-show="financing_drop"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 transform scale-90"
+        x-transition:enter-end="opacity-100 transform scale-100"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100 transform scale-100"
+        x-transition:leave-end="opacity-0 transform scale-90" >
+        <!--DROP DOWN Menu-->
+        <div class="flex flex-col gap-3 mx-5 items-start" >
+          <div class="items-center">
+            <%= link_to root_path, class: "hover:text-custom-50 duration-300", data: { turbo: false } do %>
+              <div class="flex flex-row items-center" x-data="{ isHovered: false, isOut: false }" x-on:mouseenter="isHovered = true, isOut = false" x-on:mouseleave="isHovered = false, isOut = true; setTimeout(() => { isOut = false }, 500)">
+                PRIVATE PILOT COURSE
+              </div>
+            <% end %>
+          </div>
+          <div class="items-center">
+            <%= link_to root_path, data: { turbo: false }, class: "hover:text-custom-50 duration-300" do %>
+              <div class="flex flex-row items-center" x-data="{ isHovered: false, isOut: false }" x-on:mouseenter="isHovered = true, isOut = false" x-on:mouseleave="isHovered = false, isOut = true; setTimeout(() => { isOut = false }, 500)">
+                INSTRUMENT RATING
+              </div>
+            <% end %>
+          </div>
+          <div class="items-center">
+            <%= link_to root_path, data: { turbo: false }, class: "hover:text-custom-50 duration-300" do %>
+              <div class="flex flex-row items-center" x-data="{ isHovered: false, isOut: false }" x-on:mouseenter="isHovered = true, isOut = false" x-on:mouseleave="isHovered = false, isOut = true; setTimeout(() => { isOut = false }, 500)">
+                COMMERCIAL PILOT COURSE
+              </div>
+            <% end %>
+          </div>
+          <div class="items-center">
+            <%= link_to root_path, data: { turbo: false }, class: "hover:text-custom-50 duration-300" do %>
+              <div class="flex flex-row items-center" x-data="{ isHovered: false, isOut: false }" x-on:mouseenter="isHovered = true, isOut = false" x-on:mouseleave="isHovered = false, isOut = true; setTimeout(() => { isOut = false }, 500)">
+                MULTI ENGINE COURSE
+              </div>
+            <% end %>
+          </div>
+          <div class="items-center">
+            <%= link_to root_path, data: { turbo: false }, class: "hover:text-custom-50 duration-300" do %>
+              <div class="flex flex-row items-center" x-data="{ isHovered: false, isOut: false }" x-on:mouseenter="isHovered = true, isOut = false" x-on:mouseleave="isHovered = false, isOut = true; setTimeout(() => { isOut = false }, 500)">
+                FLIGHT INSTRUCTOR COURSE
+              </div>
+            <% end %>
+          </div>
+          <div class="items-center">
+            <%= link_to root_path, data: { turbo: false }, class: "hover:text-custom-50 duration-300" do %>
+              <div class="flex flex-row items-center" x-data="{ isHovered: false, isOut: false }" x-on:mouseenter="isHovered = true, isOut = false" x-on:mouseleave="isHovered = false, isOut = true; setTimeout(() => { isOut = false }, 500)">
+                AIRLINE TRANSPORT PILOT COURSE
+              </div>
+            <% end %>
+          </div>
+          <div class="items-center">
+            <%= link_to root_path, data: { turbo: false }, class: "hover:text-custom-50 duration-300" do %>
+              <div class="flex flex-row items-center" x-data="{ isHovered: false, isOut: false }" x-on:mouseenter="isHovered = true, isOut = false" x-on:mouseleave="isHovered = false, isOut = true; setTimeout(() => { isOut = false }, 500)">
+                SEAPLANE COURSE
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--BLOG-->
+    <div class="">
+      <%= link_to "BLOG", root_path, data: { turbo: false }, class: "link-underline link-overline py-3 z-10" %>
+    </div>
+
+    <!--Button-->
+    <div class="relative flex">
+      <div class="animate-ping-1 absolute inline-flex h-full w-full rounded-full bg-custom-50 opacity-20 z-0"></div>
+      <div class="animate-ping-2 absolute inline-flex h-full w-full rounded-full bg-custom-50 opacity-20 z-0"></div>
+      <div class="animate-ping-3 absolute inline-flex h-full w-full rounded-full bg-custom-50 opacity-20 z-0"></div>
+      <button class="btn-primary">
+        START TODAY
+      </button>
+    </div>
+  </div>
+  <div class="lg:hidden mr-2 " x-data="{ open: false }">
+    <%= render "shared/header_nav_mobile_menu"%>
+  </div>
+</nav>

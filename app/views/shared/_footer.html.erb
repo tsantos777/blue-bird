@@ -14,7 +14,7 @@
             <%= link_to "AIRLINE PILOT COURSES", airline_pilot_courses_path, data: { turbo: false }, class: ""%>
           </div>
           <div class="font-header text-2xl font-semibold w-1/4 pl-20 hover:text-sky-500 duration-500" >
-            <%= link_to "WHY SIMPLIFLY", why_simplifly_path, data: { turbo: false }, class: ""%>
+            <%= link_to "WHY BLUEBIRD", why_simplifly_path, data: { turbo: false }, class: ""%>
           </div>
           <div class="font-header text-2xl font-semibold w-1/8 hover:text-sky-500 duration-500" >
             <%= link_to "CONTACT US", contact_path, data: { turbo: false }, class: ""%>
@@ -26,7 +26,7 @@
             <div class="font-header text-2xl font-semibold w-1/4">
               <ul>
                 <li class="hover:text-sky-500 duration-500 pb-3"><%= link_to "DISCOVERY FLIGHT", discovery_flight_path, target: "blank", data: { turbo: false }%></li>
-                <li class="hover:text-sky-500 duration-500 pb-3"><%= link_to "ENROLL AT SIMPLIFLY", enroll_path, target: "blank", data: { turbo: false }%></li>
+                <li class="hover:text-sky-500 duration-500 pb-3"><%= link_to "ENROLL AT BLUEBIRD", root_path, target: "blank", data: { turbo: false }%></li>
                 <li class="hover:text-sky-500 duration-500 pb-3"><%= link_to "PILOT TRAINING", pilot_training_path, data: { turbo: false }%></li>
                 <li class="hover:text-sky-500 duration-500 "><%= link_to "BEGIN PILOT CAREER", cfi_path, data: { turbo: false }%></li>
               </ul>
@@ -59,22 +59,42 @@
     
 
 
-    <div class="md:flex md:justify-between">
-      <div class="mb-6 md:mb-0 flex flex-col lg:flex-row gap-10">
+    <div class="flex-auto md:justify-between">
+      <div class="mb-6 md:mb-0 flex flex-col lg:flex-row gap-5">
         <div class="text-gray-600">
-          <div class="font-semibold pb-5">Falcon Field</div>
-          4766 E Falcon Dr<br>
-          Mesa, AZ 85215<br>
-          <a href="tel:1-480-256-8355">480-256-8355</a><br>
+        <div class="font-semibold pb-5 flex-auto sm:text-2xl">Washington Regional Airport <br>KFYG · Missouri, United States</div>
+        
+          12958 State Hwy 47,<br>
+          Marthasville, MO 63357<br>
+          <a href="tel:1-314-358-2100">(314) 358-2100</a><br>
         </div>
         <div class="text-gray-600">
-          <div class="font-semibold pb-5">Spanish Fork</div>
-          2050 N. 300 W<br>
-          Spanish Fork, UT 84660<br>
-          <a href="tel:1-801-877-0568">801-877-0568</a><br>
+
+        
+        
         </div>
-      </div>
+
+        <a href="https://metar-taf.com/KFYG" id="metartaf-MMJwOAcZ" style="font-size:18px; font-weight:500; color:#000; width:350px; height:278px; display:block">METAR Washington Regional Airport</a>
+        <script async defer crossorigin="anonymous" src="https://metar-taf.com/embed-js/KFYG?layout=landscape&visibility=mi&qnh=inHg&rh=rh&target=MMJwOAcZ"></script>
+
+        
+        <div class="relative w-400 h-40">
+        <iframe class="absolute top-0 left-0 w-400 h-40"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5244.7835591686835!2d-91.0046328790519!3d38.58981880663206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d94c696e124dd1%3A0x5ff69d69189cb32f!2sWashington%20Regional%20Airport!5e0!3m2!1sen!2sph!4v1701968194931!5m2!1sen!2sph" width="500" height="275" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
     </div>
+       
+      </div>
+       
+<
+
+
+
+
+    </div>
+    
+
+    
     <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
     <%= render "shared/bottom_footer"%>
   </div>
