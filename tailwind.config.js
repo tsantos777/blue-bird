@@ -124,14 +124,14 @@ module.exports = {
         'slide-out-left5': 'slide-out-left 0.7s ease-out',
       },
       backgroundImage : {
-        'home' : "url('pitcairn-flight-bg-cessna.webp')",
+        'home' : "url('Marthasville-fly.webp')",
         'ctahead' : "url('cessna-sunset.webp')",
         'sunset' : "url('sunset.webp')",
         'pilots-airliner' : "url('pilots-in-airliner.webp')",
         'cessna-sunset' : "url('cessna_sunset_dark.webp')",
         'aerial' : "url('aerial.webp')",
         'hangarbg' : "url('hangarbg.webp')",
-        'mountain' : "url('mountain_backdrop.webp')",
+        'mountain' : "url('Marthasville-fly2.webp')",
         'discovery-flight' : "url('discovery-flight-bg.webp')",
         'airline-cockpit' : "url('airline_cockpit.webp')",
         'canyon' : "url('canyon-background.webp')",
@@ -142,7 +142,8 @@ module.exports = {
         'student' : "url('student-pilot-before-solo.webp')",
         'thumbs' : "url('thumbs-up-in-front-of-cessna.webp')",
         'behind' : "url('behind-pic.webp')",
-        
+        'planes-parked' : "url('planes-parked.webp')",
+     
       },
       height: theme => ({
         'screen-1/2': '50vh',

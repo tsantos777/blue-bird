@@ -1,34 +1,64 @@
-<%# Head / Meta Data %>
-<% title("Accelerated Pilot Training | BlueBird Best Aviation Academy") %>
-<% meta_description("BlueBird Best offers Flexible Pilot Training Programs.  Go from Zero to Hero (PPL to CFII) on your own schedule. Our flight schools are in Marthasville, MO and Spanish Fork, UT.  Many of our students come from Gilbert, Chandler, Tempe, Scottsdale, Apache Junction, Queen Creek, Fountain Hills, Gold Canyon, Maricopa, Pinal, Springville, Provo, Payson, Mapleton, Salem, Elk Ridge, Utah County, Juab County") %>
-<% meta_keywords(" Flexible Pilot Training, Part-Time Pilot Training, Full-Time Pilot Training, Marthasville Flight School, Phoenix Flight School, Scottsdale Flight School, Spanish Fork Flight School, Salt Lake Flight School") %>
 
 <%= render "shared/header"%>
-
 <!--FASHION -->
 
 
- 
+<section class="relative flex flex-col items-center bg-gradient-to-l from-slate-900 to-sky-700 lg:py-20 py-20">
 
-    <h3 class="text-5xl font-header uppercase font-semibold text-center">Fashion</h3>
+<div class="text-center max-w-2xl font-header text-white -20">
+  <h2 class="text-3xl lg:text-5xl uppercase">Welcome to BlueBird Best Aviation and FASHION </h2>
 
-
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
-    </div>
-    
+  <div class="px-5 mb-10 mt-3 text-slate-200">STYLE WITH CLASS  <br class="hidden lg:block"> Photos by courtesy of "Blanca Parciak Photography"</div>
 </div>
 
+<div class="relative flex flex-col lg:flex-row items-center justify-center gap-12 text-slate-200 z-20">
+  
+    
+  
+    <div class="flex flex-col items-center">
+      <div class="w-80 h-72 overflow-hidden">
+      <%=image_tag "teresa-rosel-1.webp", alt: "Red dress", class: "w-full h-full object-cover hover:scale-105 duration-300"%>
+      </div>
+      
+      <div class="font-header uppercase mt-5 text-2xl">
+      Creative
+      </div>
+    </div>
    
 
+    <div class="flex flex-col items-center">
+    <div class="w-80 h-72 overflow-hidden">
+    <%=image_tag "black-4.webp", alt: "Black dress", class: "w-full h-full object-cover hover:scale-105 duration-300"%>
+    </div>
+    
+    <div class="font-header uppercase mt-5 text-2xl">
+    Exquisite
+    </div>
+  </div>
+
+
+    <div class="flex flex-col items-center">
+      <div class="w-80 h-72 overflow-hidden">
+      <%=image_tag "pink-3.webp", alt: "Teresa with blue sky", class: "w-full h-full object-cover hover:scale-105 duration-300"%>
+      </div>
+      
+      <div class="font-header uppercase mt-5 text-2xl">
+        Glamour
+      </div>
+    </div>
+
+
+</section>
+
+
+
+
+
+
 <%= render "shared/footer"%>
+
+
+
+<!--Sticky div-->
+</div>
+
