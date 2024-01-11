@@ -48,3 +48,4 @@ Gemfile.lock
 pkg
 tzdb
 .yardoc
+Gemfile.lock
