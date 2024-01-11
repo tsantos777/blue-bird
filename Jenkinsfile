@@ -5,7 +5,20 @@ pipeline {
     DOKKU_HOST = '172.234.28.110'
     APP_NAME = 'blue-bird'
   }
+  stages {
+    stage('Checkout') {
+      steps {
+        checkout scm
+      }
+    }
 
+    // Skipping the 'Build' stage
+    // stage('Build') {
+    //   steps {
+    //     sh 'bundle install'
+    //   }
+    // }
+    
   stage('Deploy to Dokku') {
       steps {
         script {
