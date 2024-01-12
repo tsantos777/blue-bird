@@ -43,9 +43,4 @@ NOTES.md
 # Ignore application configuration
 /config/application.yml
 
-doc
-Gemfile.lock
-pkg
-tzdb
-.yardoc
-Gemfile.lock
+
